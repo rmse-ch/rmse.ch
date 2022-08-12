@@ -18,6 +18,7 @@ defmodule RmseWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/announcement", AnnouncementLive
   end
 
   # Other scopes may use custom stacks.
