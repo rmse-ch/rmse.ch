@@ -53,6 +53,8 @@ if config_env() == :prod do
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
       port: port
     ],
+    # FIXME: there should be a better way I guess
+    check_origin: ["https://rmse.fly.dev", "https://rmse.ch"],
     secret_key_base: secret_key_base
 
   # ## Using releases
