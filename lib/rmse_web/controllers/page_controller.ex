@@ -3,7 +3,7 @@ defmodule RmseWeb.PageController do
 
   def index(conn, _params) do
     remaining_days =
-      Date.diff(Date.new!(2022, 07, 01), Date.utc_today())
+      Date.diff(Date.new!(2022, 09, 01), Date.utc_today())
 
     render(conn, "index.html", %{remaining_days: remaining_days})
   end
