@@ -27,7 +27,7 @@ defmodule RmseWeb.AnnouncementLive do
   end
 
   defp calculate_remaining_days do
-    target = ~N[2022-10-03 00:00:00]
+    target = ~N[2022-10-10 00:00:00]
     now = NaiveDateTime.local_now()
 
     diff_in_second = NaiveDateTime.diff(target, now)
