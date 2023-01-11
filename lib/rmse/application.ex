@@ -8,12 +8,14 @@ defmodule Rmse.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
-      Rmse.Repo,
       # Start the Telemetry supervisor
       RmseWeb.Telemetry,
+      # Start the Ecto repository
+      Rmse.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: Rmse.PubSub},
+      # Start Finch
+      {Finch, name: Rmse.Finch},
       # Start the Endpoint (http/https)
       RmseWeb.Endpoint
       # Start a worker by calling: Rmse.Worker.start_link(arg)

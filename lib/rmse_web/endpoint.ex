@@ -7,7 +7,8 @@ defmodule RmseWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_rmse_key",
-    signing_salt: "do8S0pCC"
+    signing_salt: "mGzP7kli",
+    same_site: "Lax"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -20,7 +21,7 @@ defmodule RmseWeb.Endpoint do
     at: "/",
     from: :rmse,
     gzip: false,
-    only: ~w(assets fonts images favicon robots.txt)
+    only: RmseWeb.static_paths()
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
