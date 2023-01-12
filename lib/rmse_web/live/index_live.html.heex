@@ -1,0 +1,44 @@
+<.container class="mt-9">
+  <div class="max-w-2xl">
+    <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+      Software engineer, Freelancer and Motorcyclist.
+    </h1>
+    <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+      I'm Rico, a software engineer based in Thunstetten, Switzerland.
+      I work as a freelancer, developing software solutions wherever they are needed
+      (which is nearly everywhere). Initially focused on Output Management I broadened my
+      horizon in the last couple of years to multiple different ideas and technologies.
+    </p>
+    <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+      While I started like a lot of people in the object oriented field I switched more and more
+      over to functional programming in the last couple of years, nowadays mainly using
+      Scala and Elixir.
+    </p>
+    <div class="mt-6 flex gap-6">
+      <.social_link href="https://twitter.com/titaniumcoder" aria-label="Follow on Twitter">
+        <.twitter_icon />
+      </.social_link>
+      <.social_link href="https://www.instagram.com/titaniumcoder/" aria-label="Follow on Instagram">
+        <.instagram_icon />
+      </.social_link>
+      <.social_link href="https://github.com/rmse-ch" aria-label="Follow on GitHub">
+        <.github_icon />
+      </.social_link>
+      <.social_link href="https://www.linkedin.com/in/rico-metzger/" aria-label="Follow on LinkedIn">
+        <.linked_in_icon />
+      </.social_link>
+    </div>
+  </div>
+</.container>
+<.container class="mt-24 md:mt-28">
+  <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+    <div class="flex flex-col gap-16">
+      <%= for article <- @articles do %>
+        <.article article={article}/>
+      <% end %>
+    </div>
+    <div class="space-y-10 lg:pl-16 xl:pl-24">
+      <.resume resume={@resume} />
+    </div>
+  </div>
+</.container>

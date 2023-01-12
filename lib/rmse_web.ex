@@ -83,8 +83,11 @@ defmodule RmseWeb do
     quote do
       # HTML escaping functionality
       import Phoenix.HTML
-      # Core UI components and translation
+      # Core UI components
       import RmseWeb.CoreComponents
+      # rmse.ch Components
+      import RmseWeb.RmseComponents
+      # Translation
       import RmseWeb.Gettext
 
       # Shortcut for generating JS commands

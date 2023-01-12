@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" style="scrollbar-gutter: stable;">
+<html lang="en" style="scrollbar-gutter: stable;"> <%!-- Dark Mode here --%>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title suffix=" · Phoenix Framework">
-      <%= assigns[:page_title] || "Rmse" %>
+    <.live_title>
+      <%= assigns[:page_title] || "Rico Metzger - Software Engineer, Freelancer and Motorcyclist" %>
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+
+    <!-- Für Apple-Geräte -->
+    <link rel="apple-touch-icon" sizes="180x180" href={~p"/favicon/apple-touch-icon-180x180.png"}>
+    <!-- Für Browser -->
+    <link rel="shortcut icon" type="image/x-icon" href={~p"/favicon/favicon-32x32.ico"}>
+    <link rel="icon" type="image/png" sizes="96x96" href={~p"/favicon/favicon-96x96.png"}>
+    <!-- Für Windows Metro -->
+    <meta name="msapplication-square310x310logo" content={~p"/favicon/mstile-310x310.png"}>
+    <meta name="msapplication-TileColor" content="#000000">
   </head>
-  <body class="bg-white antialiased">
+  <body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
     <%= @inner_content %>
   </body>
 </html>
