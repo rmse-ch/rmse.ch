@@ -2,6 +2,7 @@ defmodule RmseWeb.Header do
   use Phoenix.Component
 
   import RmseWeb.RmseComponents
+  alias Phoenix.LiveView.JS
 
   use RmseWeb, :verified_routes
 
@@ -14,22 +15,6 @@ defmodule RmseWeb.Header do
         d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-    """
-  end
-
-  attr :rest, :global
-
-  def chevron_down_icon(assigns) do
-    ~H"""
-    <svg viewBox="0 0 8 6" aria-hidden="true" {@rest}>
-      <path
-        d="M1.75 1.75 4 4.25l2.25-2.5"
-        fill="none"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -80,69 +65,82 @@ defmodule RmseWeb.Header do
   def mobile_nav_item(assigns) do
     ~H"""
     <li>
-      <!-- TODO: need to rewrite this for phoenix, comes from headlessui but is probably not needed here or I can use pure Tailwind or Phoenix JS -->
-      <!-- <Popover.Button as={Link} href={@href} class="block py-2"> -->
-      <%= render_slot(@inner_block) %>
-      <!-- </Popover.Button> -->
+      <.link href={@href} class="block py-2">
+        <%= render_slot(@inner_block) %>
+      </.link>
     </li>
     """
   end
 
+  def show_menu(js \\ %JS{}) do
+    js
+    |> JS.show(to: "#mobile-menu")
+    |> JS.show(to: "#mobile-overlay")
+  end
+
+  def hide_menu(js \\ %JS{}) do
+    js
+    |> JS.hide(to: "#mobile-menu")
+    |> JS.hide(to: "#mobile-overlay")
+  end
+
+  attr :class, :string, required: false, default: ""
   attr :rest, :global
 
   def mobile_navigation(assigns) do
     ~H"""
-    <!-- TODO: rewrite this whole logic!!! -->
-    <%!-- <Popover {@rest}>
-      <Popover.Button class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
-        Menu
-        <.chevron_down_icon class="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
-      </Popover.Button>
-      <Transition.Root>
-        <Transition.Child
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <Popover.Overlay class="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80" />
-        </Transition.Child>
-        <Transition.Child
-          as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
-        >
-          <Popover.Panel
-            focus
-            class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800"
-          >
-            <div class="flex flex-row-reverse items-center justify-between">
-              <Popover.Button aria-label="Close menu" class="-m-1 p-1">
-                <.close_icon class="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
-              </Popover.Button>
-              <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
-              </h2>
-            </div>
-            <nav class="mt-6">
-              <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <.mobile_nav_item href="/about">About</.mobile_nav_item>
-                <.mobile_nav_item href="/blog">Blog</.mobile_nav_item>
-                <.mobile_nav_item href="/projects">Projects</.mobile_nav_item>
-                <.mobile_nav_item href="/uses">Uses</.mobile_nav_item>
-              </ul>
-            </nav>
-          </Popover.Panel>
-        </Transition.Child>
-      </Transition.Root>
-    </Popover> --%>
+    <div class={"relative #{@class}"} {@rest}>
+      <button
+        type="button"
+        class="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
+        id="menu-button"
+        aria-expanded="true"
+        aria-haspopup="true"
+        phx-click={show_menu()}
+      >
+        <span>Menu</span> <Heroicons.chevron_down class="h-4 w-4" />
+      </button>
+
+      <div
+        class="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80 opacity-100 hidden "
+        aria-hidden="true"
+        id="mobile-overlay"
+      >
+      </div>
+
+      <div
+        class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 hidden"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="menu-button"
+        id="mobile-menu"
+        tabindex="-1"
+      >
+        <div class="flex flex-row-reverse items-center justify-between">
+          <button aria-label="Close menu" class="-m-1 p-1" phx-click={hide_menu()}>
+            <Heroicons.x_mark class="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+          </button>
+
+          <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+            Navigation
+          </h2>
+        </div>
+
+        <nav class="mt-6">
+          <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+            <.mobile_nav_item href="/about">About</.mobile_nav_item>
+
+            <.mobile_nav_item href="/motorcycle">Motorcycle</.mobile_nav_item>
+
+            <.mobile_nav_item href="/blog">Blog</.mobile_nav_item>
+
+            <.mobile_nav_item href="/projects">Projects</.mobile_nav_item>
+
+            <.mobile_nav_item href="/uses">Uses</.mobile_nav_item>
+          </ul>
+        </nav>
+      </div>
+    </div>
     """
   end
 
@@ -178,6 +176,8 @@ defmodule RmseWeb.Header do
       <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
         <.nav_item href="/about">About</.nav_item>
 
+        <.nav_item href="/motorcycle">Motorcycle</.nav_item>
+
         <.nav_item href="/blog">Blog</.nav_item>
 
         <.nav_item href="/projects">Projects</.nav_item>
@@ -198,7 +198,9 @@ defmodule RmseWeb.Header do
     <div
       class={"#{@class} h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10"}
       {@rest}
-    ><%= render_slot(@inner_block) %></div>
+    >
+      <%= render_slot(@inner_block) %>
+    </div>
     """
   end
 
@@ -243,7 +245,9 @@ defmodule RmseWeb.Header do
       aria-label="Toggle Language"
       class="group rounded-full bg-white/90 px-3 py-2 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
     >
-      <div class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 hover:text-teal-500 dark:hover:text-teal-400">de</div>
+      <div class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 hover:text-teal-500 dark:hover:text-teal-400">
+        de
+      </div>
     </button>
     """
   end
@@ -257,28 +261,6 @@ defmodule RmseWeb.Header do
       class="pointer-events-none relative z-50 flex flex-col"
       style="height: var(--header-height), marginBottom: var(--header-mb)"
     >
-      <%= if is_home_page do %>
-        <div class="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]" />
-        <.container class="top-0 order-last -mb-3 pt-3" style="position: var(--header-position)">
-          <div
-            class="top-[var(--avatar-top,theme(spacing.3))] w-full"
-            style="position: var(--header-inner-position)"
-          >
-            <div class="relative">
-              <.avatar_container
-                class="absolute left-0 top-3 origin-left transition-opacity"
-                style="opacity: var(--avatar-border-opacity, 0), transform: var(--avatar-border-transform)"
-              />
-              <.avatar
-                large
-                class="block h-16 w-16 origin-left"
-                style="transform: var(--avatar-image-transform)"
-              />
-            </div>
-          </div>
-        </.container>
-      <% end %>
-
       <div class="top-0 z-10 h-16 pt-6" style="position: var(--header-position)">
         <.container
           class="top-[var(--header-top,theme(spacing.6))] w-full"
@@ -302,6 +284,7 @@ defmodule RmseWeb.Header do
               <div class="pointer-events-auto">
                 <.language_toggle />
               </div>
+
               <div class="pointer-events-auto">
                 <.mode_toggle />
               </div>
@@ -310,10 +293,6 @@ defmodule RmseWeb.Header do
         </.container>
       </div>
     </header>
-
-    <%= if is_home_page do %>
-      <div style="height: var(--content-offset)" />
-    <% end %>
     """
   end
 end
