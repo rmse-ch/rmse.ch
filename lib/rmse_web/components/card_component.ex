@@ -86,6 +86,7 @@ defmodule RmseWeb.CardComponent do
   attr :href, :string, required: false
   attr :decorate, :boolean, required: false, default: false
   attr :rest, :global
+
   slot :inner_block
   def card_eyebrow(assigns) do
     # TODO: how can I do a dynamic component in liveview like in react?

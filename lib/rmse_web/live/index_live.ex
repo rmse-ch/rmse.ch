@@ -20,7 +20,7 @@ defmodule RmseWeb.IndexLive do
       <.card_title href={"/articles/#{@article.slug}"}>
         <%= @article.title %>
       </.card_title>
-      <.card_eyebrow dateTime={@article.date} decorate>
+      <.card_eyebrow date-time={@article.date} decorate>
         <%= @article.date %>
       </.card_eyebrow>
       <.card_description><%= @article.description %></.card_description>
