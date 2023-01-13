@@ -18,6 +18,12 @@ defmodule RmseWeb.Router do
     pipe_through :browser
 
     live "/", IndexLive
+    get "/about", PageController, :about
+    get "/motorcycle", PageController, :motorcycle
+    get "/uses", PageController, :uses
+
+    get "/projects", PageController, :wip
+    get "/blog", PageController, :wip
   end
 
   # Other scopes may use custom stacks.

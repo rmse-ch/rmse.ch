@@ -57,6 +57,26 @@ defmodule RmseWeb.RmseComponents do
   end
 
   attr :class, :string, required: false, default: ""
+  attr :href, :string, required: true
+  slot :icon, required: true
+  slot :inner_block
+  def social_link_big(assigns) do
+    ~H"""
+      <li class={"#{@class} flex"}>
+        <.link
+          href={@href}
+          class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        >
+          <div class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500">
+            <%= render_slot(@icon) %>
+          </div>
+          <span class="ml-4"><%= render_slot(@inner_block) %></span>
+        </.link>
+      </li>
+    """
+  end
+
+  attr :class, :string, required: false, default: ""
   attr :rest, :global, doc: "the arbitrary HTML attributes to add to the arrow down svg"
   slot :inner_block, doc: "the optional inner block that renders the icon"
 
@@ -96,30 +116,6 @@ defmodule RmseWeb.RmseComponents do
     """
   end
 
-  attr :rest, :global, doc: "the arbitrary HTML attributes to add to the arrow down svg"
-  def mail_icon(assigns) do
-    ~H"""
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-        {@rest}
-      >
-        <path
-          d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-          className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-        />
-        <path
-          d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-          className="stroke-zinc-400 dark:stroke-zinc-500"
-        />
-      </svg>
-      """
-  end
-
   attr :class, :string, required: false, default: ""
   attr :variant, :atom, required: false, default: :primary
   attr :href, :string, required: false, default: nil
@@ -140,4 +136,28 @@ defmodule RmseWeb.RmseComponents do
   defp class_button(class, variant) do
     "inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none #{@variant_styles[variant]} #{class}"
   end
+
+  attr :title, :string, required: true
+
+  slot :inner_block
+
+  def section(assigns) do
+    ~H"""
+      <%!-- aria-labelledby={id} --%>
+      <section
+        class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40"
+      >
+        <div class="grid max-w-3xl grid-cols-1 items-baseline gap-y-8 md:grid-cols-3">
+          <%!-- id={id} --%>
+          <h2
+            class="text-sm font-semibold text-zinc-800 dark:text-zinc-100"
+          >
+            <%= @title %>
+          </h2>
+          <div class="md:col-span-2"><%= render_slot(@inner_block) %></div>
+        </div>
+      </section>
+    """
+  end
+
 end

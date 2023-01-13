@@ -7,7 +7,14 @@
       I'm Rico, a software engineer based in Thunstetten, Switzerland.
       I work as a freelancer, developing software solutions wherever they are needed
       (which is nearly everywhere). Initially focused on Output Management I broadened my
-      horizon in the last couple of years to multiple different ideas and technologies.
+      horizon in the last couple of years to multiple different ideas and technologies. <br />
+      More details about my freelancing can be found under <.link href={~p"/about"}>About</.link>.
+    </p>
+    <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+      Privately my main hobby is motorcyclist. I started driving in 2016, after just not enjoying
+      driving with a car anymore. Now, whenever the weather and my time allows it, I sit on my 
+      current motorcycle (a Kawasaki H2 SX SE) and drive around Switzerland, mainly in Jura or the Alps. <br />
+      More details about my motorcycling can be found under <.link href={~p"/motorcycle"}>Motorcycle</.link>.
     </p>
     <div class="mt-6 flex gap-6">
       <.social_link href="https://twitter.com/titaniumcoder" aria-label="Follow on Twitter">
@@ -28,8 +35,16 @@
 <.container class="mt-24 md:mt-28">
   <div class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
     <div class="flex flex-col gap-16">
-      <%= for article <- @articles do %>
-        <.article article={article}/>
+      <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+        <Heroicons.newspaper class="h-6 w-6 flex-none" />
+        <span class="ml-3">Blog</span>
+      </h2>
+      <%= if Enum.empty?(@articles) do %>
+        <p class="text-sm text-zinc-900 dark:text-zinc-100 -translate-y-8">No blog entries yet or still loading</p>
+      <% else %>
+        <%= for article <- @articles do %>
+          <.article article={article}/>
+        <% end %>
       <% end %>
     </div>
     <div class="space-y-10 lg:pl-16 xl:pl-24">

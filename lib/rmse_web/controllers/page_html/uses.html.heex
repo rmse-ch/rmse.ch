@@ -1,0 +1,44 @@
+<.container class="mt-16 sm:mt-32">
+  <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+    <div class="lg:order-first lg:row-span-2">
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+        Software I use, gadgets I love, and other things I recommend
+      </h1>
+      
+      <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+        <p>
+          This is just me building a continuous list of things I currently used
+          (or used in the near past). Everything on this list is in my opinion helpful
+          to get work done in a productive way.
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-20">
+      <%= for tool_section <- @tool_sections do %>
+        <.section title={tool_section.title}>
+          <ul role="list" class="space-y-16">
+            <%= for item <- tool_section.items do %>
+              <li class="group relative flex flex-col items-start">
+                <h3 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
+                  <%= if item[:href] do %>
+                    <div class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+                    <.link href={item.href}>
+                      <span class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+                      <span class="relative z-10"><%= item.title %></span>
+                    </.link>
+                  <% else %>
+                    <%= item.title %>
+                  <% end %>
+                </h3>
+                <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+                  <%= item.description %>
+                </p>
+              </li>
+            <% end %>
+          </ul>
+        </.section>
+        <% end %>
+    </div>
+  </div>
+</.container>

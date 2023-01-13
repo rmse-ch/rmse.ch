@@ -83,18 +83,18 @@ defmodule RmseWeb.IndexLive do
     # Link general: https://dev.to/titaniumcoder
 
     [
-      %{
-        slug: "article-1",
-        title: "Creating a first article",
-        description: "Some very big description",
-        date: ~D[2022-10-13]
-      },
-      %{
-        slug: "article-2",
-        title: "The second article",
-        description: "A very long description for the second demo article.",
-        date: ~D[2023-01-12]
-      }
+      # %{
+      #   slug: "article-1",
+      #   title: "Creating a first article",
+      #   description: "Some very big description",
+      #   date: ~D[2022-10-13]
+      # },
+      # %{
+      #   slug: "article-2",
+      #   title: "The second article",
+      #   description: "A very long description for the second demo article.",
+      #   date: ~D[2023-01-12]
+      # }
     ]
   end
 
