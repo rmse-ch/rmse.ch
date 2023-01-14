@@ -80,7 +80,7 @@ defmodule RmseWeb.PageController do
             title: "Kotlin",
             href: "https://kotlinlang.org/",
             description:
-              "Just a better Java... but a lot better honestly."
+              "Just a better Java..."
           }
         ]
       },
