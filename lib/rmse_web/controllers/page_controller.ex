@@ -15,14 +15,14 @@ defmodule RmseWeb.PageController do
     render(conn, :motorcycle, page_title: "Motorcyclist - Rico Metzger")
   end
 
-  def uses(conn, _params) do
+  def links(conn, _params) do
     # TODO: move this to a live view with database for more comfort
     tool_sections = [
       %{
-        title: "Workplace",
+        title: "Hardware",
         items: [
           %{
-            title: "13\" MacBook Pro (still Intel)",
+            title: "Apple MacBook Pro",
             href: "https://www.apple.com/chde/macbook-pro-13/",
             description:
               """
@@ -119,7 +119,7 @@ defmodule RmseWeb.PageController do
         ]
       },
       %{
-        title: "Diverse",
+        title: "Freelancing",
         items: [
           %{
             title: "Bexio",
@@ -131,7 +131,7 @@ defmodule RmseWeb.PageController do
       },
     ]
 
-    render(conn, :uses, page_title: "Uses - Rico Metzger", tool_sections: tool_sections)
+    render(conn, :links, page_title: "Links - Rico Metzger", tool_sections: tool_sections)
   end
 
   def wip(conn, _params) do
