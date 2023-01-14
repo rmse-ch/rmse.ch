@@ -28,6 +28,7 @@ defmodule RmseWeb.Footer do
                 <.nav_link href={~p"/motorcycle"}>Motorcycle</.nav_link>
                 <.nav_link href={~p"/blog"}>Blog</.nav_link>
                 <.nav_link href={~p"/projects"}>Projects</.nav_link>
+                <.nav_link href={~p"/apps"}>Apps</.nav_link>
                 <.nav_link href={~p"/uses"}>Uses</.nav_link>
               </div>
 

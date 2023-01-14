@@ -21,7 +21,7 @@ defmodule RmseWeb.Router do
     get "/about", PageController, :about
     get "/motorcycle", PageController, :motorcycle
     get "/uses", PageController, :uses
-
+    get "/apps", PageController, :wip
     get "/projects", PageController, :wip
     get "/blog", PageController, :wip
   end
