@@ -136,6 +136,8 @@ defmodule RmseWeb.Header do
 
             <.mobile_nav_item href="/projects">Projects</.mobile_nav_item>
 
+            <.mobile_nav_item href="/apps">Apps</.mobile_nav_item>
+
             <.mobile_nav_item href="/uses">Uses</.mobile_nav_item>
           </ul>
         </nav>
@@ -181,7 +183,7 @@ defmodule RmseWeb.Header do
         <.nav_item href="/blog">Blog</.nav_item>
 
         <.nav_item href="/projects">Projects</.nav_item>
-
+        <.nav_item href="/apps">Apps</.nav_item> 
         <.nav_item href="/uses">Uses</.nav_item>
       </ul>
     </nav>
