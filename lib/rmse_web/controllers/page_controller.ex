@@ -19,37 +19,6 @@ defmodule RmseWeb.PageController do
     # TODO: move this to a live view with database for more comfort
     tool_sections = [
       %{
-        title: "Hardware",
-        items: [
-          %{
-            title: "Apple MacBook Pro",
-            href: "https://www.apple.com/chde/macbook-pro-13/",
-            description:
-              """
-              I tried hard with Windows but since using the MacBook Pro for development, I could never find myself comfortable anymore.
-              It's just more comfortable, feels more easy to work with and the tooling is great. Now whenever I can I will switch to M2
-              """
-          }
-        ]
-      },
-      %{
-        title: "Development Tools",
-        items: [
-          %{
-            title: "Visual Studio Code",
-            href: "https://code.visualstudio.com/",
-            description:
-              "My development environment for most of the development I do nowadays. The only thing that I do on IntelliJ is Java, Kotlin and sometimes Scala."
-          },
-          %{
-            title: "JetBrains IntelliJ Ultimate",
-            href: "https://www.jetbrains.com/de-de/idea/",
-            description:
-              "Still in my opinion the best IDE for Kotlin and Java. Although my personal experience is a little bit shaken in the last 6 month, due to some bad experience. But I had this with every IDE at some point."
-          }
-        ]
-      },
-      %{
         title: "Programming Languages",
         items: [
           %{
@@ -85,18 +54,7 @@ defmodule RmseWeb.PageController do
         ]
       },
       %{
-        title: "Design",
-        items: [
-          %{
-            title: "Figma",
-            href: "https://www.figma.com/",
-            description:
-              "Simple (not generally easy) to use tool to get you started. I don't even remember what I used before, it's just as good."
-          }
-        ]
-      },
-      %{
-        title: "Productivity",
+        title: "Productivity / Freelancing",
         items: [
           %{
             title: "Toggl",
@@ -116,16 +74,60 @@ defmodule RmseWeb.PageController do
             description:
               "I am honestly not a big Jira fan, I find it abused in most companies for micromanaging teams. Trello on the other hand is really good to work in small teams or even on smaller private projects."
           },
-        ]
-      },
-      %{
-        title: "Freelancing",
-        items: [
           %{
             title: "Bexio",
             href: "https://bexio.com",
             description:
               "Swiss Software for orders, invoices and all other related stuff. It also has a very good API which allows me to do a multitude of things."
+          },
+          %{
+            title: "DEV.to",
+            href: "https://dev.to",
+            description:
+              "My favourite blog for developers and it's free (it's also where I host my own blog)"
+          },
+          %{
+            title: "Medium",
+            href: "https://medium.com",
+            description:
+              "Another really good blog for developers, unfortunately not free."
+          },
+        ]
+      },
+      %{
+        title: "Development Tools",
+        items: [
+          %{
+            title: "Visual Studio Code",
+            href: "https://code.visualstudio.com/",
+            description:
+              "My development environment for most of the development I do nowadays. The only thing that I do on IntelliJ is Java, Kotlin and sometimes Scala."
+          },
+          %{
+            title: "JetBrains IntelliJ Ultimate",
+            href: "https://www.jetbrains.com/de-de/idea/",
+            description:
+              "Still in my opinion the best IDE for Kotlin and Java. Although my personal experience is a little bit shaken in the last 6 month, due to some bad experience. But I had this with every IDE at some point."
+          },
+          %{
+            title: "Figma",
+            href: "https://www.figma.com/",
+            description:
+              "Simple (not generally easy) to use tool to get you started. I don't even remember what I used before, it's just as good."
+          }
+        ]
+      },
+      %{
+        title: "Hardware",
+        items: [
+          %{
+            title: "Apple MacBook Pro",
+            href: "https://www.apple.com/chde/macbook-pro-13/",
+            description:
+              """
+              I tried hard with Windows but since using the MacBook Pro for development, I could never find myself comfortable anymore.
+              It's just more comfortable, feels more easy to work with and the tooling is great. Now whenever I can I will switch to M2
+              """
           }
         ]
       },
