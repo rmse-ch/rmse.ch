@@ -20,7 +20,7 @@ defmodule RmseWeb.Router do
     live "/", IndexLive
     get "/about", PageController, :about
     get "/motorcycle", PageController, :motorcycle
-    get "/uses", PageController, :uses
+    get "/links", PageController, :links
     get "/apps", PageController, :wip
     get "/projects", PageController, :wip
     get "/blog", PageController, :wip
