@@ -38,7 +38,7 @@
         <span class="ml-3">Blog</span>
       </h2>
       <%= if Enum.empty?(@articles) do %>
-        <p class="text-sm text-zinc-900 dark:text-zinc-100 -translate-y-8">No blog entries yet or still loading</p>
+        <p class="text-sm text-zinc-900 dark:text-zinc-100 -translate-y-8">No blog entries.</p>
       <% else %>
         <%= for article <- @articles do %>
           <.article article={article}/>

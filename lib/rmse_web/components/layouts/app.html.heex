@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="relative">
-  <RmseWeb.Header.header />
+  <RmseWeb.Header.header request_path={@request_path} />
   <main>
     <.flash kind={:info} title="Success!" flash={@flash} />
     <.flash kind={:error} title="Error!" flash={@flash} />

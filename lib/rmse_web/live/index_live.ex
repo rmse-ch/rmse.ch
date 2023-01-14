@@ -4,14 +4,21 @@ defmodule RmseWeb.IndexLive do
   import RmseWeb.SocialIconsComponent
   import RmseWeb.CardComponent
 
+  alias Rmse.Resume
+
+  @impl true
+  def handle_params(_params, uri, socket) do
+    {:noreply,
+     socket
+     |> assign_new(:request_path, fn -> URI.parse(uri).path end)} # TODO: move this logic into some general magic
+  end
+
   @impl true
   def mount(_params, _session, socket) do
     {:ok,
      socket
      |> assign(:articles, load_blog_articles())
      |> assign(:resume, load_resume())}
-
-    # TODO: load twitter stream (and may be instagram)
   end
 
   def article(assigns) do
@@ -37,11 +44,11 @@ defmodule RmseWeb.IndexLive do
         <span class="ml-3">Work</span>
       </h2>
       <ol class="mt-6 space-y-4">
-      <%= for role <- @resume do %>
+        <%= for role <- @resume do %>
           <li class="flex gap-4">
             <div class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <%= if role.logo do %>
-                <img src={~p"/images/logos/#{role.logo}"} alt="" class="h-7 w-7" unoptimized />
+              <%= if role.logo_url do %>
+                <img src={~p"/images/logos/#{role.logo_url}"} alt="" class="h-7 w-7" unoptimized />
               <% end %>
             </div>
             <dl class="flex flex-auto flex-wrap gap-x-2">
@@ -51,26 +58,27 @@ defmodule RmseWeb.IndexLive do
               </dd>
               <dt class="sr-only">Role</dt>
               <dd class="text-xs text-zinc-500 dark:text-zinc-400">
-                <%= role.title %>
+                <%= role.job_title_en %>
+                <!-- TODO: job title depending on language! -->
               </dd>
               <dt class="sr-only">Date</dt>
               <dd
-              class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={"#{show_label(role.start)} until #{show_label(role.end)}"}
+                class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                aria-label={"#{show_label(role.start_year)} until #{show_label(role.end_year)}"}
               >
-                <time dateTime={date_time(role.start)}>
-                  <%= show_label(role.start) %>
+                <time>
+                  <%= show_label(role.start_year) %>
                 </time>
                 <span aria-hidden="true">—</span>
-                <time dateTime={date_time(role.end)}>
-                  <%= show_label(role.end) %>
+                <time>
+                  <%= show_label(role.end_year) %>
                 </time>
               </dd>
             </dl>
           </li>
-          <% end %>
+        <% end %>
       </ol>
-      <.rmse_button variant={:secondary} class="group mt-6 w-full">
+      <.rmse_button variant={:secondary} class="group mt-6 w-full" disabled>
         Download CV
         <.arrow_down class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </.rmse_button>
@@ -99,60 +107,10 @@ defmodule RmseWeb.IndexLive do
   end
 
   defp load_resume do
-    # TODO: read from database
-    [
-      %{
-        company: "R. Metzger Software Engineering GmbH",
-        title: "Freelancer",
-        logo: "logo_rmse.png",
-        start: "2015",
-        end: %{
-          label: "Present",
-          dateTime: NaiveDateTime.local_now()
-        }
-      },
-      %{
-        company: "Swisscom IT Services",
-        title: "Banking Consultant",
-        logo: "logo_swisscom.png",
-        start: "2014",
-        end: "2015"
-      },
-      %{
-        company: "PrimeForce Bern GmbH",
-        title: "Senior Software Engineer",
-        logo: "logo_primeforce.jpg",
-        start: "2011",
-        end: "2014"
-      },
-      %{
-        company: "CompuGroup Medical Schweiz AG",
-        title: "Software Engineer",
-        logo: "logo_compugroup.jpg",
-        start: "2010",
-        end: "2011"
-      },
-      %{
-        company: "ti&m",
-        title: "Senior Software Engineer",
-        logo: "logo_ti8m.png",
-        start: "2009",
-        end: "2010"
-      },
-      %{
-        company: "Assentis Technologies AG",
-        title: "Junior Software Engineer",
-        logo: "logo_assentis.png",
-        start: "2005",
-        end: "2009"
-      }
-    ]
+    Resume.list_experiences()
   end
 
-  defp show_label(%{label: label}), do: label
   defp show_label(label) when is_binary(label), do: label
-  defp show_label(_), do: ""
-
-  defp date_time(%{dateTime: dateTime}), do: dateTime
-  defp date_time(dateTime), do: dateTime
+  defp show_label(label) when is_integer(label), do: Integer.to_string(label)
+  defp show_label(_), do: "Present"
 end

@@ -1,6 +1,8 @@
 defmodule RmseWeb.Router do
   use RmseWeb, :router
 
+  alias Plug.Conn
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +10,7 @@ defmodule RmseWeb.Router do
     plug :put_root_layout, {RmseWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :fill_in_current_path
   end
 
   pipeline :api do
@@ -24,6 +27,10 @@ defmodule RmseWeb.Router do
     get "/apps", PageController, :wip
     get "/projects", PageController, :wip
     get "/blog", PageController, :wip
+
+    get "/agb", PageController, :wip
+    get "/contact", PageController, :wip
+    get "/cookies", PageController, :wip
   end
 
   # Other scopes may use custom stacks.
@@ -46,5 +53,9 @@ defmodule RmseWeb.Router do
       live_dashboard "/dashboard", metrics: RmseWeb.Telemetry
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
+  end
+
+  defp fill_in_current_path(%Conn{assigns: assigns, request_path: request_path} = conn, _opts) do
+    %{conn | assigns: Map.put(assigns, :request_path, request_path)}
   end
 end
