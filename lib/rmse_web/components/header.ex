@@ -177,7 +177,7 @@ defmodule RmseWeb.Header do
     ~H"""
     <.link href={~p"/"} aria-label="Home" class={"#{@class} pointer-events-auto"} {@rest}>
       <img
-        src={~p"/images/avatar.jpg"}
+        src={~p"/images/avatar.png"}
         alt=""
         sizes={if @large, do: "4rem", else: "2.25rem"}
         class={"rounded-full bg-zinc-100 object-cover dark:bg-zinc-800 #{if @large, do: "h-16 w-16", else: "h-9 w-9"}"}
