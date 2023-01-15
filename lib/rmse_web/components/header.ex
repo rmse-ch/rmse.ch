@@ -231,9 +231,11 @@ defmodule RmseWeb.Header do
         >
           <div class="relative flex gap-4">
             <div class="flex flex-1">
+              <%= if @request_path != "/" do %>
               <.avatar_container>
                 <.avatar />
               </.avatar_container>
+              <% end %>
             </div>
 
             <div class="flex flex-1 justify-end md:justify-center">
