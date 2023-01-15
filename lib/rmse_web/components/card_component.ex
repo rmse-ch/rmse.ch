@@ -19,8 +19,6 @@ defmodule RmseWeb.CardComponent do
   attr :rest, :global
   slot :inner_block
   def card(assigns) do
-    # TODO: how can I do a dynamic component in liveview like in react?
-    #  as: Component = 'div'
     ~H"""
     <div class="group relative flex flex-col items-start">
       <%= render_slot(@inner_block) %>
@@ -46,8 +44,6 @@ defmodule RmseWeb.CardComponent do
   attr :rest, :global
   slot :inner_block
   def card_title(assigns) do
-    # TODO: how can I do a dynamic component in liveview like in react?
-    #  as: Component = 'div'
     ~H"""
     <h2 class="text-base font-semibold tracking-tight text-zinc-800 dark:text-zinc-100">
       <%= if @href do %>
@@ -89,8 +85,6 @@ defmodule RmseWeb.CardComponent do
 
   slot :inner_block
   def card_eyebrow(assigns) do
-    # TODO: how can I do a dynamic component in liveview like in react?
-    #  as: Component = 'p'
     ~H"""
     <p class={"relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 dark:text-zinc-500 #{if @decorate, do: "pl-3.5"}"} {@rest}>
       <%= if @decorate do %>

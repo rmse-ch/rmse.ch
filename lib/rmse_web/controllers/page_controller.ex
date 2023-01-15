@@ -16,7 +16,7 @@ defmodule RmseWeb.PageController do
   end
 
   def links(conn, _params) do
-    # TODO: move this to a live view with database for more comfort
+    # TODO: move this the database for more comfort
     tool_sections = [
       %{
         title: "Programming Languages",
