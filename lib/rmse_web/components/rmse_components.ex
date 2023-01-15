@@ -11,6 +11,57 @@ defmodule RmseWeb.RmseComponents do
       "bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70",
   }
 
+  def close_icon(assigns) do
+    ~H"""
+    <svg viewBox="0 0 24 24" aria-hidden="true" {@rest}>
+      <path
+        d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+    """
+  end
+
+  attr :rest, :global
+
+  def sun_icon(assigns) do
+    ~H"""
+    <svg
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {@rest}
+    >
+      <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z" />
+      <path
+        d="M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061"
+        fill="none"
+      />
+    </svg>
+    """
+  end
+
+  attr :rest, :global
+
+  def moon_icon(assigns) do
+    ~H"""
+    <svg viewBox="0 0 24 24" aria-hidden="true" {@rest}>
+      <path
+        d="M17.25 16.22a6.937 6.937 0 0 1-9.47-9.47 7.451 7.451 0 1 0 9.47 9.47ZM12.75 7C17 7 17 2.75 17 2.75S17 7 21.25 7C17 7 17 11.25 17 11.25S17 7 12.75 7Z"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+    """
+  end
+
   @doc """
   Renders an arrow down symbol
 
