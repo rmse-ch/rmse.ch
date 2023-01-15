@@ -118,6 +118,7 @@ defmodule RmseWeb.Header do
   end
 
   defp is_active(href, path), do: String.starts_with?(path, href)
+  defp is_homepage(path), do: path == "/"
 
   defp mark_active(href, path) do
     if is_active(href, path) do
@@ -189,10 +190,11 @@ defmodule RmseWeb.Header do
   def mode_toggle(assigns) do
     ~H"""
     <button
+      id="mode_toggle_button"
       type="button"
       aria-label="Toggle dark mode"
       class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-      onClick="toggleMode()"
+      phx-hook="ModeToggle"
     >
       <.sun_icon class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
       <.moon_icon class="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
@@ -222,19 +224,45 @@ defmodule RmseWeb.Header do
     ~H"""
     <header
       class="pointer-events-none relative z-50 flex flex-col"
-      style="height: var(--header-height), marginBottom: var(--header-mb)"
+      style="height: var(--header-height); marginBottom: var(--header-mb);"
     >
-      <div class="top-0 z-10 h-16 pt-6" style="position: var(--header-position)">
+      <%= if is_homepage(@request_path) do %>
+        <div
+          id="homepage-avatar"
+          class="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
+          phx-hook="HomepageAvatar"
+        />
+        <.container class="top-0 order-last -mb-3 pt-3" style="position: var(--header-position);">
+          <div
+            class="top-[var(--avatar-top,theme(spacing.3))] w-full"
+            style="position: var(--header-inner-position);"
+          >
+            <div className="relative">
+              <.avatar_container
+                class="absolute left-0 top-3 origin-left transition-opacity"
+                style="opacity: var(--avatar-border-opacity, 0); transform: var(--avatar-border-transform);"
+              />
+              <.avatar
+                large={true}
+                class="block h-16 w-16 origin-left"
+                style="transform: var(--avatar-image-transform);"
+              />
+            </div>
+          </div>
+        </.container>
+      <% end %>
+
+      <div id="header-menu" class="top-0 z-10 h-16 pt-6" style="position: var(--header-position);">
         <.container
           class="top-[var(--header-top,theme(spacing.6))] w-full"
-          style="position: var(--header-inner-position)"
+          style="position: var(--header-inner-position);"
         >
           <div class="relative flex gap-4">
             <div class="flex flex-1">
-              <%= if @request_path != "/" do %>
-              <.avatar_container>
-                <.avatar />
-              </.avatar_container>
+              <%= if !is_homepage(@request_path) do %>
+                <.avatar_container>
+                  <.avatar />
+                </.avatar_container>
               <% end %>
             </div>
 
@@ -259,6 +287,10 @@ defmodule RmseWeb.Header do
         </.container>
       </div>
     </header>
+
+    <%= if is_homepage(@request_path) do %>
+      <div style="height: var(--content-offset);" />
+    <% end %>
     """
   end
 end

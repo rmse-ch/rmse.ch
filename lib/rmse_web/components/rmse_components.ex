@@ -170,16 +170,17 @@ defmodule RmseWeb.RmseComponents do
   attr :class, :string, required: false, default: ""
   attr :variant, :atom, required: false, default: :primary
   attr :href, :string, required: false, default: nil
+  attr :disabled, :boolean, required: false, default: false
   attr :rest, :global
 
   slot :inner_block
 
   def rmse_button(assigns) do
     ~H"""
-      <%= if @href do %>
+      <%= if @href && !@disabled do %>
         <.link href={@href} class={class_button(@class, @variant)} {@rest}><%= render_slot(@inner_block) %></.link>
       <% else %>
-        <button class={class_button(@class, @variant)} {@rest}><%= render_slot(@inner_block) %></button>
+        <button class={class_button(@class, @variant)} disabled={@disabled} {@rest}><%= render_slot(@inner_block) %></button>
       <% end %>
     """
   end

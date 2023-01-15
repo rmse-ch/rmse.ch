@@ -18,15 +18,17 @@
 // Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
 import "phoenix_html"
 // Establish Phoenix Socket and LiveView configuration.
-import {Socket} from "phoenix"
-import {LiveSocket} from "phoenix_live_view"
+import { Socket } from "phoenix"
+import { LiveSocket } from "phoenix_live_view"
 import topbar from "../vendor/topbar"
 
+import Hooks from "./hooks.js"
+
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
-let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
+let liveSocket = new LiveSocket("/live", Socket, { params: { _csrf_token: csrfToken } , hooks: Hooks })
 
 // Show progress bar on live navigation and form submits
-topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
+topbar.config({ barColors: { 0: "#29d" }, shadowColor: "rgba(0, 0, 0, .3)" })
 window.addEventListener("phx:page-loading-start", info => topbar.delayedShow(200))
 window.addEventListener("phx:page-loading-stop", info => topbar.hide())
 
@@ -40,26 +42,3 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 
-// TODO: rewrite this all into phoenix logic, makes no sense to keep it outside
-function disableTransitionsTemporarily() {
-  document.documentElement.classList.add('[&_*]:!transition-none')
-  window.setTimeout(() => {
-    document.documentElement.classList.remove('[&_*]:!transition-none')
-  }, 0)
-}
-
-function toggleMode() {
-  disableTransitionsTemporarily()
-
-  let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-  let isSystemDarkMode = darkModeMediaQuery.matches
-  let isDarkMode = document.documentElement.classList.toggle('dark')
-
-  if (isDarkMode === isSystemDarkMode) {
-    delete window.localStorage.isDarkMode
-  } else {
-    window.localStorage.isDarkMode = isDarkMode
-  }
-}
-
-window.toggleMode = toggleMode
