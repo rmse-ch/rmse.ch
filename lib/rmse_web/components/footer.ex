@@ -24,7 +24,7 @@ defmodule RmseWeb.Footer do
         <div class="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
           <.inner_container>
             <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
-              <div class="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
+              <div class="flex flex-wrap gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                 <.nav_link href={~p"/about"}>About</.nav_link>
                 <.nav_link href={~p"/motorcycle"}>Motorcycle</.nav_link>
                 <.nav_link href={~p"/blog"}>Blog</.nav_link>
