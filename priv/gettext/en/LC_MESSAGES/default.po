@@ -16,10 +16,6 @@ msgstr "Actions"
 msgid "close"
 msgstr "close"
 
-#: lib/rmse_web/live/wip_live.ex:18
-msgid "AGB - Rico Metzger"
-msgstr "AGB - Rico Metzger"
-
 #: lib/rmse_web/live/about_live.ex:13
 msgid "About - Rico Metzger"
 msgstr "About - Rico Metzger"
@@ -28,6 +24,7 @@ msgstr "About - Rico Metzger"
 msgid "Apps - Rico Metzger"
 msgstr "Apps - Rico Metzger"
 
+#: lib/rmse_web/live/blog_live.ex:13
 #: lib/rmse_web/live/wip_live.ex:17
 msgid "Blog - Rico Metzger"
 msgstr "Blog - Rico Metzger"
@@ -40,18 +37,22 @@ msgstr "Contact - Rico Metzger"
 msgid "Cookies - Rico Metzger"
 msgstr "Cookies - Rico Metzger"
 
+#: lib/rmse_web/live/about_live.html.heex:21
 #: lib/rmse_web/live/index_live.html.heex:14
 msgid "Follow on GitHub"
 msgstr "Follow on GitHub"
 
+#: lib/rmse_web/live/about_live.html.heex:16
 #: lib/rmse_web/live/index_live.html.heex:11
 msgid "Follow on Instagram"
 msgstr "Follow on Instagram"
 
+#: lib/rmse_web/live/about_live.html.heex:26
 #: lib/rmse_web/live/index_live.html.heex:17
 msgid "Follow on LinkedIn"
 msgstr "Follow on LinkedIn"
 
+#: lib/rmse_web/live/about_live.html.heex:11
 #: lib/rmse_web/live/index_live.html.heex:8
 msgid "Follow on Twitter"
 msgstr "Follow on Twitter"
@@ -102,4 +103,82 @@ msgstr "Work in Progress"
 msgid "wip.full.text"
 msgstr "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\n"
 "by end of January 2023, so I hope you come back later to find the page available."
+
+#: lib/rmse_web/components/footer.ex:30
+#: lib/rmse_web/components/header.ex:83
+#: lib/rmse_web/components/header.ex:141
+msgid "About"
+msgstr "About"
+
+#: lib/rmse_web/components/footer.ex:34
+#: lib/rmse_web/components/header.ex:91
+#: lib/rmse_web/components/header.ex:149
+msgid "Apps"
+msgstr "Apps"
+
+#: lib/rmse_web/components/layouts/app.html.heex:20
+msgid "Attempting to reconnect"
+msgstr "Attempting to reconnect"
+
+#: lib/rmse_web/components/footer.ex:32
+#: lib/rmse_web/components/header.ex:87
+#: lib/rmse_web/components/header.ex:145
+msgid "Blog"
+msgstr "Blog"
+
+#: lib/rmse_web/components/footer.ex:37
+msgid "Conditions"
+msgstr "Conditions"
+
+#: lib/rmse_web/live/wip_live.ex:18
+msgid "Conditions - Rico Metzger"
+msgstr "Conditions - Rico Metzger"
+
+#: lib/rmse_web/components/footer.ex:35
+#: lib/rmse_web/components/header.ex:93
+#: lib/rmse_web/components/header.ex:151
+msgid "Contact"
+msgstr "Contact"
+
+#: lib/rmse_web/components/footer.ex:38
+msgid "Cookies"
+msgstr "Cookies"
+
+#: lib/rmse_web/components/layouts/app.html.heex:10
+msgid "Error!"
+msgstr "Error!"
+
+#: lib/rmse_web/components/footer.ex:36
+#: lib/rmse_web/components/header.ex:95
+#: lib/rmse_web/components/header.ex:153
+msgid "Links"
+msgstr "Links"
+
+#: lib/rmse_web/components/footer.ex:31
+#: lib/rmse_web/components/header.ex:85
+#: lib/rmse_web/components/header.ex:143
+msgid "Motorcycle"
+msgstr "Motorcycle"
+
+#: lib/rmse_web/components/footer.ex:33
+#: lib/rmse_web/components/header.ex:89
+#: lib/rmse_web/components/header.ex:147
+msgid "Projects"
+msgstr "Projects"
+
+#: lib/rmse_web/components/layouts/root.html.heex:8
+msgid "Rico Metzger - Software Engineer, Freelancer and Motorcyclist"
+msgstr "Rico Metzger - Software Engineer, Freelancer and Motorcyclist"
+
+#: lib/rmse_web/components/layouts/app.html.heex:9
+msgid "Success!"
+msgstr "Success!"
+
+#: lib/rmse_web/components/layouts/app.html.heex:14
+msgid "We can't find the internet"
+msgstr "We can't find the internet"
+
+#: lib/rmse_web/live/blog_live.html.heex:8
+msgid "You can find my blog also under"
+msgstr "You can find my blog also under"
 
