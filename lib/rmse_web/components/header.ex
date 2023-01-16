@@ -224,7 +224,7 @@ defmodule RmseWeb.Header do
     ~H"""
     <header
       class="pointer-events-none relative z-50 flex flex-col"
-      style="height: var(--header-height); marginBottom: var(--header-mb);"
+      style="height: var(--header-height); margin-bottom: var(--header-mb);"
     >
       <%= if is_homepage(@request_path) do %>
         <div
@@ -237,13 +237,13 @@ defmodule RmseWeb.Header do
             class="top-[var(--avatar-top,theme(spacing.3))] w-full"
             style="position: var(--header-inner-position);"
           >
-            <div className="relative">
+            <div class="relative">
               <.avatar_container
                 class="absolute left-0 top-3 origin-left transition-opacity"
                 style="opacity: var(--avatar-border-opacity, 0); transform: var(--avatar-border-transform);"
               />
               <.avatar
-                large={true}
+                large
                 class="block h-16 w-16 origin-left"
                 style="transform: var(--avatar-image-transform);"
               />

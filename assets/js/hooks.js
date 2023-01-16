@@ -33,7 +33,6 @@ Hooks.ModeToggle = {
   }
 }
 
-/*
 Hooks.HomepageAvatar = {
   mounted() {
     // the avatar magic on the hompage
@@ -51,8 +50,8 @@ Hooks.HomepageAvatar = {
     }
 
     function updateHeaderStyles() {
-      let { top, height } = document.getElementById("header-menu").getBoundingClientRect()
-      let scrollY = clamp(
+      const { top, height } = document.getElementById("header-menu").getBoundingClientRect()
+      const scrollY = clamp(
         window.scrollY,
         0,
         document.body.scrollHeight - window.innerHeight
@@ -62,7 +61,7 @@ Hooks.HomepageAvatar = {
         setProperty('--header-position', 'sticky')
       }
 
-      setProperty('--content-offset', `-${downDelay}px`)
+      setProperty('--content-offset', `${downDelay}px`)
 
       if (isInitial || scrollY < downDelay) {
         setProperty('--header-height', `${downDelay + height}px`)
@@ -137,6 +136,5 @@ Hooks.HomepageAvatar = {
     window.removeEventListener('resize', updateStyles)
   }
 }
-*/
 
 export default Hooks;
