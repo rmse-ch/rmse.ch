@@ -33,6 +33,7 @@ Hooks.ModeToggle = {
   }
 }
 
+/*
 Hooks.HomepageAvatar = {
   mounted() {
     // the avatar magic on the hompage
@@ -136,5 +137,6 @@ Hooks.HomepageAvatar = {
     window.removeEventListener('resize', updateStyles)
   }
 }
+*/
 
 export default Hooks;
