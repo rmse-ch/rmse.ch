@@ -9,13 +9,13 @@ defmodule RmseWeb.Header do
 
   attr :rest, :global
 
-  attr :href, :string, required: true
+  attr :patch, :string, required: true
   slot :inner_block, doc: "the optional inner block that renders the icon"
 
   def mobile_nav_item(assigns) do
     ~H"""
     <li>
-      <.link href={@href} class="block py-2">
+      <.link patch={@patch} class="block py-2">
         <%= render_slot(@inner_block) %>
       </.link>
     </li>
@@ -78,19 +78,19 @@ defmodule RmseWeb.Header do
 
         <nav class="mt-6">
           <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <.mobile_nav_item href={~p"/about"}>About</.mobile_nav_item>
+            <.mobile_nav_item patch={~p"/about"}>About</.mobile_nav_item>
 
-            <.mobile_nav_item href={~p"/motorcycle"}>Motorcycle</.mobile_nav_item>
+            <.mobile_nav_item patch={~p"/motorcycle"}>Motorcycle</.mobile_nav_item>
 
-            <.mobile_nav_item href={~p"/blog"}>Blog</.mobile_nav_item>
+            <.mobile_nav_item patch={~p"/blog"}>Blog</.mobile_nav_item>
 
-            <.mobile_nav_item href={~p"/projects"}>Projects</.mobile_nav_item>
+            <.mobile_nav_item patch={~p"/projects"}>Projects</.mobile_nav_item>
 
-            <.mobile_nav_item href={~p"/apps"}>Apps</.mobile_nav_item>
+            <.mobile_nav_item patch={~p"/apps"}>Apps</.mobile_nav_item>
 
-            <.mobile_nav_item href={~p"/contact"}>Contact</.mobile_nav_item>
+            <.mobile_nav_item patch={~p"/contact"}>Contact</.mobile_nav_item>
 
-            <.mobile_nav_item href={~p"/links"}>Links</.mobile_nav_item>
+            <.mobile_nav_item patch={~p"/links"}>Links</.mobile_nav_item>
           </ul>
         </nav>
       </div>
@@ -98,7 +98,7 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr :href, :string, required: true
+  attr :patch, :string, required: true
   attr :request_path, :string, required: false, default: ""
   slot :inner_block, doc: "the optional inner block that renders the icon"
 
@@ -106,11 +106,11 @@ defmodule RmseWeb.Header do
     ~H"""
     <li>
       <.link
-        href={@href}
-        class={"relative block px-3 py-2 transition #{mark_active(@href, @request_path)}"}
+        patch={@patch}
+        class={"relative block px-3 py-2 transition #{mark_active(@patch, @request_path)}"}
       >
         <%= render_slot(@inner_block) %>
-        <%= if is_active(@href, @request_path) do %>
+        <%= if is_active(@patch, @request_path) do %>
           <span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
         <% end %>
       </.link>
@@ -136,13 +136,19 @@ defmodule RmseWeb.Header do
     ~H"""
     <nav {@rest}>
       <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <.nav_item href={~p"/about"} request_path={@request_path}>About</.nav_item>
-        <.nav_item href={~p"/motorcycle"} request_path={@request_path}>Motorcycle</.nav_item>
-        <.nav_item href={~p"/blog"} request_path={@request_path}>Blog</.nav_item>
-        <.nav_item href={~p"/projects"} request_path={@request_path}>Projects</.nav_item>
-        <.nav_item href={~p"/apps"} request_path={@request_path}>Apps</.nav_item>
-        <.nav_item href={~p"/contact"} request_path={@request_path}>Contact</.nav_item>
-        <.nav_item href={~p"/links"} request_path={@request_path}>Links</.nav_item>
+        <.nav_item patch={~p"/about"} request_path={@request_path}>About</.nav_item>
+
+        <.nav_item patch={~p"/motorcycle"} request_path={@request_path}>Motorcycle</.nav_item>
+
+        <.nav_item patch={~p"/blog"} request_path={@request_path}>Blog</.nav_item>
+
+        <.nav_item patch={~p"/projects"} request_path={@request_path}>Projects</.nav_item>
+
+        <.nav_item patch={~p"/apps"} request_path={@request_path}>Apps</.nav_item>
+
+        <.nav_item patch={~p"/contact"} request_path={@request_path}>Contact</.nav_item>
+
+        <.nav_item patch={~p"/links"} request_path={@request_path}>Links</.nav_item>
       </ul>
     </nav>
     """
@@ -185,6 +191,7 @@ defmodule RmseWeb.Header do
   attr :request_path, :string, required: true
   attr :dark_mode, :boolean, required: true
   attr :language, :string, default: "en"
+
   def header(assigns) do
     ~H"""
     <header
@@ -239,7 +246,13 @@ defmodule RmseWeb.Header do
               />
             </div>
 
-            <.live_component module={PreferencesComponent} language={@language} dark_mode={@dark_mode} request_path={@request_path} id="toggle_preference" />
+            <.live_component
+              module={PreferencesComponent}
+              language={@language}
+              dark_mode={@dark_mode}
+              request_path={@request_path}
+              id="toggle_preference"
+            />
           </div>
         </.container>
       </div>

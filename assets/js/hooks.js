@@ -8,40 +8,6 @@ Hooks.DarkMode = {
   }
 }
 
-Hooks.ModeToggle = {
-  mounted() {
-    function disableTransitionsTemporarily() {
-      document.documentElement.classList.add('[&_*]:!transition-none')
-      window.setTimeout(() => {
-        document.documentElement.classList.remove('[&_*]:!transition-none')
-      }, 0)
-    }
-
-    function toggleMode() {
-      disableTransitionsTemporarily()
-
-      let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-      let isSystemDarkMode = darkModeMediaQuery.matches
-      let isDarkMode = document.documentElement.classList.toggle('dark')
-
-      if (isDarkMode === isSystemDarkMode) {
-        delete window.localStorage.isDarkMode
-      } else {
-        window.localStorage.isDarkMode = isDarkMode
-      }
-    }
-
-    const currentDarkMode = document.documentElement.classList.contains('dark');
-    const userDarkMode = window.localStorage.isDarkMode;
-
-    if (userDarkMode !== undefined && userDarkMode !== currentDarkMode) {
-      document.documentElement.classList.toggle('dark');
-    }
-
-    this.el.addEventListener("click", toggleMode)
-  }
-}
-
 Hooks.HomepageAvatar = {
   isInitial: true,
   downDelay: 0,

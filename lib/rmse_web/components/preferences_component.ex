@@ -46,7 +46,7 @@ defmodule RmseWeb.PreferencesComponent do
       URI.new!(path)
       |> URI.append_query("lang=#{new_language}")
 
-    {:noreply, push_navigate(socket, to: URI.to_string(uri), replace: true)}
+    {:noreply, redirect(socket, to: URI.to_string(uri))}
   end
 
   def handle_event("switch_dark_mode", %{"path" => path, "dark_mode" => dark_mode}, socket) do
@@ -56,7 +56,7 @@ defmodule RmseWeb.PreferencesComponent do
       URI.new!(path)
       |> URI.append_query("dark_mode=#{new_dark_mode}")
 
-      {:noreply, push_navigate(socket, to: URI.to_string(uri), replace: true)}
+      {:noreply, redirect(socket, to: URI.to_string(uri))}
   end
 
   defp other_locale("en"), do: "de"

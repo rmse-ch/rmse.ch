@@ -1,6 +1,5 @@
 defmodule RmseWeb.PreferencesOnMount do
   import Phoenix.Component
-  import Phoenix.LiveView
 
   def on_mount(:default, params, session, socket) do
     cond do
@@ -13,17 +12,7 @@ defmodule RmseWeb.PreferencesOnMount do
       cond do
         params["dark_mode"] -> assign(socket, :dark_mode, to_boolean(params["dark_mode"]))
         session["dark_mode"] -> assign(socket, :dark_mode, to_boolean(session["dark_mode"]))
-        true -> socket
-      end
-
-    socket =
-      if params["lang"] || params["dark_mode"] do
-        push_event(socket, "preferences", %{
-          "dark_mode" => socket.assigns[:dark_mode],
-          "language" => Gettext.get_locale(RmseWeb.Gettext)
-        })
-      else
-        socket
+        true -> assign(socket, :dark_mode, nil)
       end
 
     {:cont, assign(socket, :language, Gettext.get_locale(RmseWeb.Gettext))}

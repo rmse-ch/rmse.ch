@@ -42,8 +42,7 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 window.addEventListener("phx:preferences", info => {
-  const { detail: { dark_mode: dark_mode, language: language } } = info
-  document.documentElement.lang = language
+  const { detail: { dark_mode: dark_mode } } = info
   if (dark_mode) {
     document.documentElement.classList.add("dark")
   } else {

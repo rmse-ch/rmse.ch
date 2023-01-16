@@ -6,9 +6,14 @@ defmodule RmseWeb.SystemDarkModeComponent do
       def handle_event("view:dark-mode", %{"systemDarkMode" => systemDarkMode}, socket) do
         case Map.get(socket.assigns, :dark_mode) do
           nil ->
-            {:noreply, assign(socket, :dark_mode, systemDarkMode)}
+            {:noreply,
+             socket
+             |> push_event("preferences", %{
+               "dark_mode" => systemDarkMode
+             })
+             |> assign(:dark_mode, systemDarkMode)}
 
-          _ ->
+          value ->
             {:noreply, socket}
         end
       end

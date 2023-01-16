@@ -75,8 +75,11 @@ defmodule RmseWeb.Router do
 
   defp store_dark_mode(%Conn{params: params} = conn, _opts) do
     case Map.get(params, "dark_mode") do
-      nil -> conn
-      dark_mode -> put_session(conn, :dark_mode, dark_mode)
+      nil ->
+        conn
+
+      dark_mode ->
+        put_session(conn, :dark_mode, dark_mode)
     end
   end
 end
