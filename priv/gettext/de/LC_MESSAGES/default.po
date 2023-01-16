@@ -94,8 +94,6 @@ msgid "Work in Progress"
 msgstr "In Arbeit"
 
 #: lib/rmse_web/live/wip_live.html.heex:9
-msgid "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\n"
-"by end of January 2023, so I hope you come back later to find the page available.\n"
-""
+msgid "wip.full.text"
 msgstr "Leider ist diese Seite noch in Arbeit. Das Ziel ist es, diese Homepage Ende Januar 2023 komplett fertiggestellt zu haben. Kommen Sie also bald zurück, um den fehlenden Inhalt auch noch zu finden."
 

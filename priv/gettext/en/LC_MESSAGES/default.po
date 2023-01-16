@@ -99,10 +99,7 @@ msgid "Work in Progress"
 msgstr "Work in Progress"
 
 #: lib/rmse_web/live/wip_live.html.heex:9
-msgid "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\n"
-"by end of January 2023, so I hope you come back later to find the page available.\n"
-""
+msgid "wip.full.text"
 msgstr "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\n"
-"by end of January 2023, so I hope you come back later to find the page available.\n"
-""
+"by end of January 2023, so I hope you come back later to find the page available."
 
