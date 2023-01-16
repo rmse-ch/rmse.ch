@@ -21,3 +21,98 @@ msgstr ""
 #, elixir-autogen, elixir-format
 msgid "close"
 msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:18
+#, elixir-autogen, elixir-format
+msgid "AGB - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/about_live.ex:13
+#, elixir-autogen, elixir-format
+msgid "About - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:21
+#, elixir-autogen, elixir-format
+msgid "Apps - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:17
+#, elixir-autogen, elixir-format
+msgid "Blog - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:22
+#, elixir-autogen, elixir-format
+msgid "Contact - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:19
+#, elixir-autogen, elixir-format
+msgid "Cookies - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:25
+#, elixir-autogen, elixir-format
+msgid "Follow on GitHub"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:22
+#, elixir-autogen, elixir-format
+msgid "Follow on Instagram"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:28
+#, elixir-autogen, elixir-format
+msgid "Follow on LinkedIn"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:19
+#, elixir-autogen, elixir-format
+msgid "Follow on Twitter"
+msgstr ""
+
+#: lib/rmse_web/live/links_live.ex:146
+#, elixir-autogen, elixir-format
+msgid "Links - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/links_live.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Links that I use myself"
+msgstr ""
+
+#: lib/rmse_web/live/motorcycle_live.ex:13
+#, elixir-autogen, elixir-format
+msgid "Motorcycle - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:42
+#, elixir-autogen, elixir-format
+msgid "No blog entries."
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:20
+#, elixir-autogen, elixir-format
+msgid "Projects - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Software engineer, Freelancer and Motorcyclist."
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:6
+#, elixir-autogen, elixir-format
+msgid "index_page_content"
+msgstr "    <p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
+"      I'm Rico, a software engineer based in Thunstetten, Switzerland.\n"
+"      I work as a freelancer, developing software solutions wherever they are needed\n"
+"      (which is nearly everywhere). Initially focused on Output Management I broadened my\n"
+"      horizon in the last couple of years to multiple different ideas and technologies.\n"
+"    </p>\n"
+"    <p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
+"      Privately my main hobby is motorcycling. I started driving in 2016. Now, whenever the weather \n"
+"      and my time allows it, I sit on my motorcycle (a Kawasaki H2 SX SE) and drive around Switzerland, \n"
+"      mainly in Jura or the Alps.\n"
+"    </p>"

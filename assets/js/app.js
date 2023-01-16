@@ -25,7 +25,7 @@ import topbar from "../vendor/topbar"
 import Hooks from "./hooks.js"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
-let liveSocket = new LiveSocket("/live", Socket, { params: { _csrf_token: csrfToken } , hooks: Hooks })
+let liveSocket = new LiveSocket("/live", Socket, { params: { _csrf_token: csrfToken }, hooks: Hooks })
 
 // Show progress bar on live navigation and form submits
 topbar.config({ barColors: { 0: "#29d" }, shadowColor: "rgba(0, 0, 0, .3)" })
@@ -41,4 +41,12 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
-
+window.addEventListener("phx:preferences", info => {
+  const { detail: { dark_mode: dark_mode, language: language } } = info
+  document.documentElement.lang = language
+  if (dark_mode) {
+    document.documentElement.classList.add("dark")
+  } else {
+    document.documentElement.classList.remove("dark")
+  }
+})

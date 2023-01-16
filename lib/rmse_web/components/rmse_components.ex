@@ -212,4 +212,7 @@ defmodule RmseWeb.RmseComponents do
     """
   end
 
+  def assign_request_path(socket, uri) do
+    assign_new(socket, :request_path, fn -> URI.parse(uri).path end)
+  end
 end

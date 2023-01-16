@@ -8,9 +8,7 @@ defmodule RmseWeb.IndexLive do
 
   @impl true
   def handle_params(_params, uri, socket) do
-    {:noreply,
-     socket
-     |> assign_new(:request_path, fn -> URI.parse(uri).path end)} # TODO: move this logic into some general magic
+    {:noreply, assign_request_path(socket, uri)}
   end
 
   @impl true
@@ -78,12 +76,17 @@ defmodule RmseWeb.IndexLive do
           </li>
         <% end %>
       </ol>
-      <.rmse_button variant={:secondary} class="group mt-6 w-full" disabled>
+      <.rmse_button variant={:secondary} class="group mt-6 w-full" href={cv_link(@language)}>
         Download CV
         <.arrow_down class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </.rmse_button>
     </div>
     """
+  end
+
+  defp cv_link(language) do
+    pdf_name = "cv_rico.metzger_2022_11_#{language}.pdf"
+    ~p"/cv/#{pdf_name}"
   end
 
   defp load_blog_articles do

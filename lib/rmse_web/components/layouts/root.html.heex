@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="scrollbar-gutter: stable;" class="dark"> <%!-- Dark Mode here --%>
+<html lang={@language} style="scrollbar-gutter: stable;" phx-hook="Root" id="html-root" class={if @dark_mode, do: "dark"}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,7 +20,7 @@
     <meta name="msapplication-square310x310logo" content={~p"/favicon/mstile-310x310.png"}>
     <meta name="msapplication-TileColor" content="#000000">
   </head>
-  <body class="flex h-full flex-col bg-zinc-50 dark:bg-black">
+  <body class="flex h-full flex-col bg-zinc-50 dark:bg-black" phx-hook="LocalStorage" id="body-root">
     <%= @inner_content %>
   </body>
 </html>

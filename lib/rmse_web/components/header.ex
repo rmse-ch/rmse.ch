@@ -3,6 +3,7 @@ defmodule RmseWeb.Header do
 
   import RmseWeb.RmseComponents
   alias Phoenix.LiveView.JS
+  alias RmseWeb.PreferencesComponent
 
   use RmseWeb, :verified_routes
 
@@ -77,19 +78,19 @@ defmodule RmseWeb.Header do
 
         <nav class="mt-6">
           <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-            <.mobile_nav_item href="/about">About</.mobile_nav_item>
+            <.mobile_nav_item href={~p"/about"}>About</.mobile_nav_item>
 
-            <.mobile_nav_item href="/motorcycle">Motorcycle</.mobile_nav_item>
+            <.mobile_nav_item href={~p"/motorcycle"}>Motorcycle</.mobile_nav_item>
 
-            <.mobile_nav_item href="/blog">Blog</.mobile_nav_item>
+            <.mobile_nav_item href={~p"/blog"}>Blog</.mobile_nav_item>
 
-            <.mobile_nav_item href="/projects">Projects</.mobile_nav_item>
+            <.mobile_nav_item href={~p"/projects"}>Projects</.mobile_nav_item>
 
-            <.mobile_nav_item href="/apps">Apps</.mobile_nav_item>
+            <.mobile_nav_item href={~p"/apps"}>Apps</.mobile_nav_item>
 
-            <.mobile_nav_item href="/contact">Contact</.mobile_nav_item>
+            <.mobile_nav_item href={~p"/contact"}>Contact</.mobile_nav_item>
 
-            <.mobile_nav_item href="/links">Links</.mobile_nav_item>
+            <.mobile_nav_item href={~p"/links"}>Links</.mobile_nav_item>
           </ul>
         </nav>
       </div>
@@ -135,19 +136,13 @@ defmodule RmseWeb.Header do
     ~H"""
     <nav {@rest}>
       <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <.nav_item href="/about" request_path={@request_path}>About</.nav_item>
-
-        <.nav_item href="/motorcycle" request_path={@request_path}>Motorcycle</.nav_item>
-
-        <.nav_item href="/blog" request_path={@request_path}>Blog</.nav_item>
-
-        <.nav_item href="/projects" request_path={@request_path}>Projects</.nav_item>
-
-        <.nav_item href="/apps" request_path={@request_path}>Apps</.nav_item>
-
-        <.nav_item href="/contact" request_path={@request_path}>Contact</.nav_item>
-
-        <.nav_item href="/links" request_path={@request_path}>Links</.nav_item>
+        <.nav_item href={~p"/about"} request_path={@request_path}>About</.nav_item>
+        <.nav_item href={~p"/motorcycle"} request_path={@request_path}>Motorcycle</.nav_item>
+        <.nav_item href={~p"/blog"} request_path={@request_path}>Blog</.nav_item>
+        <.nav_item href={~p"/projects"} request_path={@request_path}>Projects</.nav_item>
+        <.nav_item href={~p"/apps"} request_path={@request_path}>Apps</.nav_item>
+        <.nav_item href={~p"/contact"} request_path={@request_path}>Contact</.nav_item>
+        <.nav_item href={~p"/links"} request_path={@request_path}>Links</.nav_item>
       </ul>
     </nav>
     """
@@ -187,39 +182,9 @@ defmodule RmseWeb.Header do
     """
   end
 
-  def mode_toggle(assigns) do
-    ~H"""
-    <button
-      id="mode_toggle_button"
-      type="button"
-      aria-label="Toggle dark mode"
-      class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-      phx-hook="ModeToggle"
-    >
-      <.sun_icon class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
-      <.moon_icon class="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
-    </button>
-    """
-  end
-
-  # bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10
-
-  def language_toggle(assigns) do
-    ~H"""
-    <button
-      type="button"
-      aria-label="Toggle Language"
-      class="group rounded-full bg-white/90 px-3 py-2 text-sm font-medium shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20 mr-2"
-    >
-      <div class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 hover:text-teal-500 dark:hover:text-teal-400">
-        de
-      </div>
-    </button>
-    """
-  end
-
   attr :request_path, :string, required: true
-
+  attr :dark_mode, :boolean, required: true
+  attr :language, :string, default: "en"
   def header(assigns) do
     ~H"""
     <header
@@ -274,15 +239,7 @@ defmodule RmseWeb.Header do
               />
             </div>
 
-            <div class="flex justify-end md:flex-1">
-              <div class="pointer-events-auto">
-                <.language_toggle />
-              </div>
-
-              <div class="pointer-events-auto">
-                <.mode_toggle />
-              </div>
-            </div>
+            <.live_component module={PreferencesComponent} language={@language} dark_mode={@dark_mode} request_path={@request_path} id="toggle_preference" />
           </div>
         </.container>
       </div>

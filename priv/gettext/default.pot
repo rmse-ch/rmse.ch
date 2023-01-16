@@ -20,3 +20,98 @@ msgstr ""
 #, elixir-autogen, elixir-format
 msgid "close"
 msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:18
+#, elixir-autogen, elixir-format
+msgid "AGB - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/about_live.ex:13
+#, elixir-autogen, elixir-format
+msgid "About - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:21
+#, elixir-autogen, elixir-format
+msgid "Apps - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:17
+#, elixir-autogen, elixir-format
+msgid "Blog - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:22
+#, elixir-autogen, elixir-format
+msgid "Contact - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:19
+#, elixir-autogen, elixir-format
+msgid "Cookies - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:14
+#, elixir-autogen, elixir-format
+msgid "Follow on GitHub"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:11
+#, elixir-autogen, elixir-format
+msgid "Follow on Instagram"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:17
+#, elixir-autogen, elixir-format
+msgid "Follow on LinkedIn"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:8
+#, elixir-autogen, elixir-format
+msgid "Follow on Twitter"
+msgstr ""
+
+#: lib/rmse_web/live/links_live.ex:146
+#, elixir-autogen, elixir-format
+msgid "Links - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/links_live.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Links that I use myself"
+msgstr ""
+
+#: lib/rmse_web/live/motorcycle_live.ex:13
+#, elixir-autogen, elixir-format
+msgid "Motorcycle - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:31
+#, elixir-autogen, elixir-format
+msgid "No blog entries."
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.ex:20
+#, elixir-autogen, elixir-format
+msgid "Projects - Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Software engineer, Freelancer and Motorcyclist."
+msgstr ""
+
+#: lib/rmse_web/live/index_live.html.heex:6
+#, elixir-autogen, elixir-format
+msgid "index_page_content"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Work in Progress"
+msgstr ""
+
+#: lib/rmse_web/live/wip_live.html.heex:9
+#, elixir-autogen, elixir-format
+msgid "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\r\nby end of January 2023, so I hope you come back later to find the page available.\r\n"
+msgstr ""

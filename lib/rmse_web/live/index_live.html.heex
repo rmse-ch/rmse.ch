@@ -1,30 +1,20 @@
 <.container class="mt-9">
   <div class="max-w-2xl">
     <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-      Software engineer, Freelancer and Motorcyclist.
+      <%= gettext("Software engineer, Freelancer and Motorcyclist.") %>
     </h1>
-    <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-      I'm Rico, a software engineer based in Thunstetten, Switzerland.
-      I work as a freelancer, developing software solutions wherever they are needed
-      (which is nearly everywhere). Initially focused on Output Management I broadened my
-      horizon in the last couple of years to multiple different ideas and technologies.
-    </p>
-    <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-      Privately my main hobby is motorcycling. I started driving in 2016, after just not enjoying
-      driving with a car anymore. Now, whenever the weather and my time allows it, I sit on my 
-      current motorcycle (a Kawasaki H2 SX SE) and drive around Switzerland, mainly in Jura or the Alps.
-    </p>
+    <%= raw(gettext("index_page_content")) %>
     <div class="mt-6 flex gap-6">
-      <.social_link href="https://twitter.com/titaniumcoder" aria-label="Follow on Twitter">
+      <.social_link href="https://twitter.com/titaniumcoder" aria-label={gettext("Follow on Twitter")}>
         <.twitter_icon />
       </.social_link>
-      <.social_link href="https://www.instagram.com/titaniumcoder/" aria-label="Follow on Instagram">
+      <.social_link href="https://www.instagram.com/titaniumcoder/" aria-label={gettext("Follow on Instagram")}>
         <.instagram_icon />
       </.social_link>
-      <.social_link href="https://github.com/rmse-ch" aria-label="Follow on GitHub">
+      <.social_link href="https://github.com/rmse-ch" aria-label={gettext("Follow on GitHub")}>
         <.github_icon />
       </.social_link>
-      <.social_link href="https://www.linkedin.com/in/rico-metzger/" aria-label="Follow on LinkedIn">
+      <.social_link href="https://www.linkedin.com/in/rico-metzger/" aria-label={gettext("Follow on LinkedIn")}>
         <.linked_in_icon />
       </.social_link>
     </div>
@@ -38,7 +28,7 @@
         <span class="ml-3">Blog</span>
       </h2>
       <%= if Enum.empty?(@articles) do %>
-        <p class="text-sm text-zinc-900 dark:text-zinc-100 -translate-y-8">No blog entries.</p>
+        <p class="text-sm text-zinc-900 dark:text-zinc-100 -translate-y-8"><%= gettext("No blog entries.") %></p>
       <% else %>
         <%= for article <- @articles do %>
           <.article article={article}/>
@@ -46,7 +36,7 @@
       <% end %>
     </div>
     <div class="space-y-10 lg:pl-16 xl:pl-24">
-      <.resume resume={@resume} />
+      <.resume resume={@resume} language={@language} />
     </div>
   </div>
 </.container>

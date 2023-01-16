@@ -1,23 +1,91 @@
-## "msgid"s in this file come from POT (.pot) files.
-###
-### Do not add, change, or remove "msgid"s manually here as
-### they're tied to the ones in the corresponding POT file
-### (with the same domain).
-###
-### Use "mix gettext.extract --merge" or "mix gettext.merge"
-### to merge POT files into PO files.
 msgid ""
 msgstr ""
-"Language: de\n"
-"Plural-Forms: nplurals=2\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: RMSE\n"
+"Language: de-ch\n"
 
 #: lib/rmse_web/components/core_components.ex:456
-#, elixir-autogen, elixir-format
 msgid "Actions"
 msgstr "Aktionen"
 
 #: lib/rmse_web/components/core_components.ex:80
 #: lib/rmse_web/components/core_components.ex:169
-#, elixir-autogen, elixir-format
 msgid "close"
-msgstr "Schliessen"
+msgstr "schließen"
+
+#: lib/rmse_web/live/wip_live.ex:18
+msgid "AGB - Rico Metzger"
+msgstr "AGB - Rico Metzger"
+
+#: lib/rmse_web/live/about_live.ex:13
+msgid "About - Rico Metzger"
+msgstr "Über - Rico Metzger"
+
+#: lib/rmse_web/live/wip_live.ex:21
+msgid "Apps - Rico Metzger"
+msgstr "Anwendungen - Rico Metzger"
+
+#: lib/rmse_web/live/wip_live.ex:17
+msgid "Blog - Rico Metzger"
+msgstr "Blog - Rico Metzger"
+
+#: lib/rmse_web/live/wip_live.ex:22
+msgid "Contact - Rico Metzger"
+msgstr "Ansprechpartner - Rico Metzger"
+
+#: lib/rmse_web/live/wip_live.ex:19
+msgid "Cookies - Rico Metzger"
+msgstr "Cookies - Rico Metzger"
+
+#: lib/rmse_web/live/index_live.html.heex:25
+msgid "Follow on GitHub"
+msgstr "Auf GitHub folgen"
+
+#: lib/rmse_web/live/index_live.html.heex:22
+msgid "Follow on Instagram"
+msgstr "Auf Instagram folgen"
+
+#: lib/rmse_web/live/index_live.html.heex:28
+msgid "Follow on LinkedIn"
+msgstr "Auf LinkedIn folgen"
+
+#: lib/rmse_web/live/index_live.html.heex:19
+msgid "Follow on Twitter"
+msgstr "Auf Twitter folgen"
+
+#: lib/rmse_web/live/links_live.ex:146
+msgid "Links - Rico Metzger"
+msgstr "Links - Rico Metzger"
+
+#: lib/rmse_web/live/links_live.html.heex:4
+msgid "Links that I use myself"
+msgstr "Links, die ich selbst verwende"
+
+#: lib/rmse_web/live/motorcycle_live.ex:13
+msgid "Motorcycle - Rico Metzger"
+msgstr "Motorrad - Rico Metzger"
+
+#: lib/rmse_web/live/index_live.html.heex:42
+msgid "No blog entries."
+msgstr "Keine Blogeinträge."
+
+#: lib/rmse_web/live/wip_live.ex:20
+msgid "Projects - Rico Metzger"
+msgstr "Projekte - Rico Metzger"
+
+#: lib/rmse_web/live/index_live.html.heex:4
+msgid "Software engineer, Freelancer and Motorcyclist."
+msgstr "Software-Ingenieur, Freiberufler und Motorradfahrer."
+
+#: lib/rmse_web/live/index_live.html.heex:6
+msgid "index_page_content"
+msgstr "<p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
+"Mein Name ist Rico, ich bin ein Software-Entwickler aus Thunstetten. Ich arbeite als Freelancer, entwickle Lösungen für Firmen, die Software benötigen und gewillt sind, mit einem Freelancer zusammenzuarbeiten. Während ich am Anfang vor allem auf das Output Management fokussiert war, habe ich in den letzten Jahren meinen Horizont erweitert.       \n"
+"    </p>\n"
+"    <p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
+"Privat verbringe ich viel Zeit mit meinem Lieblingshobby: Motorradfahren. Ich fahre seit 2016 und kann es mir kaum noch vorstellen, dass ich davor nicht gefahren bin. Jede freie Minute (und sofern es nicht gerade Eis hat) verbringe ich auf meiner Kawasaki H2 SX SE, irgendwo im Jura oder den Schweizer Alpen.\n"
+"    </p>"
+

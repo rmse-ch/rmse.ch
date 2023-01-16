@@ -17,7 +17,7 @@ defmodule RmseWeb do
   those modules here.
   """
 
-  def static_paths, do: ~w(assets favicon fonts images favicon.ico robots.txt)
+  def static_paths, do: ~w(assets favicon fonts images cv favicon.ico robots.txt)
 
   def router do
     quote do
@@ -53,6 +53,8 @@ defmodule RmseWeb do
     quote do
       use Phoenix.LiveView,
         layout: {RmseWeb.Layouts, :app}
+
+      use RmseWeb.SystemDarkModeComponent
 
       unquote(html_helpers())
     end
