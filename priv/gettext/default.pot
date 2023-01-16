@@ -113,5 +113,5 @@ msgstr ""
 
 #: lib/rmse_web/live/wip_live.html.heex:9
 #, elixir-autogen, elixir-format
-msgid "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\r\nby end of January 2023, so I hope you come back later to find the page available.\r\n"
+msgid "wip.full.text"
 msgstr ""
