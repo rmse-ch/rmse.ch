@@ -40,19 +40,19 @@ msgstr "Ansprechpartner - Rico Metzger"
 msgid "Cookies - Rico Metzger"
 msgstr "Cookies - Rico Metzger"
 
-#: lib/rmse_web/live/index_live.html.heex:25
+#: lib/rmse_web/live/index_live.html.heex:14
 msgid "Follow on GitHub"
 msgstr "Auf GitHub folgen"
 
-#: lib/rmse_web/live/index_live.html.heex:22
+#: lib/rmse_web/live/index_live.html.heex:11
 msgid "Follow on Instagram"
 msgstr "Auf Instagram folgen"
 
-#: lib/rmse_web/live/index_live.html.heex:28
+#: lib/rmse_web/live/index_live.html.heex:17
 msgid "Follow on LinkedIn"
 msgstr "Auf LinkedIn folgen"
 
-#: lib/rmse_web/live/index_live.html.heex:19
+#: lib/rmse_web/live/index_live.html.heex:8
 msgid "Follow on Twitter"
 msgstr "Auf Twitter folgen"
 
@@ -68,7 +68,7 @@ msgstr "Links, die ich selbst verwende"
 msgid "Motorcycle - Rico Metzger"
 msgstr "Motorrad - Rico Metzger"
 
-#: lib/rmse_web/live/index_live.html.heex:42
+#: lib/rmse_web/live/index_live.html.heex:31
 msgid "No blog entries."
 msgstr "Keine Blogeinträge."
 
@@ -88,4 +88,14 @@ msgstr "<p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
 "    <p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
 "Privat verbringe ich viel Zeit mit meinem Lieblingshobby: Motorradfahren. Ich fahre seit 2016 und kann es mir kaum noch vorstellen, dass ich davor nicht gefahren bin. Jede freie Minute (und sofern es nicht gerade Eis hat) verbringe ich auf meiner Kawasaki H2 SX SE, irgendwo im Jura oder den Schweizer Alpen.\n"
 "    </p>"
+
+#: lib/rmse_web/live/wip_live.html.heex:4
+msgid "Work in Progress"
+msgstr "In Arbeit"
+
+#: lib/rmse_web/live/wip_live.html.heex:9
+msgid "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\n"
+"by end of January 2023, so I hope you come back later to find the page available.\n"
+""
+msgstr "Leider ist diese Seite noch in Arbeit. Das Ziel ist es, diese Homepage Ende Januar 2023 komplett fertiggestellt zu haben. Kommen Sie also bald zurück, um den fehlenden Inhalt auch noch zu finden."
 
