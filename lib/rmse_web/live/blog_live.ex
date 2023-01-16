@@ -1,4 +1,4 @@
-defmodule RmseWeb.AboutLive do
+defmodule RmseWeb.BlogLive do
   use RmseWeb, :live_view
 
   import RmseWeb.SocialIconsComponent
@@ -10,7 +10,7 @@ defmodule RmseWeb.AboutLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :page_title, gettext("About - Rico Metzger"))}
+    {:ok, assign(socket, :page_title, gettext("Blog - Rico Metzger"))}
   end
 
   attr :language, :string, required: true

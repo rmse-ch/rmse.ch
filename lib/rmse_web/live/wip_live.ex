@@ -15,7 +15,7 @@ defmodule RmseWeb.WIPLive do
   end
 
   defp title(:blog), do: gettext("Blog - Rico Metzger")
-  defp title(:agb), do: gettext("AGB - Rico Metzger")
+  defp title(:conditions), do: gettext("Conditions - Rico Metzger")
   defp title(:cookies), do: gettext("Cookies - Rico Metzger")
   defp title(:projects), do: gettext("Projects - Rico Metzger")
   defp title(:apps), do: gettext("Apps - Rico Metzger")

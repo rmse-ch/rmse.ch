@@ -1,0 +1,21 @@
+<.container class="mt-16 sm:mt-32">
+  <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+    <%= @page_title %>
+  </h1>
+  
+  <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+    <p>
+      <%= gettext("You can find my blog also under") %><span> </span>
+      <.link
+        href="https://dev.to/titaniumcoder/."
+        class="text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+      >
+        DEV.to
+      </.link>
+    </p>
+    
+    <p>
+      TODO: Load Blog from dev.to
+    </p>
+  </div>
+</.container>

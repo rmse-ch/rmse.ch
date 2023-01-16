@@ -32,9 +32,9 @@ defmodule RmseWeb.Router do
 
       live "/apps", WIPLive, :apps
       live "/projects", WIPLive, :projects
-      live "/blog", WIPLive, :blog
+      live "/blog", BlogLive
 
-      live "/agb", WIPLive, :agb
+      live "/conditions", WIPLive, :conditions
       live "/contact", WIPLive, :contact
       live "/cookies", WIPLive, :cookies
     end

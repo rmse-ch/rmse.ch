@@ -1,99 +1,29 @@
 <.container class="mt-16 sm:mt-32">
   <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
     <div class="lg:order-first lg:row-span-2">
-      <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-        I'm Rico Metzger, an enthusiastic freelancing software engineer.
-      </h1>
-      
-      <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-        <p>
-          I've loved computers from when I first met an eye on then. Beginning
-          with hardware understanding I quickly shifted to software development
-          and could never learn enough about new ideas in software engineering
-          or software architecture.
-        </p>
-        
-        <p>
-          Nowadays I mainly embrace developing software using DDD and ideally
-          using an event driven architecture. In my personal experience, decoulping
-          different parts of a software into smaller parts using an event driven
-          style leads to far easier maintenable software in the long run, even if
-          the initial investment is higher.
-        </p>
-      </div>
-      
-      <h2 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl mt-9">
-        History of my programming languages
-      </h2>
-      
-      <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-        <p>
-          My first projects in professional software development were in the field
-          of OOP, mainly with Java. I programmed Java combined with the normal
-          big frameworks (JavaEE, Spring) and sometimes with smaller frameworks
-          (Micronaut, Vaadin, Wicket). Java at this time was a programming language
-          that of all the programming languages around at this time, I liked most.
-        </p>
-        
-        <p>
-          Then I learned to know
-          <.link
-            class="text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-            href="https://scala-lang.org"
-          >
-            Scala
-          </.link>
-          and this opened a complete new world. Functional Programming and especially
-          clean immutable objects on one side, the Akka actor model on the other side
-          while having the full ecosystem of Java Libraries was something I admired.
-          While the learning curve is higher than pure Java, the program developed with
-          this stack were cleaner, easier to understand later on and easier to maintain.
-          There was naturally a catch though: Scala is not very popular (at least in Switzerland).
-        </p>
-        
-        <p>
-          My current most beloved language for web application development is
-          <.link
-            class="text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-            href="https://elixir-lang.org"
-          >
-            Elixir
-          </.link>
-          combined with the
-          <.link
-            class="text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-            href="https://phoenixframework.org"
-          >
-            Phoenix Framework
-          </.link>. The idea of finally
-          being able to do fullstack development without having to use 2 separate languages
-          or some strange transpiler, while keeping the stability of the actor based (very old)
-          Erlang virtual machine (BEAM) is a wonderful experience. Something I still miss
-          on other languages.
-        </p>
-      </div>
+      <.about_content language={@language} />
     </div>
     
     <div class="lg:pl-20">
       <ul role="list">
         <.social_link_big href="https://twitter.com/titaniumcoder">
           <:icon><.twitter_icon /></:icon>
-          Follow on Twitter
+          <%= gettext("Follow on Twitter") %>
         </.social_link_big>
         
         <.social_link_big href="https://www.instagram.com/titaniumcoder" class="mt-4">
           <:icon><.instagram_icon /></:icon>
-          Follow on Instagram
+          <%= gettext("Follow on Instagram") %>
         </.social_link_big>
         
         <.social_link_big href="https://github.com/rmse-ch" class="mt-4">
           <:icon><.github_icon /></:icon>
-          Follow on Github
+          <%= gettext("Follow on GitHub") %>
         </.social_link_big>
         
         <.social_link_big href="https://www.linkedin.com/in/rico-metzger/" class="mt-4">
           <:icon><.linked_in_icon /></:icon>
-          Follow on LinkedIn
+          <%= gettext("Follow on LinkedIn") %>
         </.social_link_big>
         
         <.social_link_big
