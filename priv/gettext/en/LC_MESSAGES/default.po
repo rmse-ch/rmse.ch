@@ -1,109 +1,86 @@
-## "msgid"s in this file come from POT (.pot) files.
-###
-### Do not add, change, or remove "msgid"s manually here as
-### they're tied to the ones in the corresponding POT file
-### (with the same domain).
-###
-### Use "mix gettext.extract --merge" or "mix gettext.merge"
-### to merge POT files into PO files.
 msgid ""
 msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: RMSE\n"
 "Language: en\n"
-"Plural-Forms: nplurals=2\n"
 
 #: lib/rmse_web/components/core_components.ex:456
-#, elixir-autogen, elixir-format
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: lib/rmse_web/components/core_components.ex:80
 #: lib/rmse_web/components/core_components.ex:169
-#, elixir-autogen, elixir-format
 msgid "close"
-msgstr ""
+msgstr "close"
 
 #: lib/rmse_web/live/wip_live.ex:18
-#, elixir-autogen, elixir-format
 msgid "AGB - Rico Metzger"
-msgstr ""
+msgstr "AGB - Rico Metzger"
 
 #: lib/rmse_web/live/about_live.ex:13
-#, elixir-autogen, elixir-format
 msgid "About - Rico Metzger"
-msgstr ""
+msgstr "About - Rico Metzger"
 
 #: lib/rmse_web/live/wip_live.ex:21
-#, elixir-autogen, elixir-format
 msgid "Apps - Rico Metzger"
-msgstr ""
+msgstr "Apps - Rico Metzger"
 
 #: lib/rmse_web/live/wip_live.ex:17
-#, elixir-autogen, elixir-format
 msgid "Blog - Rico Metzger"
-msgstr ""
+msgstr "Blog - Rico Metzger"
 
 #: lib/rmse_web/live/wip_live.ex:22
-#, elixir-autogen, elixir-format
 msgid "Contact - Rico Metzger"
-msgstr ""
+msgstr "Contact - Rico Metzger"
 
 #: lib/rmse_web/live/wip_live.ex:19
-#, elixir-autogen, elixir-format
 msgid "Cookies - Rico Metzger"
-msgstr ""
+msgstr "Cookies - Rico Metzger"
 
-#: lib/rmse_web/live/index_live.html.heex:25
-#, elixir-autogen, elixir-format
+#: lib/rmse_web/live/index_live.html.heex:14
 msgid "Follow on GitHub"
-msgstr ""
+msgstr "Follow on GitHub"
 
-#: lib/rmse_web/live/index_live.html.heex:22
-#, elixir-autogen, elixir-format
+#: lib/rmse_web/live/index_live.html.heex:11
 msgid "Follow on Instagram"
-msgstr ""
+msgstr "Follow on Instagram"
 
-#: lib/rmse_web/live/index_live.html.heex:28
-#, elixir-autogen, elixir-format
+#: lib/rmse_web/live/index_live.html.heex:17
 msgid "Follow on LinkedIn"
-msgstr ""
+msgstr "Follow on LinkedIn"
 
-#: lib/rmse_web/live/index_live.html.heex:19
-#, elixir-autogen, elixir-format
+#: lib/rmse_web/live/index_live.html.heex:8
 msgid "Follow on Twitter"
-msgstr ""
+msgstr "Follow on Twitter"
 
 #: lib/rmse_web/live/links_live.ex:146
-#, elixir-autogen, elixir-format
 msgid "Links - Rico Metzger"
-msgstr ""
+msgstr "Links - Rico Metzger"
 
 #: lib/rmse_web/live/links_live.html.heex:4
-#, elixir-autogen, elixir-format
 msgid "Links that I use myself"
-msgstr ""
+msgstr "Links that I use myself"
 
 #: lib/rmse_web/live/motorcycle_live.ex:13
-#, elixir-autogen, elixir-format
 msgid "Motorcycle - Rico Metzger"
-msgstr ""
+msgstr "Motorcycle - Rico Metzger"
 
-#: lib/rmse_web/live/index_live.html.heex:42
-#, elixir-autogen, elixir-format
+#: lib/rmse_web/live/index_live.html.heex:31
 msgid "No blog entries."
-msgstr ""
+msgstr "No blog entries."
 
 #: lib/rmse_web/live/wip_live.ex:20
-#, elixir-autogen, elixir-format
 msgid "Projects - Rico Metzger"
-msgstr ""
+msgstr "Projects - Rico Metzger"
 
 #: lib/rmse_web/live/index_live.html.heex:4
-#, elixir-autogen, elixir-format
 msgid "Software engineer, Freelancer and Motorcyclist."
-msgstr ""
+msgstr "Software engineer, Freelancer and Motorcyclist."
 
 #: lib/rmse_web/live/index_live.html.heex:6
-#, elixir-autogen, elixir-format
 msgid "index_page_content"
 msgstr "    <p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
 "      I'm Rico, a software engineer based in Thunstetten, Switzerland.\n"
@@ -116,3 +93,16 @@ msgstr "    <p class=\"mt-6 text-base text-zinc-600 dark:text-zinc-400\">\n"
 "      and my time allows it, I sit on my motorcycle (a Kawasaki H2 SX SE) and drive around Switzerland, \n"
 "      mainly in Jura or the Alps.\n"
 "    </p>"
+
+#: lib/rmse_web/live/wip_live.html.heex:4
+msgid "Work in Progress"
+msgstr "Work in Progress"
+
+#: lib/rmse_web/live/wip_live.html.heex:9
+msgid "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\n"
+"by end of January 2023, so I hope you come back later to find the page available.\n"
+""
+msgstr "You found one of the pages, that I am still actively working on. The homepage is planned to be finished\n"
+"by end of January 2023, so I hope you come back later to find the page available.\n"
+""
+
