@@ -1,13 +1,4 @@
 let Hooks = {}
-Hooks.DarkMode = {
-  mounted() {
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    let isSystemDarkMode = darkModeMediaQuery.matches
-
-    this.pushEvent("view:dark-mode", {systemDarkMode: isSystemDarkMode})
-  }
-}
-
 Hooks.HomepageAvatar = {
   isInitial: true,
   downDelay: 0,

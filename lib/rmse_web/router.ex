@@ -1,7 +1,7 @@
 defmodule RmseWeb.Router do
   use RmseWeb, :router
 
-  alias RmseWeb.PreferencesOnMount
+  alias RmseWeb.LanguageOnMount
 
   alias Plug.Conn
 
@@ -13,8 +13,7 @@ defmodule RmseWeb.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug :fill_in_current_path
-    plug :store_language
-    plug :store_dark_mode
+    plug RmseWeb.Plugs.Locale, "en"
   end
 
   pipeline :api do
@@ -24,7 +23,7 @@ defmodule RmseWeb.Router do
   scope "/", RmseWeb do
     pipe_through :browser
 
-    live_session :default, on_mount: [PreferencesOnMount] do
+    live_session :default, on_mount: [LanguageOnMount] do
       live "/", IndexLive
       live "/about", AboutLive
       live "/motorcycle", MotorcycleLive
@@ -64,22 +63,5 @@ defmodule RmseWeb.Router do
 
   defp fill_in_current_path(%Conn{assigns: assigns, request_path: request_path} = conn, _opts) do
     %{conn | assigns: Map.put(assigns, :request_path, request_path)}
-  end
-
-  defp store_language(%Conn{params: params} = conn, _opts) do
-    case Map.get(params, "lang") do
-      nil -> conn
-      lang -> put_session(conn, :lang, lang)
-    end
-  end
-
-  defp store_dark_mode(%Conn{params: params} = conn, _opts) do
-    case Map.get(params, "dark_mode") do
-      nil ->
-        conn
-
-      dark_mode ->
-        put_session(conn, :dark_mode, dark_mode)
-    end
   end
 end

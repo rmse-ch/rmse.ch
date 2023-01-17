@@ -54,8 +54,6 @@ defmodule RmseWeb do
       use Phoenix.LiveView,
         layout: {RmseWeb.Layouts, :app}
 
-      use RmseWeb.SystemDarkModeComponent
-
       unquote(html_helpers())
     end
   end

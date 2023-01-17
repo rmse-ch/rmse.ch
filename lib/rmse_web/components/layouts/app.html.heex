@@ -3,8 +3,8 @@
     <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
   </div>
 </div>
-<div class="relative" phx-hook="DarkMode" id="main-container">
-  <RmseWeb.Header.header request_path={@request_path} language={@language} dark_mode={@dark_mode} />
+<div class="relative">
+  <RmseWeb.Header.header request_path={@request_path} language={@language} />
   <main>
     <.flash kind={:info} title={gettext("Success!")} flash={@flash} />
     <.flash kind={:error} title={gettext("Error!")} flash={@flash} />

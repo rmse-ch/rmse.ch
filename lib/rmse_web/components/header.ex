@@ -100,7 +100,7 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr :href, :string, required: true
+  attr :navigate, :string, required: true
   attr :request_path, :string, required: false, default: ""
   slot :inner_block, doc: "the optional inner block that renders the icon"
 
@@ -108,11 +108,11 @@ defmodule RmseWeb.Header do
     ~H"""
     <li>
       <.link
-        href={@href}
-        class={"relative block px-3 py-2 transition #{mark_active(@href, @request_path)}"}
+        navigate={@navigate}
+        class={"relative block px-3 py-2 transition #{mark_active(@navigate, @request_path)}"}
       >
         <%= render_slot(@inner_block) %>
-        <%= if is_active(@href, @request_path) do %>
+        <%= if is_active(@navigate, @request_path) do %>
           <span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
         <% end %>
       </.link>
@@ -138,19 +138,33 @@ defmodule RmseWeb.Header do
     ~H"""
     <nav {@rest}>
       <ul class="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <.nav_item href={~p"/about"}><%= gettext("About") %></.nav_item>
+        <.nav_item navigate={~p"/about"} request_path={@request_path}>
+          <%= gettext("About") %>
+        </.nav_item>
 
-        <.nav_item href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.nav_item>
+        <.nav_item navigate={~p"/motorcycle"} request_path={@request_path}>
+          <%= gettext("Motorcycle") %>
+        </.nav_item>
 
-        <.nav_item href={~p"/blog"}><%= gettext("Blog") %></.nav_item>
+        <.nav_item navigate={~p"/blog"} request_path={@request_path}>
+          <%= gettext("Blog") %>
+        </.nav_item>
 
-        <.nav_item href={~p"/projects"}><%= gettext("Projects") %></.nav_item>
+        <.nav_item navigate={~p"/projects"} request_path={@request_path}>
+          <%= gettext("Projects") %>
+        </.nav_item>
 
-        <.nav_item href={~p"/apps"}><%= gettext("Apps") %></.nav_item>
+        <.nav_item navigate={~p"/apps"} request_path={@request_path}>
+          <%= gettext("Apps") %>
+        </.nav_item>
 
-        <.nav_item href={~p"/contact"}><%= gettext("Contact") %></.nav_item>
+        <.nav_item navigate={~p"/contact"} request_path={@request_path}>
+          <%= gettext("Contact") %>
+        </.nav_item>
 
-        <.nav_item href={~p"/links"}><%= gettext("Links") %></.nav_item>
+        <.nav_item navigate={~p"/links"} request_path={@request_path}>
+          <%= gettext("Links") %>
+        </.nav_item>
       </ul>
     </nav>
     """
@@ -191,7 +205,6 @@ defmodule RmseWeb.Header do
   end
 
   attr :request_path, :string, required: true
-  attr :dark_mode, :boolean, required: true
   attr :language, :string, default: "en"
 
   def header(assigns) do
@@ -251,7 +264,6 @@ defmodule RmseWeb.Header do
             <.live_component
               module={PreferencesComponent}
               language={@language}
-              dark_mode={@dark_mode}
               request_path={@request_path}
               id="toggle_preference"
             />

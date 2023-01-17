@@ -22,14 +22,10 @@ defmodule RmseWeb.PreferencesComponent do
       </div>
       <div class="pointer-events-auto">
         <button
-          id="mode_toggle_button"
           type="button"
           aria-label="Toggle dark mode"
           class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-          phx-click="switch_dark_mode"
-          phx-target={@myself}
-          phx-value-path={@request_path}
-          phx-value-dark_mode={to_string(@dark_mode)}
+          onClick="switchDarkMode()"
         >
           <.sun_icon class="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
           <.moon_icon class="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
@@ -49,21 +45,7 @@ defmodule RmseWeb.PreferencesComponent do
     {:noreply, redirect(socket, to: URI.to_string(uri))}
   end
 
-  def handle_event("switch_dark_mode", %{"path" => path, "dark_mode" => dark_mode}, socket) do
-    new_dark_mode = invert_boolean(dark_mode)
-
-    uri =
-      URI.new!(path)
-      |> URI.append_query("dark_mode=#{new_dark_mode}")
-
-      {:noreply, redirect(socket, to: URI.to_string(uri))}
-  end
-
   defp other_locale("en"), do: "de"
   defp other_locale("de"), do: "en"
   defp other_locale(_), do: "en"
-
-  defp invert_boolean("false"), do: true
-  defp invert_boolean("true"), do: false
-  defp invert_boolean(_), do: true
 end
