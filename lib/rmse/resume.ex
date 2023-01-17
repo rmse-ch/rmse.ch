@@ -25,22 +25,4 @@ defmodule Rmse.Resume do
 
     Repo.all(query)
   end
-
-  @doc """
-  Creates a work experience.
-
-  ## Examples
-
-      iex> create_experience(%{company: "ABC", job_title_de: "De", job_title_en: "en", start_year: 2000})
-      {:ok, %Experience{}}
-
-      iex> create_aaa(%{start_year: 11})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_experience(attrs \\ %{}) do
-    %Experience{}
-    |> Experience.changeset(attrs)
-    |> Repo.insert()
-  end
 end
