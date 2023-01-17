@@ -1,8 +1,6 @@
 defmodule RmseWeb.BlogLive do
   use RmseWeb, :live_view
 
-  import RmseWeb.SocialIconsComponent
-
   @impl true
   def handle_params(_params, uri, socket) do
     {:noreply, assign_request_path(socket, uri)}
