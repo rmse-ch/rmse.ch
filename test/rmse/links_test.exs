@@ -23,7 +23,9 @@ defmodule Rmse.LinksTest do
     test "create_link_collection/1 with valid data creates a link_collection" do
       valid_attrs = %{name_de: "some name_de", name_en: "some name_en", position: 42}
 
-      assert {:ok, %LinkCollection{} = link_collection} = Links.create_link_collection(valid_attrs)
+      assert {:ok, %LinkCollection{} = link_collection} =
+               Links.create_link_collection(valid_attrs)
+
       assert link_collection.name_de == "some name_de"
       assert link_collection.name_en == "some name_en"
       assert link_collection.position == 42
@@ -35,9 +37,16 @@ defmodule Rmse.LinksTest do
 
     test "update_link_collection/2 with valid data updates the link_collection" do
       link_collection = link_collection_fixture()
-      update_attrs = %{name_de: "some updated name_de", name_en: "some updated name_en", position: 43}
 
-      assert {:ok, %LinkCollection{} = link_collection} = Links.update_link_collection(link_collection, update_attrs)
+      update_attrs = %{
+        name_de: "some updated name_de",
+        name_en: "some updated name_en",
+        position: 43
+      }
+
+      assert {:ok, %LinkCollection{} = link_collection} =
+               Links.update_link_collection(link_collection, update_attrs)
+
       assert link_collection.name_de == "some updated name_de"
       assert link_collection.name_en == "some updated name_en"
       assert link_collection.position == 43
@@ -45,7 +54,10 @@ defmodule Rmse.LinksTest do
 
     test "update_link_collection/2 with invalid data returns error changeset" do
       link_collection = link_collection_fixture()
-      assert {:error, %Ecto.Changeset{}} = Links.update_link_collection(link_collection, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               Links.update_link_collection(link_collection, @invalid_attrs)
+
       assert link_collection == Links.get_link_collection!(link_collection.id)
     end
 
@@ -66,7 +78,14 @@ defmodule Rmse.LinksTest do
 
     import Rmse.LinksFixtures
 
-    @invalid_attrs %{description_de: nil, description_en: nil, href: nil, name_de: nil, name_en: nil, position: nil}
+    @invalid_attrs %{
+      description_de: nil,
+      description_en: nil,
+      href: nil,
+      name_de: nil,
+      name_en: nil,
+      position: nil
+    }
 
     test "list_links/0 returns all links" do
       link = link_fixture()
@@ -79,7 +98,14 @@ defmodule Rmse.LinksTest do
     end
 
     test "create_link/1 with valid data creates a link" do
-      valid_attrs = %{description_de: "some description_de", description_en: "some description_en", href: "some href", name_de: "some name_de", name_en: "some name_en", position: 42}
+      valid_attrs = %{
+        description_de: "some description_de",
+        description_en: "some description_en",
+        href: "some href",
+        name_de: "some name_de",
+        name_en: "some name_en",
+        position: 42
+      }
 
       assert {:ok, %Link{} = link} = Links.create_link(valid_attrs)
       assert link.description_de == "some description_de"
@@ -96,7 +122,15 @@ defmodule Rmse.LinksTest do
 
     test "update_link/2 with valid data updates the link" do
       link = link_fixture()
-      update_attrs = %{description_de: "some updated description_de", description_en: "some updated description_en", href: "some updated href", name_de: "some updated name_de", name_en: "some updated name_en", position: 43}
+
+      update_attrs = %{
+        description_de: "some updated description_de",
+        description_en: "some updated description_en",
+        href: "some updated href",
+        name_de: "some updated name_de",
+        name_en: "some updated name_en",
+        position: 43
+      }
 
       assert {:ok, %Link{} = link} = Links.update_link(link, update_attrs)
       assert link.description_de == "some updated description_de"

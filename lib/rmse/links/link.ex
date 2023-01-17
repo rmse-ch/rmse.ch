@@ -21,8 +21,25 @@ defmodule Rmse.Links.Link do
   @doc false
   def changeset(link, attrs) do
     link
-    |> cast(attrs, [:href, :title_de, :title_en, :description_de, :description_en, :position, :link_collection_id, :active])
-    |> validate_required([:href, :title_de, :title_en, :description_de, :description_en, :position, :active])
+    |> cast(attrs, [
+      :href,
+      :title_de,
+      :title_en,
+      :description_de,
+      :description_en,
+      :position,
+      :link_collection_id,
+      :active
+    ])
+    |> validate_required([
+      :href,
+      :title_de,
+      :title_en,
+      :description_de,
+      :description_en,
+      :position,
+      :active
+    ])
     |> cast_assoc(:link_collection)
   end
 end

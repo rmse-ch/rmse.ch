@@ -3,9 +3,15 @@ defmodule RmseWeb.LanguageOnMount do
 
   def on_mount(:default, params, session, socket) do
     cond do
-      params["lang"] -> Gettext.put_locale(RmseWeb.Gettext, params["lang"])
-      session["current_language"] -> Gettext.put_locale(RmseWeb.Gettext, session["current_language"])
-      true -> nil # do nothing
+      params["lang"] ->
+        Gettext.put_locale(RmseWeb.Gettext, params["lang"])
+
+      session["current_language"] ->
+        Gettext.put_locale(RmseWeb.Gettext, session["current_language"])
+
+      # do nothing
+      true ->
+        nil
     end
 
     {:cont, assign(socket, :language, Gettext.get_locale(RmseWeb.Gettext))}

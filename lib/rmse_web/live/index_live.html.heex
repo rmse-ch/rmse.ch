@@ -5,16 +5,25 @@
     </h1>
     <%= raw(gettext("index_page_content")) %>
     <div class="mt-6 flex gap-6">
-      <.social_link href="https://twitter.com/titaniumcoder" aria-label={gettext("Follow on Twitter")}>
+      <.social_link
+        href="https://twitter.com/titaniumcoder"
+        aria-label={gettext("Follow on Twitter")}
+      >
         <.twitter_icon />
       </.social_link>
-      <.social_link href="https://www.instagram.com/titaniumcoder/" aria-label={gettext("Follow on Instagram")}>
+      <.social_link
+        href="https://www.instagram.com/titaniumcoder/"
+        aria-label={gettext("Follow on Instagram")}
+      >
         <.instagram_icon />
       </.social_link>
       <.social_link href="https://github.com/rmse-ch" aria-label={gettext("Follow on GitHub")}>
         <.github_icon />
       </.social_link>
-      <.social_link href="https://www.linkedin.com/in/rico-metzger/" aria-label={gettext("Follow on LinkedIn")}>
+      <.social_link
+        href="https://www.linkedin.com/in/rico-metzger/"
+        aria-label={gettext("Follow on LinkedIn")}
+      >
         <.linked_in_icon />
       </.social_link>
     </div>
@@ -28,10 +37,12 @@
         <span class="ml-3">Blog</span>
       </h2>
       <%= if Enum.empty?(@articles) do %>
-        <p class="text-sm text-zinc-900 dark:text-zinc-100 -translate-y-8"><%= gettext("No blog entries.") %></p>
+        <p class="text-sm text-zinc-900 dark:text-zinc-100 -translate-y-8">
+          <%= gettext("No blog entries.") %>
+        </p>
       <% else %>
         <%= for article <- @articles do %>
-          <.article article={article}/>
+          <.article article={article} />
         <% end %>
       <% end %>
     </div>

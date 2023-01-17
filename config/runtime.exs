@@ -65,7 +65,7 @@ if config_env() == :prod do
     check_origin: ["https://rmse.fly.dev", "https://rmse.ch"],
     secret_key_base: secret_key_base
 
-# ## SSL Support
+  # ## SSL Support
   #
   # To get SSL working, you will need to add the `https` key
   # to your endpoint configuration:

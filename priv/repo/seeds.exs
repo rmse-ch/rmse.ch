@@ -78,11 +78,13 @@ alias Rmse.Links.Link
 Repo.delete_all(Link)
 Repo.delete_all(LinkCollection)
 
-%LinkCollection{id: lc1} = Repo.insert!(%LinkCollection{
-  name_de: "Programmiersprachen",
-  name_en: "Programming Languages",
-  position: 0
-})
+%LinkCollection{id: lc1} =
+  Repo.insert!(%LinkCollection{
+    name_de: "Programmiersprachen",
+    name_en: "Programming Languages",
+    position: 0
+  })
+
 Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Elixir",
@@ -98,6 +100,7 @@ Repo.insert!(%Link{
   And for hardware near or system near programming, I can use Rustler with Rust.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Rust",
@@ -111,6 +114,7 @@ Repo.insert!(%Link{
   System near programming at a new level. Once adapted to the compile time error messages, it's a really fun to use language.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Scala",
@@ -124,6 +128,7 @@ Repo.insert!(%Link{
   My favourite programming language on the JVM with better standard library than Java and most important: functional programming.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Python",
@@ -137,6 +142,7 @@ Repo.insert!(%Link{
   Easy to learn programming language which is used a lot in the field of ML and AI.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Go",
@@ -150,6 +156,7 @@ Repo.insert!(%Link{
   Easy to learn, robust, built-in concurrency, a good ecosystem and a great community - a well thought programming language supported by Google.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Kotlin",
@@ -163,6 +170,7 @@ Repo.insert!(%Link{
   How Java should be (in my opinion).
   """
 })
+
 Repo.insert!(%Link{
   id: lc1,
   title_de: "Java",
@@ -177,11 +185,13 @@ Repo.insert!(%Link{
   """
 })
 
-%LinkCollection{id: lc2} = Repo.insert!(%LinkCollection{
-  name_de: "Produktivität / Freelancer",
-  name_en: "Productivity / Freelancing",
-  position: 1
-})
+%LinkCollection{id: lc2} =
+  Repo.insert!(%LinkCollection{
+    name_de: "Produktivität / Freelancer",
+    name_en: "Productivity / Freelancing",
+    position: 1
+  })
+
 Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Toggl",
@@ -195,6 +205,7 @@ Repo.insert!(%Link{
   As a freelancer, keeping track of my time is important or I don't get payed. I tried a multitude of time trackers but at the end always back at toggl.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Todoist",
@@ -208,6 +219,7 @@ Repo.insert!(%Link{
   As a fan of Gettings-Things-Done, I love this simple to use TODO app, which I have installed on all of my devices.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Trello",
@@ -221,6 +233,7 @@ Repo.insert!(%Link{
   I am honestly not a big Jira fan. Trello on the other hand is really good to work in small teams or even on smaller private projects.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "DEV.to",
@@ -234,6 +247,7 @@ Repo.insert!(%Link{
   My favourite blog for developers and it's free.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Medium",
@@ -248,11 +262,13 @@ Repo.insert!(%Link{
   """
 })
 
-%LinkCollection{id: lc3} = Repo.insert!(%LinkCollection{
-  name_de: "Entwicklungswerkzeuge",
-  name_en: "Development Tools",
-  position: 2
-})
+%LinkCollection{id: lc3} =
+  Repo.insert!(%LinkCollection{
+    name_de: "Entwicklungswerkzeuge",
+    name_en: "Development Tools",
+    position: 2
+  })
+
 Repo.insert!(%Link{
   link_collection_id: lc3,
   title_de: "Visual Studio Code",
@@ -266,6 +282,7 @@ Repo.insert!(%Link{
   My development environment for most of the development I do nowadays.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc3,
   title_de: "JetBrains IntelliJ Ultimate",
@@ -279,6 +296,7 @@ Repo.insert!(%Link{
   Still in my opinion the best IDE for Kotlin and Java. I also use it for non functional Scala, while for I mostly switch to Visual Studio Code for functional Scala.
   """
 })
+
 Repo.insert!(%Link{
   link_collection_id: lc3,
   title_de: "Figma",
@@ -293,11 +311,13 @@ Repo.insert!(%Link{
   """
 })
 
-%LinkCollection{id: lc4} = Repo.insert!(%LinkCollection{
-  name_de: "Hardware",
-  name_en: "Hardware",
-  position: 3
-})
+%LinkCollection{id: lc4} =
+  Repo.insert!(%LinkCollection{
+    name_de: "Hardware",
+    name_en: "Hardware",
+    position: 3
+  })
+
 Repo.insert!(%Link{
   link_collection_id: lc4,
   title_de: "Apple MacBook Pro",
@@ -314,12 +334,13 @@ Repo.insert!(%Link{
   """
 })
 
+%LinkCollection{id: lc100} =
+  Repo.insert!(%LinkCollection{
+    name_de: "Sonstiges",
+    name_en: "Misc",
+    position: 99
+  })
 
-%LinkCollection{id: lc100} = Repo.insert!(%LinkCollection{
-  name_de: "Sonstiges",
-  name_en: "Misc",
-  position: 99
-})
 Repo.insert!(%Link{
   link_collection_id: lc100,
   title_de: "Bexio",
