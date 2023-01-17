@@ -6,9 +6,10 @@ defmodule RmseWeb.Plugs.Locale do
   def init(default), do: default
 
   def call(%Plug.Conn{params: %{"lang" => lang}} = conn, _default) do
-    conn = put_session(conn, :lang, lang)
-    set_locale(conn, lang, nil, nil)
+    IO.puts("Storing new language #{lang}")
     conn
+    |> put_session(:lang, lang)
+    |> set_locale(lang, nil, nil)
   end
 
   def call(conn, default) do

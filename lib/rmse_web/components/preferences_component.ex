@@ -20,7 +20,7 @@ defmodule RmseWeb.PreferencesComponent do
           </div>
         </button>
       </div>
-      
+
       <div class="pointer-events-auto">
         <button
           type="button"
