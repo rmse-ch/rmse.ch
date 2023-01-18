@@ -85,19 +85,34 @@ Repo.delete_all(LinkCollection)
     position: 0
   })
 
-Repo.insert!(%Link{
+  Repo.insert!(%Link{
+    link_collection_id: lc1,
+    title_de: "Scala",
+    title_en: "Scala",
+    position: 2,
+    href: "https://www.scala-lang.org/",
+    description_de: """
+    Funktionale Programmierung auf der JVM, deutlich verbesserte Standard-Library gegenüber Java. Mein JVM-Favorit.
+    """,
+    description_en: """
+    My favourite programming language on the JVM with better standard library than Java and most important: functional programming.
+    """
+  })
+
+  Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Elixir",
   title_en: "Elixir",
-  position: 0,
+  position: 1,
   href: "https://elixir-lang.org/",
   description_de: """
-  Im Moment meine Programmiersprache Nummer 1. Sie bringt die Stabilität und das Aktorenmodell der Erlang BEAM VM zusammen mit einer modernen, einfach verständlichen funktionalen Programmierung.
-  Und dank dem Ökosystem bietet sie einige grossartige Anbindungen wie das Phoenixframework oder Rustler. All das dann auch noch kombiniert mit einer grossartigen Community.
+  Im Moment meine Programmiersprache Nummer 1 (wenn ich sie nutzen kann). Sie bringt die Stabilität und das Aktorenmodell der Erlang BEAM VM zusammen mit einer modernen,
+  einfach verständlichen funktionalen Programmierung. Und dank dem Ökosystem bietet sie einige grossartige Anbindungen wie das Phoenixframework oder Rustler. All das dann
+   auch noch kombiniert mit einer grossartigen Community.
   """,
   description_en: """
-  My absolute favourite at the time being. The stability and concurrency of the BEAM combined with a modern, easy to handle functional programming language.
-  And for hardware near or system near programming, I can use Rustler with Rust.
+  My favourite at the time being. The stability and concurrency of the BEAM combined with a modern, easy to handle functional programming language.
+  And for hardware near or system near programming, I can use Rustler with Rust. And all this combined with one of the best communities I know.
   """
 })
 
@@ -105,27 +120,13 @@ Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Rust",
   title_en: "Rust",
-  position: 1,
+  position: 2,
   href: "https://www.rust-lang.org/",
   description_de: """
   Systemnahe Programmierung auf einem komplett neuen Level. Hat man sich erst einmal an die Fehlermeldungen beim Kompilieren gewöhnt, ist es eine sehr angenehm zu verwendende Programmiersprache
   """,
   description_en: """
   System near programming at a new level. Once adapted to the compile time error messages, it's a really fun to use language.
-  """
-})
-
-Repo.insert!(%Link{
-  link_collection_id: lc1,
-  title_de: "Scala",
-  title_en: "Scala",
-  position: 2,
-  href: "https://www.scala-lang.org/",
-  description_de: """
-  Funktionale Programmierung auf der JVM, deutlich verbesserte Standard-Library gegenüber Java. Mein JVM-Favorit.
-  """,
-  description_en: """
-  My favourite programming language on the JVM with better standard library than Java and most important: functional programming.
   """
 })
 
