@@ -4,6 +4,7 @@ defmodule RmseWeb.IndexLive do
   import RmseWeb.SocialIconsComponent
   import RmseWeb.CardComponent
 
+  alias Rmse.Blog
   alias Rmse.Resume
 
   @impl true
@@ -22,14 +23,14 @@ defmodule RmseWeb.IndexLive do
   def article(assigns) do
     ~H"""
     <.card>
-      <.card_title href={"/articles/#{@article.slug}"}>
+      <.card_title href={"/blog/#{@article.slug}"}>
         <%= @article.title %>
       </.card_title>
-      <.card_eyebrow date-time={@article.date} decorate>
-        <%= @article.date %>
+      <.card_eyebrow decorate>
+        <.format_datetime datetime={@article.created_at} />
       </.card_eyebrow>
       <.card_description><%= @article.description %></.card_description>
-      <.card_cta>Read article</.card_cta>
+      <.card_cta><%= gettext("Read article") %></.card_cta>
     </.card>
     """
   end
@@ -39,7 +40,7 @@ defmodule RmseWeb.IndexLive do
     <div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <Heroicons.briefcase class="h-6 w-6 flex-none" />
-        <span class="ml-3">Work</span>
+        <span class="ml-3"><%= gettext("Work") %></span>
       </h2>
       <ol class="mt-6 space-y-4">
         <%= for role <- @resume do %>
@@ -50,7 +51,7 @@ defmodule RmseWeb.IndexLive do
               <% end %>
             </div>
             <dl class="flex flex-auto flex-wrap gap-x-2">
-              <dt class="sr-only">Company</dt>
+              <dt class="sr-only"><%= gettext("Company") %></dt>
               <dd class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
                 <%= role.company %>
               </dd>
@@ -59,7 +60,7 @@ defmodule RmseWeb.IndexLive do
                 <%= role.job_title_en %>
                 <!-- TODO: job title depending on language! -->
               </dd>
-              <dt class="sr-only">Date</dt>
+              <dt class="sr-only"><%= gettext("Date") %></dt>
               <dd
                 class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
                 aria-label={"#{show_label(role.start_year)} until #{show_label(role.end_year)}"}
@@ -77,7 +78,7 @@ defmodule RmseWeb.IndexLive do
         <% end %>
       </ol>
       <.rmse_button variant={:secondary} class="group mt-6 w-full" href={cv_link(@language)}>
-        Download CV
+        <%= gettext("Download CV") %>
         <.arrow_down class="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </.rmse_button>
     </div>
@@ -90,23 +91,7 @@ defmodule RmseWeb.IndexLive do
   end
 
   defp load_blog_articles do
-    # TODO: read via API from https://developers.forem.com/api/v1#tag/articles/operation/getArticles, username = titaniumcoder
-    # Link general: https://dev.to/titaniumcoder
-
-    [
-      # %{
-      #   slug: "article-1",
-      #   title: "Creating a first article",
-      #   description: "Some very big description",
-      #   date: ~D[2022-10-13]
-      # },
-      # %{
-      #   slug: "article-2",
-      #   title: "The second article",
-      #   description: "A very long description for the second demo article.",
-      #   date: ~D[2023-01-12]
-      # }
-    ]
+    Blog.list_newest_articles()
   end
 
   defp load_resume do
@@ -115,5 +100,5 @@ defmodule RmseWeb.IndexLive do
 
   defp show_label(label) when is_binary(label), do: label
   defp show_label(label) when is_integer(label), do: Integer.to_string(label)
-  defp show_label(_), do: "Present"
+  defp show_label(_), do: gettext("Present")
 end

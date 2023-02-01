@@ -12,7 +12,11 @@ defmodule RmseWeb.BlogLive.Index do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, socket |> assign(:articles, []) |> assign(:page_title, gettext("Blog - Rico Metzger"))}
+    {:ok,
+     socket
+     |> assign(:articles, [])
+     |> assign(:page_title, gettext("Blog - Rico Metzger"))
+     |> assign(:more?, false)}
   end
 
   @impl true
@@ -28,6 +32,11 @@ defmodule RmseWeb.BlogLive.Index do
   defp assign_page(socket, _params), do: assign(socket, :page, 0) |> load_articles(0)
 
   defp load_articles(socket, page) do
-    assign(socket, :articles, Blog.list_articles(page))
+    articles = Blog.list_articles(page)
+    more? = Enum.count(articles) > 20
+
+    socket
+    |> assign(:articles, articles)
+    |> assign(:more?, more?)
   end
 end

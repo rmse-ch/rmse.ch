@@ -51,7 +51,8 @@ defmodule Rmse.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:earmark, "~> 1.4"}
+      {:earmark, "~> 1.4"},
+      {:tzdata, "~> 1.1"}
     ]
   end
 

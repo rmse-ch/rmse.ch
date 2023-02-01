@@ -31,7 +31,7 @@ msgstr ""
 msgid "Apps - Rico Metzger"
 msgstr ""
 
-#: lib/rmse_web/live/blog_live/index.ex:15
+#: lib/rmse_web/live/blog_live/index.ex:18
 #: lib/rmse_web/live/wip_live.ex:17
 #, elixir-autogen, elixir-format
 msgid "Blog - Rico Metzger"
@@ -211,22 +211,62 @@ msgstr ""
 msgid "Blog by Rico Metzger"
 msgstr ""
 
-#: lib/rmse_web/live/blog_live/index.html.heex:96
+#: lib/rmse_web/live/blog_live/index.html.heex:100
 #, elixir-autogen, elixir-format
 msgid "Next"
 msgstr ""
 
-#: lib/rmse_web/live/blog_live/index.html.heex:74
+#: lib/rmse_web/live/blog_live/index.html.heex:78
 #, elixir-autogen, elixir-format
 msgid "Pagination"
 msgstr ""
 
-#: lib/rmse_web/live/blog_live/index.html.heex:88
+#: lib/rmse_web/live/blog_live/index.html.heex:92
 #, elixir-autogen, elixir-format
 msgid "Previous"
 msgstr ""
 
-#: lib/rmse_web/live/blog_live/index.html.heex:78
+#: lib/rmse_web/live/blog_live/index.html.heex:82
 #, elixir-autogen, elixir-format
 msgid "Showing page "
+msgstr ""
+
+#: lib/rmse_web/live/index_live.ex:54
+#, elixir-autogen, elixir-format
+msgid "Company"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:55
+#, elixir-autogen, elixir-format
+msgid "Created at"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.ex:63
+#, elixir-autogen, elixir-format
+msgid "Date"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.ex:81
+#, elixir-autogen, elixir-format
+msgid "Download CV"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.ex:103
+#, elixir-autogen, elixir-format
+msgid "Present"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.ex:33
+#, elixir-autogen, elixir-format
+msgid "Read article"
+msgstr ""
+
+#: lib/rmse_web/live/index_live.ex:43
+#, elixir-autogen, elixir-format
+msgid "Work"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:55
+#, elixir-autogen, elixir-format
+msgid "last updated at"
 msgstr ""

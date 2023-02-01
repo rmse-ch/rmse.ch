@@ -22,7 +22,7 @@ defmodule Rmse.Blog do
       from a in Article,
         where: a.published,
         order_by: [desc: a.created_at],
-        limit: 20,
+        limit: 21, # trick: I show 20 but if I can load 21, I know there are more records
         offset: ^page * 20
 
     Repo.all(query)

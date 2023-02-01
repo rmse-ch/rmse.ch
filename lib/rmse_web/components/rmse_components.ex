@@ -64,9 +64,9 @@ defmodule RmseWeb.RmseComponents do
 
   @doc """
   Renders an arrow down symbol
-  
+
   ## Examples
-  
+
     <.arrow-down />
   """
 
@@ -87,9 +87,9 @@ defmodule RmseWeb.RmseComponents do
 
   @doc """
   Renders a social link
-  
+
   ## Examples
-  
+
     <.social-link icon={linkedin} />
   """
 
@@ -213,6 +213,29 @@ defmodule RmseWeb.RmseComponents do
     </section>
     """
   end
+
+  attr :datetime, DateTime, required: true
+
+  def format_datetime(%{datetime: datetime} = assigns) do
+    dt = DateTime.shift_zone!(datetime, "Europe/Zurich")
+
+    assigns =
+      Map.put(
+        assigns,
+        :formatted_datetime,
+        :io_lib.format("~2..0B.~2..0B.~4..0B ~2..0B:~2..0B", [
+          dt.day,
+          dt.month,
+          dt.year,
+          dt.hour,
+          dt.minute
+        ])
+        |> to_string()
+      )
+
+    ~H"<span><%= @formatted_datetime %></span>"
+  end
+
 
   def assign_request_path(socket, uri) do
     assign_new(socket, :request_path, fn -> URI.parse(uri).path end)

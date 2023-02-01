@@ -1,9 +1,14 @@
-<.container class="mt-16 sm:mt-32">
-  <%!--
-  <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-    <%= @article.title %>
-  </h1>
-   --%>
+<.container class="mt-12 sm:mt-24">
+  <%= if @article.medium_id || @article.dev_to_id do %>
+    <div class="dark:bg-zinc-800 bg-zinc-200 py-2 sm:py-4">
+      <%= if @article.medium_id do %>
+      <.link href={"https://medium.com/" <> to_string(@article.medium_id)}>Read on Medium</.link>
+      <% end %>
+      <%= if @article.dev_to_id do %>
+        <.link href={"https://dev.to/" <> to_string(@article.dev_to_id)}>Read on Dev.to</.link>
+      <% end %>
+    </div>
+  <% end %>
   <div class="mt-6 text-base text-zinc-600 dark:text-zinc-300">
     <p><%= raw(@content) %></p>
   </div>

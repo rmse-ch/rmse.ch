@@ -51,6 +51,9 @@
             <p class="mt-2 text-sm text-gray-500">
               <%= article.description %>
             </p>
+            <p class="mt-2 text-sm text-gray-500">
+              <%= gettext("Created at") %>: <b><.format_datetime datetime={article.created_at} /></b><span class="text-gray-300 dark:text-gray-700">, <%= gettext("last updated at") %>: <.format_datetime datetime={article.updated_at} /></span>
+            </p>
           </div>
           <span
             class="pointer-events-none absolute top-6 right-6 text-gray-300 dark:text-gray-700 group-hover:text-gray-400 dark:group-hover:text-gray-600"
@@ -69,32 +72,34 @@
       <% end %>
     </div>
   <% end %>
-  <nav
-    class="flex items-center justify-between border-t border-gray-200 dark:border-gray-800 px-4 py-3 sm:px-6 mt-6"
-    aria-label={gettext("Pagination")}
-  >
-    <div class="hidden sm:block">
-      <p class="text-sm text-gray-700 dark:text-zinc-300">
-        <%= gettext("Showing page ") %><%= @page + 1 %>
-      </p>
-    </div>
-    <div class="flex flex-1 justify-between sm:justify-end">
-      <button
-        phx-click="show_page"
-        phx-value-page={@page - 1}
-        disabled={@page == 0}
-        class="relative inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
-      >
-        <%= gettext("Previous") %>
-      </button>
-      <button
-        phx-click="show_page"
-        phx-value-page={@page + 1}
-        disabled={Enum.empty?(@articles)}
-        class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
-      >
-        <%= gettext("Next") %>
-      </button>
-    </div>
-  </nav>
+  <%= if @page > 0 and @more? do %>
+    <nav
+      class="flex items-center justify-between border-t border-gray-200 dark:border-gray-800 px-4 py-3 sm:px-6 mt-6"
+      aria-label={gettext("Pagination")}
+    >
+      <div class="hidden sm:block">
+        <p class="text-sm text-gray-700 dark:text-zinc-300">
+          <%= gettext("Showing page ") %><%= @page + 1 %>
+        </p>
+      </div>
+      <div class="flex flex-1 justify-between sm:justify-end">
+        <button
+          phx-click="show_page"
+          phx-value-page={@page - 1}
+          disabled={@page == 0}
+          class="relative inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
+        >
+          <%= gettext("Previous") %>
+        </button>
+        <button
+          phx-click="show_page"
+          phx-value-page={@page + 1}
+          disabled={!@more?}
+          class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
+        >
+          <%= gettext("Next") %>
+        </button>
+      </div>
+    </nav>
+  <% end %>
 </.container>
