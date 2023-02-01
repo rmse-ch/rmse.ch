@@ -99,7 +99,7 @@ defmodule RmseWeb.CardComponent do
           <span class="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
         </span>
       <% end %>
-       <%= render_slot(@inner_block) %>
+      <%= render_slot(@inner_block) %>
     </p>
     """
   end

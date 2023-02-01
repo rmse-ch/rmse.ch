@@ -28,23 +28,23 @@ defmodule RmseWeb.Footer do
             <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
               <div class="flex flex-wrap gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                 <.nav_link href={~p"/about"}><%= gettext("About") %></.nav_link>
-                
+
                 <.nav_link href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.nav_link>
-                
+
                 <.nav_link href={~p"/blog"}><%= gettext("Blog") %></.nav_link>
-                
+
                 <.nav_link href={~p"/projects"}><%= gettext("Projects") %></.nav_link>
-                
+
                 <.nav_link href={~p"/apps"}><%= gettext("Apps") %></.nav_link>
-                
+
                 <.nav_link href={~p"/contact"}><%= gettext("Contact") %></.nav_link>
-                
+
                 <.nav_link href={~p"/links"}><%= gettext("Links") %></.nav_link>
-                
+
                 <%!-- <.nav_link href={~p"/conditions"} class="pl-9"><%= gettext("Conditions") %></.nav_link> --%>
-                <.nav_link href={~p"/cookies"}><%= gettext("Cookies") %></.nav_link>
+                <%!-- <.nav_link href={~p"/cookies"}><%= gettext("Cookies") %></.nav_link> --%>
               </div>
-              
+
               <p class="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; <%= Date.utc_today().year %> Rico Metzger
               </p>

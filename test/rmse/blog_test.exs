@@ -8,12 +8,30 @@ defmodule Rmse.BlogTest do
 
     import Rmse.BlogFixtures
 
-    @invalid_attrs %{content: nil, created_at: nil, description: nil, dev_to_id: nil, medium_id: nil, published: nil, slug: nil, tags: nil, title: nil, updated_at: nil}
+    @invalid_attrs %{
+      content: nil,
+      created_at: nil,
+      description: nil,
+      dev_to_id: nil,
+      medium_id: nil,
+      published: nil,
+      slug: nil,
+      tags: nil,
+      title: nil,
+      updated_at: nil
+    }
 
     test "list_articles/1 returns 1 page of articles" do
-      article = article_fixture()
-      assert Blog.list_articles(0) == [article]
+      article_published = article_fixture()
+      _article_unpublished = article_fixture(%{published: false})
+      assert Blog.list_articles(0) == [article_published]
       assert Blog.list_articles(1) == []
+    end
+
+    test "list_newest_articles/0 returns list of published articles" do
+      article_published = article_fixture()
+      _article_unpublished = article_fixture(%{published: false})
+      assert Blog.list_newest_articles() == [article_published]
     end
 
     test "get_article!/1 returns the article with given id" do
@@ -32,7 +50,18 @@ defmodule Rmse.BlogTest do
     end
 
     test "create_article/1 with valid data creates a article" do
-      valid_attrs = %{content: "some content", created_at: ~U[2023-01-31 10:22:00Z], description: "some description", dev_to_id: 42, medium_id: 42, published: true, slug: "some slug", tags: ["option1", "option2"], title: "some title", updated_at: ~U[2023-01-31 10:22:00Z]}
+      valid_attrs = %{
+        content: "some content",
+        created_at: ~U[2023-01-31 10:22:00Z],
+        description: "some description",
+        dev_to_id: 42,
+        medium_id: 42,
+        published: true,
+        slug: "some slug",
+        tags: ["option1", "option2"],
+        title: "some title",
+        updated_at: ~U[2023-01-31 10:22:00Z]
+      }
 
       assert {:ok, %Article{} = article} = Blog.create_article(valid_attrs)
       assert article.content == "some content"
@@ -53,7 +82,19 @@ defmodule Rmse.BlogTest do
 
     test "update_article/2 with valid data updates the article" do
       article = article_fixture()
-      update_attrs = %{content: "some updated content", created_at: ~U[2023-02-01 10:22:00Z], description: "some updated description", dev_to_id: 43, medium_id: 43, published: false, slug: "some updated slug", tags: ["option1"], title: "some updated title", updated_at: ~U[2023-02-01 10:22:00Z]}
+
+      update_attrs = %{
+        content: "some updated content",
+        created_at: ~U[2023-02-01 10:22:00Z],
+        description: "some updated description",
+        dev_to_id: 43,
+        medium_id: 43,
+        published: false,
+        slug: "some updated slug",
+        tags: ["option1"],
+        title: "some updated title",
+        updated_at: ~U[2023-02-01 10:22:00Z]
+      }
 
       assert {:ok, %Article{} = article} = Blog.update_article(article, update_attrs)
       assert article.content == "some updated content"

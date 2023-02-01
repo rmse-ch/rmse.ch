@@ -31,7 +31,8 @@ defmodule RmseWeb.Router do
 
       live "/apps", WIPLive, :apps
       live "/projects", WIPLive, :projects
-      live "/blog", BlogLive
+      live "/blog", BlogLive.Index
+      live "/blog/:slug", BlogLive.Show
 
       live "/conditions", WIPLive, :conditions
       live "/contact", WIPLive, :contact

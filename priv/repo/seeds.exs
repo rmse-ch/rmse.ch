@@ -85,21 +85,21 @@ Repo.delete_all(LinkCollection)
     position: 0
   })
 
-  Repo.insert!(%Link{
-    link_collection_id: lc1,
-    title_de: "Scala",
-    title_en: "Scala",
-    position: 2,
-    href: "https://www.scala-lang.org/",
-    description_de: """
-    Funktionale Programmierung auf der JVM, deutlich verbesserte Standard-Library gegenüber Java. Mein JVM-Favorit.
-    """,
-    description_en: """
-    My favourite programming language on the JVM with better standard library than Java and most important: functional programming.
-    """
-  })
+Repo.insert!(%Link{
+  link_collection_id: lc1,
+  title_de: "Scala",
+  title_en: "Scala",
+  position: 2,
+  href: "https://www.scala-lang.org/",
+  description_de: """
+  Funktionale Programmierung auf der JVM, deutlich verbesserte Standard-Library gegenüber Java. Mein JVM-Favorit.
+  """,
+  description_en: """
+  My favourite programming language on the JVM with better standard library than Java and most important: functional programming.
+  """
+})
 
-  Repo.insert!(%Link{
+Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Elixir",
   title_en: "Elixir",

@@ -4,3 +4,37 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+/* Special Blog Formatting */
+.blog-h1 {
+  @apply text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl mt-6 mb-6;
+}
+.blog-h2 {
+  @apply text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl mt-4 mb-4;
+}
+.blog-h3 {
+  @apply text-xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl mt-2 mb-2;
+}
+.blog-ol {
+  @apply list-decimal list-outside pl-6;
+}
+.blog-ul {
+  @apply list-disc list-outside pl-6;
+}
+.blog-li > .blog-p {
+  display: inline-block;
+}
+.blog-pre {
+  white-space: pre-wrap;
+}
+.blog-img {
+  @apply object-contain;
+}
+
+.blog-pre:has(.blog-code) {
+  @apply text-zinc-800 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-800 px-3 my-3;
+}
+
+.blog-code.inline {
+  /* @apply bg-white; */
+}

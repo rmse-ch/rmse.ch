@@ -122,7 +122,7 @@ defmodule RmseWeb.RmseComponents do
         <div class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500">
           <%= render_slot(@icon) %>
         </div>
-         <span class="ml-4"><%= render_slot(@inner_block) %></span>
+        <span class="ml-4"><%= render_slot(@inner_block) %></span>
       </.link>
     </li>
     """
@@ -207,7 +207,7 @@ defmodule RmseWeb.RmseComponents do
         <h2 class="text-sm font-semibold text-zinc-800 dark:text-zinc-100">
           <%= @title %>
         </h2>
-        
+
         <div class="md:col-span-2"><%= render_slot(@inner_block) %></div>
       </div>
     </section>

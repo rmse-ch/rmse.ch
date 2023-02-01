@@ -31,7 +31,7 @@ msgstr ""
 msgid "Apps - Rico Metzger"
 msgstr ""
 
-#: lib/rmse_web/live/blog_live.ex:13
+#: lib/rmse_web/live/blog_live/index.ex:15
 #: lib/rmse_web/live/wip_live.ex:17
 #, elixir-autogen, elixir-format
 msgid "Blog - Rico Metzger"
@@ -47,31 +47,31 @@ msgstr ""
 msgid "Cookies - Rico Metzger"
 msgstr ""
 
-#: lib/rmse_web/live/about_live.html.heex:21
-#: lib/rmse_web/live/index_live.html.heex:14
+#: lib/rmse_web/live/about_live.html.heex:30
+#: lib/rmse_web/live/index_live.html.heex:20
 #, elixir-autogen, elixir-format
 msgid "Follow on GitHub"
 msgstr ""
 
-#: lib/rmse_web/live/about_live.html.heex:16
-#: lib/rmse_web/live/index_live.html.heex:11
+#: lib/rmse_web/live/about_live.html.heex:25
+#: lib/rmse_web/live/index_live.html.heex:16
 #, elixir-autogen, elixir-format
 msgid "Follow on Instagram"
 msgstr ""
 
-#: lib/rmse_web/live/about_live.html.heex:26
-#: lib/rmse_web/live/index_live.html.heex:17
+#: lib/rmse_web/live/about_live.html.heex:35
+#: lib/rmse_web/live/index_live.html.heex:25
 #, elixir-autogen, elixir-format
 msgid "Follow on LinkedIn"
 msgstr ""
 
-#: lib/rmse_web/live/about_live.html.heex:11
-#: lib/rmse_web/live/index_live.html.heex:8
+#: lib/rmse_web/live/about_live.html.heex:20
+#: lib/rmse_web/live/index_live.html.heex:10
 #, elixir-autogen, elixir-format
 msgid "Follow on Twitter"
 msgstr ""
 
-#: lib/rmse_web/live/links_live.ex:146
+#: lib/rmse_web/live/links_live.ex:19
 #, elixir-autogen, elixir-format
 msgid "Links - Rico Metzger"
 msgstr ""
@@ -86,7 +86,8 @@ msgstr ""
 msgid "Motorcycle - Rico Metzger"
 msgstr ""
 
-#: lib/rmse_web/live/index_live.html.heex:31
+#: lib/rmse_web/live/blog_live/index.html.heex:37
+#: lib/rmse_web/live/index_live.html.heex:41
 #, elixir-autogen, elixir-format
 msgid "No blog entries."
 msgstr ""
@@ -118,14 +119,14 @@ msgstr ""
 
 #: lib/rmse_web/components/footer.ex:30
 #: lib/rmse_web/components/header.ex:83
-#: lib/rmse_web/components/header.ex:141
+#: lib/rmse_web/components/header.ex:142
 #, elixir-autogen, elixir-format
 msgid "About"
 msgstr ""
 
-#: lib/rmse_web/components/footer.ex:34
+#: lib/rmse_web/components/footer.ex:38
 #: lib/rmse_web/components/header.ex:91
-#: lib/rmse_web/components/header.ex:149
+#: lib/rmse_web/components/header.ex:158
 #, elixir-autogen, elixir-format
 msgid "Apps"
 msgstr ""
@@ -135,16 +136,11 @@ msgstr ""
 msgid "Attempting to reconnect"
 msgstr ""
 
-#: lib/rmse_web/components/footer.ex:32
+#: lib/rmse_web/components/footer.ex:34
 #: lib/rmse_web/components/header.ex:87
-#: lib/rmse_web/components/header.ex:145
+#: lib/rmse_web/components/header.ex:150
 #, elixir-autogen, elixir-format
 msgid "Blog"
-msgstr ""
-
-#: lib/rmse_web/components/footer.ex:37
-#, elixir-autogen, elixir-format
-msgid "Conditions"
 msgstr ""
 
 #: lib/rmse_web/live/wip_live.ex:18
@@ -152,16 +148,11 @@ msgstr ""
 msgid "Conditions - Rico Metzger"
 msgstr ""
 
-#: lib/rmse_web/components/footer.ex:35
+#: lib/rmse_web/components/footer.ex:40
 #: lib/rmse_web/components/header.ex:93
-#: lib/rmse_web/components/header.ex:151
+#: lib/rmse_web/components/header.ex:162
 #, elixir-autogen, elixir-format
 msgid "Contact"
-msgstr ""
-
-#: lib/rmse_web/components/footer.ex:38
-#, elixir-autogen, elixir-format
-msgid "Cookies"
 msgstr ""
 
 #: lib/rmse_web/components/layouts/app.html.heex:10
@@ -169,28 +160,28 @@ msgstr ""
 msgid "Error!"
 msgstr ""
 
-#: lib/rmse_web/components/footer.ex:36
+#: lib/rmse_web/components/footer.ex:42
 #: lib/rmse_web/components/header.ex:95
-#: lib/rmse_web/components/header.ex:153
+#: lib/rmse_web/components/header.ex:166
 #, elixir-autogen, elixir-format
 msgid "Links"
 msgstr ""
 
-#: lib/rmse_web/components/footer.ex:31
+#: lib/rmse_web/components/footer.ex:32
 #: lib/rmse_web/components/header.ex:85
-#: lib/rmse_web/components/header.ex:143
+#: lib/rmse_web/components/header.ex:146
 #, elixir-autogen, elixir-format
 msgid "Motorcycle"
 msgstr ""
 
-#: lib/rmse_web/components/footer.ex:33
+#: lib/rmse_web/components/footer.ex:36
 #: lib/rmse_web/components/header.ex:89
-#: lib/rmse_web/components/header.ex:147
+#: lib/rmse_web/components/header.ex:154
 #, elixir-autogen, elixir-format
 msgid "Projects"
 msgstr ""
 
-#: lib/rmse_web/components/layouts/root.html.heex:8
+#: lib/rmse_web/components/layouts/root.html.heex:9
 #, elixir-autogen, elixir-format
 msgid "Rico Metzger - Software Engineer, Freelancer and Motorcyclist"
 msgstr ""
@@ -205,7 +196,37 @@ msgstr ""
 msgid "We can't find the internet"
 msgstr ""
 
-#: lib/rmse_web/live/blog_live.html.heex:8
+#: lib/rmse_web/live/blog_live/index.html.heex:14
 #, elixir-autogen, elixir-format
 msgid "You can find my blog also under"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:21
+#, elixir-autogen, elixir-format
+msgid "and"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:3
+#, elixir-autogen, elixir-format
+msgid "Blog by Rico Metzger"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:96
+#, elixir-autogen, elixir-format
+msgid "Next"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:74
+#, elixir-autogen, elixir-format
+msgid "Pagination"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:88
+#, elixir-autogen, elixir-format
+msgid "Previous"
+msgstr ""
+
+#: lib/rmse_web/live/blog_live/index.html.heex:78
+#, elixir-autogen, elixir-format
+msgid "Showing page "
 msgstr ""

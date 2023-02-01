@@ -4,7 +4,7 @@
       <%= gettext("Links that I use myself") %>
     </h1>
   </div>
-  
+
   <div class="space-y-20 mt-20">
     <%= for tool_section <- @tool_sections do %>
       <.section title={title(@language, tool_section)}>
@@ -22,7 +22,7 @@
                   <%= item.title %>
                 <% end %>
               </h3>
-              
+
               <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                 <%= raw(description(@language, item)) %>
               </p>

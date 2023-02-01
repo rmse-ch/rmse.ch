@@ -52,14 +52,14 @@ defmodule RmseWeb.Header do
       >
         <span>Menu</span> <Heroicons.chevron_down class="h-4 w-4" />
       </button>
-      
+
       <div
         class="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm dark:bg-black/80 opacity-100 hidden "
         aria-hidden="true"
         id="mobile-overlay"
       >
       </div>
-      
+
       <div
         class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 dark:bg-zinc-900 dark:ring-zinc-800 hidden"
         role="menu"
@@ -72,26 +72,26 @@ defmodule RmseWeb.Header do
           <button aria-label="Close menu" class="-m-1 p-1" phx-click={hide_menu()}>
             <Heroicons.x_mark class="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
           </button>
-          
+
           <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">
             Navigation
           </h2>
         </div>
-        
+
         <nav class="mt-6">
           <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
             <.mobile_nav_item href={~p"/about"}><%= gettext("About") %></.mobile_nav_item>
-            
+
             <.mobile_nav_item href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.mobile_nav_item>
-            
+
             <.mobile_nav_item href={~p"/blog"}><%= gettext("Blog") %></.mobile_nav_item>
-            
+
             <.mobile_nav_item href={~p"/projects"}><%= gettext("Projects") %></.mobile_nav_item>
-            
+
             <.mobile_nav_item href={~p"/apps"}><%= gettext("Apps") %></.mobile_nav_item>
-            
+
             <.mobile_nav_item href={~p"/contact"}><%= gettext("Contact") %></.mobile_nav_item>
-            
+
             <.mobile_nav_item href={~p"/links"}><%= gettext("Links") %></.mobile_nav_item>
           </ul>
         </nav>
@@ -141,27 +141,27 @@ defmodule RmseWeb.Header do
         <.nav_item navigate={~p"/about"} request_path={@request_path}>
           <%= gettext("About") %>
         </.nav_item>
-        
+
         <.nav_item navigate={~p"/motorcycle"} request_path={@request_path}>
           <%= gettext("Motorcycle") %>
         </.nav_item>
-        
+
         <.nav_item navigate={~p"/blog"} request_path={@request_path}>
           <%= gettext("Blog") %>
         </.nav_item>
-        
+
         <.nav_item navigate={~p"/projects"} request_path={@request_path}>
           <%= gettext("Projects") %>
         </.nav_item>
-        
+
         <.nav_item navigate={~p"/apps"} request_path={@request_path}>
           <%= gettext("Apps") %>
         </.nav_item>
-        
+
         <.nav_item navigate={~p"/contact"} request_path={@request_path}>
           <%= gettext("Contact") %>
         </.nav_item>
-        
+
         <.nav_item navigate={~p"/links"} request_path={@request_path}>
           <%= gettext("Links") %>
         </.nav_item>
@@ -238,7 +238,7 @@ defmodule RmseWeb.Header do
           </div>
         </.container>
       <% end %>
-      
+
       <div id="header-menu" class="top-0 z-10 h-16 pt-6" style="position: var(--header-position);">
         <.container
           class="top-[var(--header-top,theme(spacing.6))] w-full"
@@ -252,7 +252,7 @@ defmodule RmseWeb.Header do
                 </.avatar_container>
               <% end %>
             </div>
-            
+
             <div class="flex flex-1 justify-end md:justify-center">
               <.mobile_navigation class="pointer-events-auto md:hidden" />
               <.desktop_navigation
@@ -260,7 +260,7 @@ defmodule RmseWeb.Header do
                 request_path={@request_path}
               />
             </div>
-            
+
             <.live_component
               module={PreferencesComponent}
               language={@language}

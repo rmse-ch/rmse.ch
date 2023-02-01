@@ -1,0 +1,100 @@
+<.container class="mt-16 sm:mt-32">
+  <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+    <%= gettext("Blog by Rico Metzger") %>
+  </h1>
+
+  <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+    <%= if @language == "de" do %>
+      <p>
+        Bitte beachten Sie, dass meine Blog-Einträge (zur Zeit) nur in englischer Sprache verfügbar sind. Da es sich um ein technisches Blog rund um die
+        Software-Entwicklung handelt, gehe ich davon aus, dass der Grossteil meiner Leserschaft mit der englischen Sprache vertraut ist.
+      </p>
+    <% end %>
+    <p>
+      <%= gettext("You can find my blog also under") %><span> </span>
+      <.link
+        href="https://dev.to/titaniumcoder"
+        class="text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+      >
+        DEV.to
+      </.link>
+      <span></span><%= gettext("and") %><span> </span>
+      <.link
+        href="https://medium.com/@rico.metzger"
+        class="text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+      >
+        Medium
+      </.link>
+    </p>
+  </div>
+  <div class="relative mt-3 mb-3">
+    <div class="absolute inset-0 flex items-center" aria-hidden="true">
+      <div class="w-full border-t border-gray-300"></div>
+    </div>
+  </div>
+  <%= if Enum.empty?(@articles) do %>
+    <p class="text-sm text-zinc-900 dark:text-zinc-100">
+      <%= gettext("No blog entries.") %>
+    </p>
+  <% else %>
+    <div class="divide-y divide-gray-200 dark:divide-gray-800 overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-800 shadow sm:grid sm:grid-cols-2 sm:gap-px sm:divide-y-0">
+      <%= for article <- @articles do %>
+        <div class="rounded-tl-lg rounded-tr-lg sm:rounded-tr-none relative group bg-white dark:bg-black p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-zinc-500 text-zinc-700 dark:text-zinc-300">
+          <div class="mt-3">
+            <h3 class="text-lg font-medium ">
+              <.link navigate={~p"/blog/#{article.slug}"} class="focus:outline-none">
+                <!-- Extend touch target to entire panel -->
+                <span class="absolute inset-0" aria-hidden="true"></span>
+                <%= article.title %>
+              </.link>
+            </h3>
+            <p class="mt-2 text-sm text-gray-500">
+              <%= article.description %>
+            </p>
+          </div>
+          <span
+            class="pointer-events-none absolute top-6 right-6 text-gray-300 dark:text-gray-700 group-hover:text-gray-400 dark:group-hover:text-gray-600"
+            aria-hidden="true"
+          >
+            <svg
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M20 4h1a1 1 0 00-1-1v1zm-1 12a1 1 0 102 0h-2zM8 3a1 1 0 000 2V3zM3.293 19.293a1 1 0 101.414 1.414l-1.414-1.414zM19 4v12h2V4h-2zm1-1H8v2h12V3zm-.707.293l-16 16 1.414 1.414 16-16-1.414-1.414z" />
+            </svg>
+          </span>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <nav
+    class="flex items-center justify-between border-t border-gray-200 dark:border-gray-800 px-4 py-3 sm:px-6 mt-6"
+    aria-label={gettext("Pagination")}
+  >
+    <div class="hidden sm:block">
+      <p class="text-sm text-gray-700 dark:text-zinc-300">
+        <%= gettext("Showing page ") %><%= @page + 1 %>
+      </p>
+    </div>
+    <div class="flex flex-1 justify-between sm:justify-end">
+      <button
+        phx-click="show_page"
+        phx-value-page={@page - 1}
+        disabled={@page == 0}
+        class="relative inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
+      >
+        <%= gettext("Previous") %>
+      </button>
+      <button
+        phx-click="show_page"
+        phx-value-page={@page + 1}
+        disabled={Enum.empty?(@articles)}
+        class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 dark:border-gray-700 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
+      >
+        <%= gettext("Next") %>
+      </button>
+    </div>
+  </nav>
+</.container>
