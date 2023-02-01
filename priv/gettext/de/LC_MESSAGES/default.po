@@ -24,7 +24,7 @@ msgstr "Über - Rico Metzger"
 msgid "Apps - Rico Metzger"
 msgstr "Anwendungen - Rico Metzger"
 
-#: lib/rmse_web/live/blog_live.ex:14
+#: lib/rmse_web/live/blog_live/index.ex:15
 #: lib/rmse_web/live/wip_live.ex:17
 msgid "Blog - Rico Metzger"
 msgstr "Blog - Rico Metzger"
@@ -69,6 +69,7 @@ msgstr "Links, die ich selbst verwende"
 msgid "Motorcycle - Rico Metzger"
 msgstr "Motorrad - Rico Metzger"
 
+#: lib/rmse_web/live/blog_live/index.html.heex:37
 #: lib/rmse_web/live/index_live.html.heex:41
 msgid "No blog entries."
 msgstr "Keine Blogeinträge."
@@ -130,10 +131,6 @@ msgstr "AGB - Rico Metzger"
 msgid "Contact"
 msgstr "Kontakt"
 
-#: lib/rmse_web/components/footer.ex:45
-msgid "Cookies"
-msgstr "Cookies"
-
 #: lib/rmse_web/components/layouts/app.html.heex:10
 msgid "Error!"
 msgstr "Fehler!"
@@ -168,15 +165,31 @@ msgstr "Erfolgreich!"
 msgid "We can't find the internet"
 msgstr "Wir können das Internet nicht finden"
 
-#: lib/rmse_web/live/blog_live.html.heex:10
+#: lib/rmse_web/live/blog_live/index.html.heex:14
 msgid "You can find my blog also under"
 msgstr "Sie finden meinen Blog auch unter"
 
-#: lib/rmse_web/live/blog_live.html.heex:17
+#: lib/rmse_web/live/blog_live/index.html.heex:21
 msgid "and"
 msgstr "und"
 
-#: lib/rmse_web/live/blog_live.html.heex:3
+#: lib/rmse_web/live/blog_live/index.html.heex:3
 msgid "Blog by Rico Metzger"
 msgstr "Blog von Rico Metzger"
+
+#: lib/rmse_web/live/blog_live/index.html.heex:96
+msgid "Next"
+msgstr "Weiter"
+
+#: lib/rmse_web/live/blog_live/index.html.heex:74
+msgid "Pagination"
+msgstr "Paginierung"
+
+#: lib/rmse_web/live/blog_live/index.html.heex:88
+msgid "Previous"
+msgstr "Vorherige"
+
+#: lib/rmse_web/live/blog_live/index.html.heex:78
+msgid "Showing page "
+msgstr "Zeige Seite "
 
