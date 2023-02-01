@@ -219,7 +219,7 @@ msgstr "Artikel lesen"
 
 #: lib/rmse_web/live/index_live.ex:43
 msgid "Work"
-msgstr "Bisherige Stellen"
+msgstr "Berufliche Laufbahn"
 
 #: lib/rmse_web/live/blog_live/index.html.heex:55
 msgid "last updated at"
