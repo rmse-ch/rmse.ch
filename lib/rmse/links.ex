@@ -32,9 +32,17 @@ defmodule Rmse.Links do
     |> Repo.all()
     |> Enum.group_by(fn c -> c.id end)
     |> Enum.map(&take_one/1)
+    |> Enum.sort_by(&order_collections/1)
+    |> Enum.map(&filter_and_order_links/1)
   end
 
   defp take_one({_id, collection_links}) do
     hd(collection_links)
+  end
+
+  defp order_collections(c), do: {c.position, c.id}
+
+  defp filter_and_order_links(c) do
+    %LinkCollection{c | links: Enum.filter(c.links, fn a -> a.active end)}
   end
 end

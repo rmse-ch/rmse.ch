@@ -1,161 +1,83 @@
 defmodule Rmse.LinksTest do
   use Rmse.DataCase
 
+  alias Rmse.Links.LinkCollection
   alias Rmse.Links
 
   describe "link_collections" do
-    alias Rmse.Links.LinkCollection
+    alias Rmse.Links.Link
 
-    import Rmse.LinksFixtures
+    test "list_link_collections/0 returns the links grouped by collection" do
+      # create 3 links, add it to 2 collections and verify that this works
+      {link_collection1, link_collection2, inactive_link_collection} = create_link_collections()
 
-    @invalid_attrs %{name_de: nil, name_en: nil, position: nil}
+      create_link(1, 0, true, link_collection1)
+      create_link(2, 1, true, link_collection1)
+      create_link(3, 2, false, link_collection1)
+      create_link(4, 0, true, link_collection2)
+      create_link(5, 0, true, inactive_link_collection)
 
-    test "list_link_collections/0 returns all link_collections" do
-      link_collection = link_collection_fixture()
-      assert Links.list_link_collections() == [link_collection]
-    end
+      [lc1, lc2] = Links.list_link_collections()
 
-    test "get_link_collection!/1 returns the link_collection with given id" do
-      link_collection = link_collection_fixture()
-      assert Links.get_link_collection!(link_collection.id) == link_collection
-    end
+      assert lc1.name_en == "link collection 2"
+      assert lc2.name_en == "link collection 1"
 
-    test "create_link_collection/1 with valid data creates a link_collection" do
-      valid_attrs = %{name_de: "some name_de", name_en: "some name_en", position: 42}
+      assert Enum.count(lc1.links) == 1
+      assert Enum.count(lc2.links) == 2
 
-      assert {:ok, %LinkCollection{} = link_collection} =
-               Links.create_link_collection(valid_attrs)
+      all_links = Enum.flat_map([lc1, lc2], fn c -> c.links end)
 
-      assert link_collection.name_de == "some name_de"
-      assert link_collection.name_en == "some name_en"
-      assert link_collection.position == 42
-    end
-
-    test "create_link_collection/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Links.create_link_collection(@invalid_attrs)
-    end
-
-    test "update_link_collection/2 with valid data updates the link_collection" do
-      link_collection = link_collection_fixture()
-
-      update_attrs = %{
-        name_de: "some updated name_de",
-        name_en: "some updated name_en",
-        position: 43
-      }
-
-      assert {:ok, %LinkCollection{} = link_collection} =
-               Links.update_link_collection(link_collection, update_attrs)
-
-      assert link_collection.name_de == "some updated name_de"
-      assert link_collection.name_en == "some updated name_en"
-      assert link_collection.position == 43
-    end
-
-    test "update_link_collection/2 with invalid data returns error changeset" do
-      link_collection = link_collection_fixture()
-
-      assert {:error, %Ecto.Changeset{}} =
-               Links.update_link_collection(link_collection, @invalid_attrs)
-
-      assert link_collection == Links.get_link_collection!(link_collection.id)
-    end
-
-    test "delete_link_collection/1 deletes the link_collection" do
-      link_collection = link_collection_fixture()
-      assert {:ok, %LinkCollection{}} = Links.delete_link_collection(link_collection)
-      assert_raise Ecto.NoResultsError, fn -> Links.get_link_collection!(link_collection.id) end
-    end
-
-    test "change_link_collection/1 returns a link_collection changeset" do
-      link_collection = link_collection_fixture()
-      assert %Ecto.Changeset{} = Links.change_link_collection(link_collection)
+      assert !Enum.any?(all_links, fn e -> e.title_en == "Link 3" end)
+      assert !Enum.any?(all_links, fn e -> e.title_en == "Link 5" end)
     end
   end
 
-  describe "links" do
+  defp create_link_collections do
+    alias Rmse.Links.LinkCollection
+
+    link_collection1 =
+      %LinkCollection{
+        name_en: "link collection 1",
+        name_de: "Linksammlung 1",
+        active: true,
+        position: 1
+      }
+      |> Repo.insert!()
+
+    link_collection2 =
+      %LinkCollection{
+        name_en: "link collection 2",
+        name_de: "Linksammlung 2",
+        active: true,
+        position: 0
+      }
+      |> Repo.insert!()
+
+    inactive_link_collection =
+      %LinkCollection{
+        name_en: "inactive link collection",
+        name_de: "Inaktive Linksammlung",
+        active: false,
+        position: 2
+      }
+      |> Repo.insert!()
+
+    {link_collection1, link_collection2, inactive_link_collection}
+  end
+
+  defp create_link(no, position, active, link_collection) do
     alias Rmse.Links.Link
 
-    import Rmse.LinksFixtures
-
-    @invalid_attrs %{
-      description_de: nil,
-      description_en: nil,
-      href: nil,
-      name_de: nil,
-      name_en: nil,
-      position: nil
+    %Link{
+      title_en: "Link #{no}",
+      title_de: "Link #{no}",
+      href: "https://l#{no}",
+      description_de: "Beschreibung #{no}",
+      description_en: "Description #{no}",
+      position: position,
+      active: active,
+      link_collection: link_collection
     }
-
-    test "list_links/0 returns all links" do
-      link = link_fixture()
-      assert Links.list_links() == [link]
-    end
-
-    test "get_link!/1 returns the link with given id" do
-      link = link_fixture()
-      assert Links.get_link!(link.id) == link
-    end
-
-    test "create_link/1 with valid data creates a link" do
-      valid_attrs = %{
-        description_de: "some description_de",
-        description_en: "some description_en",
-        href: "some href",
-        name_de: "some name_de",
-        name_en: "some name_en",
-        position: 42
-      }
-
-      assert {:ok, %Link{} = link} = Links.create_link(valid_attrs)
-      assert link.description_de == "some description_de"
-      assert link.description_en == "some description_en"
-      assert link.href == "some href"
-      assert link.name_de == "some name_de"
-      assert link.name_en == "some name_en"
-      assert link.position == 42
-    end
-
-    test "create_link/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Links.create_link(@invalid_attrs)
-    end
-
-    test "update_link/2 with valid data updates the link" do
-      link = link_fixture()
-
-      update_attrs = %{
-        description_de: "some updated description_de",
-        description_en: "some updated description_en",
-        href: "some updated href",
-        name_de: "some updated name_de",
-        name_en: "some updated name_en",
-        position: 43
-      }
-
-      assert {:ok, %Link{} = link} = Links.update_link(link, update_attrs)
-      assert link.description_de == "some updated description_de"
-      assert link.description_en == "some updated description_en"
-      assert link.href == "some updated href"
-      assert link.name_de == "some updated name_de"
-      assert link.name_en == "some updated name_en"
-      assert link.position == 43
-    end
-
-    test "update_link/2 with invalid data returns error changeset" do
-      link = link_fixture()
-      assert {:error, %Ecto.Changeset{}} = Links.update_link(link, @invalid_attrs)
-      assert link == Links.get_link!(link.id)
-    end
-
-    test "delete_link/1 deletes the link" do
-      link = link_fixture()
-      assert {:ok, %Link{}} = Links.delete_link(link)
-      assert_raise Ecto.NoResultsError, fn -> Links.get_link!(link.id) end
-    end
-
-    test "change_link/1 returns a link changeset" do
-      link = link_fixture()
-      assert %Ecto.Changeset{} = Links.change_link(link)
-    end
+    |> Repo.insert!()
   end
 end
