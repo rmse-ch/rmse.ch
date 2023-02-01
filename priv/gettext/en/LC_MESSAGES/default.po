@@ -24,7 +24,7 @@ msgstr "About - Rico Metzger"
 msgid "Apps - Rico Metzger"
 msgstr "Apps - Rico Metzger"
 
-#: lib/rmse_web/live/blog_live/index.ex:15
+#: lib/rmse_web/live/blog_live/index.ex:18
 #: lib/rmse_web/live/wip_live.ex:17
 msgid "Blog - Rico Metzger"
 msgstr "Blog - Rico Metzger"
@@ -183,19 +183,51 @@ msgstr "and"
 msgid "Blog by Rico Metzger"
 msgstr "Blog by Rico Metzger"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:96
+#: lib/rmse_web/live/blog_live/index.html.heex:100
 msgid "Next"
 msgstr "Next"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:74
+#: lib/rmse_web/live/blog_live/index.html.heex:78
 msgid "Pagination"
 msgstr "Pagination"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:88
+#: lib/rmse_web/live/blog_live/index.html.heex:92
 msgid "Previous"
 msgstr "Previous"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:78
+#: lib/rmse_web/live/blog_live/index.html.heex:82
 msgid "Showing page "
 msgstr "Showing page "
+
+#: lib/rmse_web/live/index_live.ex:54
+msgid "Company"
+msgstr "Company"
+
+#: lib/rmse_web/live/blog_live/index.html.heex:55
+msgid "Created at"
+msgstr "Created at"
+
+#: lib/rmse_web/live/index_live.ex:63
+msgid "Date"
+msgstr "Date"
+
+#: lib/rmse_web/live/index_live.ex:81
+msgid "Download CV"
+msgstr "Download CV"
+
+#: lib/rmse_web/live/index_live.ex:103
+msgid "Present"
+msgstr "Present"
+
+#: lib/rmse_web/live/index_live.ex:33
+msgid "Read article"
+msgstr "Read article"
+
+#: lib/rmse_web/live/index_live.ex:43
+msgid "Work"
+msgstr "Work"
+
+#: lib/rmse_web/live/blog_live/index.html.heex:55
+msgid "last updated at"
+msgstr "last updated at"
 
