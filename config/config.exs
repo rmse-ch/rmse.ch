@@ -62,8 +62,6 @@ config :phoenix, :json_library, Jason
 # full timezone database
 config :elixir, :time_zone_database, Tzdata.TimeZoneDatabase
 
-config :rmse, strapi_token: 'some_fancy_token'
-
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"
