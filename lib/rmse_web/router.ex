@@ -5,8 +5,6 @@ defmodule RmseWeb.Router do
 
   alias Plug.Conn
 
-  @strapi_token Application.compile_env(:rmse, :strapi_token)
-
   pipeline :browser do
     plug(:accepts, ["html"])
     plug(:fetch_session)
@@ -87,9 +85,12 @@ defmodule RmseWeb.Router do
 
   defp validate_authorization_header(conn, []), do: unauthorized(conn)
 
-  defp validate_authorization_header(conn, ["Bearer " <> token | _tl])
-       when token == @strapi_token,
-       do: conn
+  defp validate_authorization_header(conn, ["Bearer " <> token | tl]) do
+    cond do
+      token == strapi_token() -> conn
+      true -> validate_authorization_header(conn, tl)
+    end
+  end
 
   defp validate_authorization_header(conn, [_hd | tl]),
     do: validate_authorization_header(conn, tl)
@@ -97,4 +98,6 @@ defmodule RmseWeb.Router do
   defp validate_authorization_header(conn, _), do: unauthorized(conn)
 
   defp unauthorized(conn), do: conn |> Conn.send_resp(401, "\"unauthorized\"") |> Conn.halt()
+
+  defp strapi_token, do: Application.fetch_env!(:rmse, :strapi_token)
 end
