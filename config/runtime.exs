@@ -65,7 +65,14 @@ if config_env() == :prod do
     secret_key_base: secret_key_base
 
   # Bearer Token for Strapi
-  config :rmse, strapi_token: System.get_env("STRAPI_TOKEN")
+  strapi_token =
+    System.get_env("STRAPI_TOKEN") ||
+      raise """
+      environment variable STRAPI_TOKEN is missing.
+      You can generate one by calling: mix phx.gen.secret
+      """
+
+  config :rmse, strapi_token: strapi_token
 
   # ## Configuring the mailer
   #
