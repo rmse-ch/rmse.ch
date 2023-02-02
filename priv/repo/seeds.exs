@@ -85,34 +85,34 @@ Repo.delete_all(LinkCollection)
     position: 0
   })
 
-Repo.insert!(%Link{
+  Repo.insert!(%Link{
+    link_collection_id: lc1,
+    title_de: "Elixir",
+    title_en: "Elixir",
+    position: 1,
+    href: "https://elixir-lang.org/",
+    description_de: """
+    Im Moment meine Programmiersprache Nummer 1 (wenn ich sie nutzen kann). Sie bringt die Stabilität und das Aktorenmodell der Erlang BEAM VM zusammen mit einer modernen,
+    einfach verständlichen funktionalen Programmierung. Und dank dem Ökosystem bietet sie einige grossartige Anbindungen wie das Phoenixframework oder Rustler. All das dann
+     auch noch kombiniert mit einer grossartigen Community.
+    """,
+    description_en: """
+    My favourite at the time being. The stability and concurrency of the BEAM combined with a modern, easy to handle functional programming language.
+    And for hardware near or system near programming, I can use Rustler with Rust. And all this combined with one of the best communities I know.
+    """
+  })
+
+  Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Scala",
   title_en: "Scala",
-  position: 2,
+  position: 4,
   href: "https://www.scala-lang.org/",
   description_de: """
   Funktionale Programmierung auf der JVM, deutlich verbesserte Standard-Library gegenüber Java. Mein JVM-Favorit.
   """,
   description_en: """
   My favourite programming language on the JVM with better standard library than Java and most important: functional programming.
-  """
-})
-
-Repo.insert!(%Link{
-  link_collection_id: lc1,
-  title_de: "Elixir",
-  title_en: "Elixir",
-  position: 1,
-  href: "https://elixir-lang.org/",
-  description_de: """
-  Im Moment meine Programmiersprache Nummer 1 (wenn ich sie nutzen kann). Sie bringt die Stabilität und das Aktorenmodell der Erlang BEAM VM zusammen mit einer modernen,
-  einfach verständlichen funktionalen Programmierung. Und dank dem Ökosystem bietet sie einige grossartige Anbindungen wie das Phoenixframework oder Rustler. All das dann
-   auch noch kombiniert mit einer grossartigen Community.
-  """,
-  description_en: """
-  My favourite at the time being. The stability and concurrency of the BEAM combined with a modern, easy to handle functional programming language.
-  And for hardware near or system near programming, I can use Rustler with Rust. And all this combined with one of the best communities I know.
   """
 })
 
@@ -134,7 +134,7 @@ Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Python",
   title_en: "Python",
-  position: 3,
+  position: 6,
   href: "https://www.scala-lang.org/",
   description_de: """
   Eine der am einfachsten zu lernenden Programmiersprachen und aus dem ML/AI Bereich nicht wegzudenken.
@@ -148,7 +148,7 @@ Repo.insert!(%Link{
   link_collection_id: lc1,
   title_de: "Go",
   title_en: "Go",
-  position: 4,
+  position: 3,
   href: "https://go.dev/",
   description_de: """
   Ebenfalls einfach zu lernende Programmiersprache, hochperformant mit sehr gutem Support für Nebenläufigkeit und einer sehr guten Standard-Library.
@@ -173,10 +173,10 @@ Repo.insert!(%Link{
 })
 
 Repo.insert!(%Link{
-  id: lc1,
+  link_collection_id: lc1,
   title_de: "Java",
   title_en: "Java",
-  position: 6,
+  position: 7,
   href: "https://dev.java/",
   description_de: """
   20 Jahre alte Programmiersprache, die die Welt der Programmierung eroberte und sehr lange dominierte. Nicht mehr wegzudenken.
@@ -197,7 +197,7 @@ Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Toggl",
   title_en: "Toggl",
-  position: 0,
+  position: 3,
   href: "https://toggl.com",
   description_de: """
   Als Freiberufler ist es wichtig, dass ich meine Zeit im Blick behalte, sonst werde ich nicht bezahlt. Ich habe eine Vielzahl von Zeiterfassungsprogrammen ausprobiert, aber am Ende bin ich immer wieder zu Toggl zurückgekehrt.
@@ -211,7 +211,7 @@ Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Todoist",
   title_en: "Todoist",
-  position: 1,
+  position: 2,
   href: "https://toggl.com",
   description_de: """
   Als Fan von Gettings-Things-Done mag ich diese einfach zu bedienende TODO-App, die ich auf allen meinen Geräten installiert habe.
@@ -225,7 +225,7 @@ Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Trello",
   title_en: "Trello",
-  position: 2,
+  position: 4,
   href: "https://trello.com",
   description_de: """
   Ich bin ehrlich gesagt kein großer Jira-Fan. Trello hingegen ist wirklich gut für die Arbeit in kleinen Teams oder auch für kleinere private Projekte.
@@ -239,7 +239,7 @@ Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "DEV.to",
   title_en: "DEV.to",
-  position: 3,
+  position: 1,
   href: "https://dev.to",
   description_de: """
   Mein Lieblingsblog als Software-Entwickler, und er ist kostenlos.
@@ -253,7 +253,7 @@ Repo.insert!(%Link{
   link_collection_id: lc2,
   title_de: "Medium",
   title_en: "Medium",
-  position: 4,
+  position: 0,
   href: "https://medium.com",
   description_de: """
   Ein weiterer sehr guter Blog für Entwickler, leider nicht kostenlos.

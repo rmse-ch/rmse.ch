@@ -43,6 +43,6 @@ defmodule Rmse.Links do
   defp order_collections(c), do: {c.position, c.id}
 
   defp filter_and_order_links(c) do
-    %LinkCollection{c | links: Enum.filter(c.links, fn a -> a.active end)}
+    %LinkCollection{c | links: c.links |> Enum.filter(fn a -> a.active end) |> Enum.sort_by(&({&1.position, &1.id}))}
   end
 end
