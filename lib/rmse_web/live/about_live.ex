@@ -23,8 +23,8 @@ defmodule RmseWeb.AboutLive do
 
     <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
       <p>
-        Ich liebe Computer, seit ich das erste Mal ein Auge auf sie geworfen habe. Zu Beginn
-        mit einem Fokus auf Hardware bin ich schnell zur Softwareentwicklung übergegangen
+        Seit ich das erste Mal ein Auge auf Computer geworfen habe, sind sie aus meinem Leben nicht mehr wegzudenken.
+        Zu Beginn mit einem Fokus auf Hardware bin ich schnell zur Softwareentwicklung übergegangen
         und konnte nie genug über neue Ideen in der Softwareentwicklung
         oder Software-Architektur lernen.
       </p>
@@ -33,7 +33,7 @@ defmodule RmseWeb.AboutLive do
         Heutzutage beschäftige ich mich hauptsächlich mit der Entwicklung von Software mit DDD und idealerweise
         mit einer Event-Driven Architektur. Meiner persönlichen Erfahrung nach führt das Entkoppeln
         verschiedener Teile eines Monolithen in kleinere Teile (Microservices / Self Contained Services),
-        welche asynchron mittels Business-Events miteinander kommunizieren langfristig zu einer
+        welche asynchron mittels Business-Events miteinander kommunizieren, langfristig zu einer
         leichter wartbaren Software. Selbstverständlich sind dabei die Initialkosten nicht zu unterschätzen,
         aber sie helfen auch dabei, die Business Domäne besser zu verstehen.
       </p>
@@ -48,8 +48,8 @@ defmodule RmseWeb.AboutLive do
         Meine ersten Projekte in der professionellen Softwareentwicklung waren im Bereich
         der OOP, hauptsächlich mit Java. Ich programmierte Java in Kombination mit den üblichen
         großen Frameworks (JavaEE, Spring) und manchmal mit kleineren Frameworks
-        (Micronaut, Vaadin, Wicket). Java war zu einfach die Programmiersprache,
-        die mir von allen Programmiersprachen dieser Zeit am besten gefiel.
+        (Micronaut, Vaadin, Wicket). Java war einfach die Programmiersprache,
+        die mir von allen Programmiersprachen zu dieser Zeit am besten gefiel.
       </p>
 
       <p>
@@ -63,7 +63,7 @@ defmodule RmseWeb.AboutLive do
         kennen
         und dies eröffnete eine völlig neue Welt. Funktionale Programmierung und vor allem
         saubere unveränderliche Objekte auf der einen Seite, das Akka-Akteursmodell auf der anderen Seite
-        und das Ganze komplettiert durch das gewaltige Ökosystem der Java-Bibliotheken - das war phantastisch.
+        und das Ganze komplettiert durch das gewaltige Ökosystem der Java-Bibliotheken - das war fantastisch.
         Die Lernkurve ist zwar höher als bei reinem Java, aber die mit diesem Stack entwickelten Programme
         waren sauberer, später leichter zu verstehen und einfacher zu warten. Aber es gab natürlich einen Haken:
         Scala ist nicht sehr populär (zumindest in der Schweiz).
@@ -85,8 +85,8 @@ defmodule RmseWeb.AboutLive do
           Phoenix Framework
         </.link>.
         Endlich bin ich in der Lage zu sein, Fullstack-Entwicklung zu betreiben, ohne 2 separate Sprachen oder einen seltsamen Transpiler
-        verwenden zu müssen, und dabei die Stabilität der auf Akteuren basierenden (sehr alten) Erlang Virtual Machine (BEAM)
-        zu erhalten, ist eine wunderbare Erfahrung. Etwas, das ich in dieser Form bei anderen Sprachen immer noch vermisste.
+        verwenden zu müssen, und dabei die Stabilität der auf Aktoren basierenden (sehr alten) Erlang Virtual Machine (BEAM)
+        zu erhalten, ist eine wunderbare Erfahrung. Etwas, das ich in dieser Form bei anderen Sprachen immer noch vermisse.
       </p>
     </div>
     """
@@ -100,8 +100,8 @@ defmodule RmseWeb.AboutLive do
 
     <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
       <p>
-        I've loved computers from when I first met an eye on then. Beginning
-        with hardware understanding I quickly shifted to software development
+        Since the moment, computers entered my life, I could not be without them anymore.
+        Beginning with hardware understanding I quickly shifted to software development
         and could never learn enough about new ideas in software engineering
         or software architecture.
       </p>
@@ -124,8 +124,8 @@ defmodule RmseWeb.AboutLive do
         My first projects in professional software development were in the field
         of OOP, mainly with Java. I programmed Java combined with the normal
         big frameworks (JavaEE, Spring) and sometimes with smaller frameworks
-        (Micronaut, Vaadin, Wicket). Java at this time was a programming language
-        that of all the programming languages around at this time, I liked most.
+        (Micronaut, Vaadin, Wicket). Java at this time was the programming language
+        that I liked most.
       </p>
 
       <p>
@@ -139,7 +139,7 @@ defmodule RmseWeb.AboutLive do
         and this opened a complete new world. Functional Programming and especially
         clean immutable objects on one side, the Akka actor model on the other side
         while having the full ecosystem of Java Libraries was something I admired.
-        While the learning curve is higher than pure Java, the program developed with
+        While the learning curve is higher than pure Java, the programs developed with
         this stack were cleaner, easier to understand later on and easier to maintain.
         There was naturally a catch though: Scala is not very popular (at least in Switzerland).
       </p>
