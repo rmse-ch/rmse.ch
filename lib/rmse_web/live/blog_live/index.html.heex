@@ -52,7 +52,10 @@
               <%= article.description %>
             </p>
             <p class="mt-2 text-sm text-gray-500">
-              <%= gettext("Created at") %>: <b><.format_datetime datetime={article.created_at} /></b><span class="text-gray-300 dark:text-gray-700">, <%= gettext("last updated at") %>: <.format_datetime datetime={article.updated_at} /></span>
+              <%= gettext("Created at") %>:
+              <b><.format_datetime datetime={article.created_at} /></b><span class="text-gray-300 dark:text-gray-700">, <%= gettext("last updated at") %>: <.format_datetime datetime={
+                article.updated_at
+              } /></span>
             </p>
           </div>
           <span

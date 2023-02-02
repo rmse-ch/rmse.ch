@@ -1,6 +1,7 @@
 defmodule RmseWeb.BlogLive.Show do
   require Logger
 
+  alias Rmse.Blog.Article
   alias Rmse.Blog
   use RmseWeb, :live_view
 
@@ -21,18 +22,29 @@ defmodule RmseWeb.BlogLive.Show do
   end
 
   defp assign_slug(socket, %{"slug" => slug}) do
-    article = Blog.get_article_by_slug(slug)
+    update_socket_with_article(socket, slug, Blog.get_article_by_slug(slug))
+  end
 
+  defp update_socket_with_article(socket, slug, nil) do
+    socket
+    |> assign(:slug, slug)
+    |> assign(:article, nil)
+    |> assign_content(nil)
+    |> assign(:page_title, slug)
+  end
+
+  defp update_socket_with_article(socket, slug, article) do
     socket
     |> assign(:slug, slug)
     |> assign(:article, article)
-    |> assign_content(article.content)
+    |> assign_content(article)
     |> assign(:page_title, article.title)
   end
 
-  def assign_content(socket, nil), do: socket
+  def assign_content(socket, nil), do: assign(socket, :content, nil)
+  def assign_content(socket, %Article{content: nil}), do: assign(socket, :content, nil)
 
-  def assign_content(socket, markdown) do
+  def assign_content(socket, %Article{content: markdown}) do
     case Earmark.as_html(markdown,
            escape: false,
            inner_html: true,
@@ -67,11 +79,4 @@ defmodule RmseWeb.BlogLive.Show do
       _ -> classify(tag, tl, [hd | acc])
     end
   end
-
-  # defp tailwindify({"h1", attrs, inner, map}), do: {"h1", [{"class", "text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl mt-6 mb-6"} | attrs], inner, map}
-  # defp tailwindify({"h2", attrs, inner, map}), do: {"h2", [{"class", "text-xl font-semibold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl mt-4 mb-4"} | attrs], inner, map}
-
-  # defp tailwindify({"ol", attrs, inner, map}), do: {"div", [], [{"ol", [{"class", "list-decimal list-outside"} | attrs], inner, map}], %{}}
-  # defp tailwindify({"ul", attrs, inner, map}), do: {"div", [], [{"ul", [{"class", "list-disc list-outside"} | attrs], inner, map}], %{}}
-  # defp tailwindify({"img", attrs, inner, map}), do: {"img", [{"class", "object-contain"} | attrs], inner, map}
 end

@@ -236,7 +236,6 @@ defmodule RmseWeb.RmseComponents do
     ~H"<span><%= @formatted_datetime %></span>"
   end
 
-
   def assign_request_path(socket, uri) do
     assign_new(socket, :request_path, fn -> URI.parse(uri).path end)
   end

@@ -19,11 +19,13 @@ defmodule Rmse.Blog do
   """
   def list_articles(page \\ 0) do
     query =
-      from a in Article,
+      from(a in Article,
         where: a.published,
         order_by: [desc: a.created_at],
-        limit: 21, # trick: I show 20 but if I can load 21, I know there are more records
+        # trick: I show 20 but if I can load 21, I know there are more records
+        limit: 21,
         offset: ^page * 20
+      )
 
     Repo.all(query)
   end
@@ -39,13 +41,28 @@ defmodule Rmse.Blog do
   """
   def list_newest_articles do
     query =
-      from a in Article,
+      from(a in Article,
         where: a.published,
         order_by: [desc: a.created_at],
         limit: 3
+      )
 
     Repo.all(query)
   end
+
+  @doc """
+  Gets a single article.
+
+  ## Examples
+
+      iex> get_article(123)
+      %Article{}
+
+      iex> get_article(456)
+      nil
+
+  """
+  def get_article(id), do: Repo.get(Article, id)
 
   @doc """
   Gets a single article.
@@ -65,8 +82,6 @@ defmodule Rmse.Blog do
 
   @doc """
   Gets a single article by using the slug.
-
-  Raises `Ecto.NoResultsError` if the Article does not exist.
 
   ## Examples
 
@@ -129,6 +144,42 @@ defmodule Rmse.Blog do
   """
   def delete_article(%Article{} = article) do
     Repo.delete(article)
+  end
+
+  @doc """
+  Publishes an article.
+
+  ## Examples
+
+      iex> publish_article!(article)
+      %Article{published: true}
+
+      iex> publish_article!(article)
+      ** (Ecto.NoResultsError)
+
+  """
+  def publish_article!(%Article{} = article) do
+    article
+    |> Article.changeset(%{published: true})
+    |> Repo.update!()
+  end
+
+  @doc """
+  Unpublish an article.
+
+  ## Examples
+
+      iex> unpublish_article!(article)
+      %Article{published: false}
+
+      iex> unpublish_article!(article)
+      ** (Ecto.NoResultsError)
+
+  """
+  def unpublish_article!(%Article{} = article) do
+    article
+    |> Article.changeset(%{published: false})
+    |> Repo.update!()
   end
 
   @doc """

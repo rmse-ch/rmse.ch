@@ -77,3 +77,6 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+# Bearer Token for Strapi
+config :rmse, strapi_token: "12345"

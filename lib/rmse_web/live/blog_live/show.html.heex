@@ -1,27 +1,40 @@
 <.container class="mt-12 sm:mt-24">
-  <div class="md:flex md:items-center md:justify-between">
+  <div :if={!@article}>
+    <h2 class="text-2xl font-bold leading-7 text-gray-900 dark:text-white sm:truncate sm:text-3xl sm:tracking-tight">
+      Artikel konnte nicht gefunden werden!
+    </h2>
+  </div>
+  <div :if={@article} class="md:flex md:items-center md:justify-between">
     <div class="min-w-0 flex-1">
       <h2 class="text-2xl font-bold leading-7 text-gray-900 dark:text-white sm:truncate sm:text-3xl sm:tracking-tight">
-        <%= @article.title %>
+        <span :if={!@article.published}>(DRAFT) </span><%= @article.title %>
       </h2>
     </div>
     <div class="mt-4 flex md:mt-0 md:ml-4">
-    <span class="isolate inline-flex rounded-md shadow-sm">
-      <.link :if={@article.medium_url} href={@article.medium_url}
-        class="relative inline-flex items-center rounded-l-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-400 px-4 py-2 text-sm font-medium text-gray-700 dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
-      >
-        <img src={~p"/images/logos/logo_medium_black.svg"} alt="Medium" class="h-10 object-contain" />
-      </.link>
-      <.link :if={@article.dev_to_url} href={@article.dev_to_url}
-        class="relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-400 px-4 py-2 text-sm font-medium text-gray-700 dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
-      >
-        <img src={~p"/images/logos/logo_dev.svg"} alt="dev.to" class="h-10 object-contain" />
-      </.link>
-    </span>
+      <span class="isolate inline-flex rounded-md shadow-sm">
+        <.link
+          :if={@article.medium_url}
+          href={@article.medium_url}
+          class="relative inline-flex items-center rounded-l-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-400 px-4 py-2 text-sm font-medium text-gray-700 dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+        >
+          <img
+            src={~p"/images/logos/logo_medium_black.svg"}
+            alt="Medium"
+            class="h-10 object-contain"
+          />
+        </.link>
+        <.link
+          :if={@article.dev_to_url}
+          href={@article.dev_to_url}
+          class="relative -ml-px inline-flex items-center rounded-r-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-400 px-4 py-2 text-sm font-medium text-gray-700 dark:text-white shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+        >
+          <img src={~p"/images/logos/logo_dev.svg"} alt="dev.to" class="h-10 object-contain" />
+        </.link>
+      </span>
     </div>
   </div>
 
-  <div class="mt-6 text-base text-zinc-600 dark:text-zinc-300">
+  <div :if={@content} class="mt-6 text-base text-zinc-600 dark:text-zinc-300">
     <p><%= raw(@content) %></p>
   </div>
 </.container>

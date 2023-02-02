@@ -2,6 +2,7 @@ defmodule Rmse.Blog.Article do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @primary_key {:id, :id, autogenerate: false}
   schema "articles" do
     field :content, :string
     field :description, :string
@@ -25,6 +26,7 @@ defmodule Rmse.Blog.Article do
   def changeset(article, attrs) do
     article
     |> cast(attrs, [
+      :id,
       :title,
       :content,
       :tags,
@@ -39,6 +41,7 @@ defmodule Rmse.Blog.Article do
       :updated_at
     ])
     |> validate_required([
+      :id,
       :title,
       :content,
       :tags,

@@ -51,6 +51,7 @@ defmodule Rmse.BlogTest do
 
     test "create_article/1 with valid data creates a article" do
       valid_attrs = %{
+        id: 99,
         content: "some content",
         created_at: ~U[2023-01-31 10:22:00Z],
         description: "some description",
