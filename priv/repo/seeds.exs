@@ -48,7 +48,7 @@ Repo.insert!(%Experience{
   company: "CompuGroup Medical Schweiz AG",
   job_title_de: "Software Engineer",
   job_title_en: "Software Engineer",
-  logo_url: "logo_compugroup.jpg",
+  logo_url: "logo_compugroup.png",
   start_year: 2010,
   end_year: 2011
 })
