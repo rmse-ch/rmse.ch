@@ -16,67 +16,34 @@ msgstr "Aktionen"
 msgid "close"
 msgstr "schließen"
 
-#: lib/rmse_web/live/about_live.ex:13
-msgid "About - Rico Metzger"
-msgstr "Über - Rico Metzger"
-
-#: lib/rmse_web/live/wip_live.ex:21
-msgid "Apps - Rico Metzger"
-msgstr "Anwendungen - Rico Metzger"
-
-#: lib/rmse_web/live/blog_live/index.ex:18
-#: lib/rmse_web/live/wip_live.ex:17
-msgid "Blog - Rico Metzger"
-msgstr "Blog - Rico Metzger"
-
-#: lib/rmse_web/live/wip_live.ex:22
-msgid "Contact - Rico Metzger"
-msgstr "Ansprechpartner - Rico Metzger"
-
-#: lib/rmse_web/live/wip_live.ex:19
-msgid "Cookies - Rico Metzger"
-msgstr "Cookies - Rico Metzger"
-
-#: lib/rmse_web/live/about_live.html.heex:30
+#: lib/rmse_web/live/about_live.html.heex:97
 #: lib/rmse_web/live/index_live.html.heex:20
 msgid "Follow on GitHub"
 msgstr "Auf GitHub folgen"
 
-#: lib/rmse_web/live/about_live.html.heex:25
+#: lib/rmse_web/live/about_live.html.heex:92
 #: lib/rmse_web/live/index_live.html.heex:16
 msgid "Follow on Instagram"
 msgstr "Auf Instagram folgen"
 
-#: lib/rmse_web/live/about_live.html.heex:35
+#: lib/rmse_web/live/about_live.html.heex:102
 #: lib/rmse_web/live/index_live.html.heex:25
 msgid "Follow on LinkedIn"
 msgstr "Auf LinkedIn folgen"
 
-#: lib/rmse_web/live/about_live.html.heex:20
+#: lib/rmse_web/live/about_live.html.heex:87
 #: lib/rmse_web/live/index_live.html.heex:10
 msgid "Follow on Twitter"
 msgstr "Auf Twitter folgen"
-
-#: lib/rmse_web/live/links_live.ex:19
-msgid "Links - Rico Metzger"
-msgstr "Links - Rico Metzger"
 
 #: lib/rmse_web/live/links_live.html.heex:4
 msgid "Links that I use myself"
 msgstr "Links, die ich selbst verwende"
 
-#: lib/rmse_web/live/motorcycle_live.ex:13
-msgid "Motorcycle - Rico Metzger"
-msgstr "Motorrad - Rico Metzger"
-
 #: lib/rmse_web/live/blog_live/index.html.heex:37
 #: lib/rmse_web/live/index_live.html.heex:41
 msgid "No blog entries."
 msgstr "Keine Blogeinträge."
-
-#: lib/rmse_web/live/wip_live.ex:20
-msgid "Projects - Rico Metzger"
-msgstr "Projekte - Rico Metzger"
 
 #: lib/rmse_web/live/index_live.html.heex:4
 msgid "Software engineer, Freelancer and Motorcyclist."
@@ -97,37 +64,30 @@ msgstr "In Arbeit"
 
 #: lib/rmse_web/live/wip_live.html.heex:9
 msgid "wip.full.text"
-msgstr "Leider ist diese Seite noch in Arbeit. Das Ziel ist es, diese Homepage Ende Januar 2023 komplett fertiggestellt zu haben. Kommen Sie also bald zurück, um den fehlenden Inhalt auch noch zu finden."
+msgstr "Leider ist diese Seite noch in Arbeit. Das Ziel ist es, diese Homepage bald komplett fertiggestellt zu haben. Kommen Sie also bald zurück, um den fehlenden Inhalt auch noch zu finden."
 
-#: lib/rmse_web/components/footer.ex:30
+#: lib/rmse_web/components/footer.ex:29
 #: lib/rmse_web/components/header.ex:83
-#: lib/rmse_web/components/header.ex:142
+#: lib/rmse_web/components/header.ex:147
 msgid "About"
-msgstr "Über"
+msgstr "Über mich"
 
-#: lib/rmse_web/components/footer.ex:38
-#: lib/rmse_web/components/header.ex:91
-#: lib/rmse_web/components/header.ex:158
+#: lib/rmse_web/live/wip_live.ex:20
 msgid "Apps"
 msgstr "Apps"
 
 #: lib/rmse_web/components/layouts/app.html.heex:20
 msgid "Attempting to reconnect"
-msgstr "Versuche Verbindung wiederhezustellen"
+msgstr "Versuche Verbindung wiederherzustellen"
 
-#: lib/rmse_web/components/footer.ex:34
-#: lib/rmse_web/components/header.ex:87
-#: lib/rmse_web/components/header.ex:150
+#: lib/rmse_web/components/footer.ex:31
+#: lib/rmse_web/components/header.ex:85
+#: lib/rmse_web/components/header.ex:151
+#: lib/rmse_web/live/blog_live/index.ex:18
 msgid "Blog"
 msgstr "Blog"
 
-#: lib/rmse_web/live/wip_live.ex:18
-msgid "Conditions - Rico Metzger"
-msgstr "AGB - Rico Metzger"
-
-#: lib/rmse_web/components/footer.ex:40
-#: lib/rmse_web/components/header.ex:93
-#: lib/rmse_web/components/header.ex:162
+#: lib/rmse_web/live/wip_live.ex:21
 msgid "Contact"
 msgstr "Kontakt"
 
@@ -135,27 +95,24 @@ msgstr "Kontakt"
 msgid "Error!"
 msgstr "Fehler!"
 
-#: lib/rmse_web/components/footer.ex:42
-#: lib/rmse_web/components/header.ex:95
-#: lib/rmse_web/components/header.ex:166
+#: lib/rmse_web/components/footer.ex:43
+#: lib/rmse_web/components/header.ex:100
+#: lib/rmse_web/components/header.ex:178
+#: lib/rmse_web/live/links_live.ex:19
 msgid "Links"
 msgstr "Links"
 
-#: lib/rmse_web/components/footer.ex:32
-#: lib/rmse_web/components/header.ex:85
-#: lib/rmse_web/components/header.ex:146
+#: lib/rmse_web/components/footer.ex:39
+#: lib/rmse_web/components/header.ex:94
+#: lib/rmse_web/components/header.ex:168
+#: lib/rmse_web/live/motorcycle_live.ex:13
 msgid "Motorcycle"
 msgstr "Motorrad"
 
-#: lib/rmse_web/components/footer.ex:36
-#: lib/rmse_web/components/header.ex:89
-#: lib/rmse_web/components/header.ex:154
+#: lib/rmse_web/live/skills_live.ex:46
+#: lib/rmse_web/live/wip_live.ex:19
 msgid "Projects"
 msgstr "Projekte"
-
-#: lib/rmse_web/components/layouts/root.html.heex:9
-msgid "Rico Metzger - Software Engineer, Freelancer and Motorcyclist"
-msgstr "Rico Metzger - Software-Ingenieur, Freiberufler und Motorradfahrer"
 
 #: lib/rmse_web/components/layouts/app.html.heex:9
 msgid "Success!"
@@ -163,7 +120,7 @@ msgstr "Erfolgreich!"
 
 #: lib/rmse_web/components/layouts/app.html.heex:14
 msgid "We can't find the internet"
-msgstr "Wir können das Internet nicht finden"
+msgstr "Leider ist das Internet unauffindbar"
 
 #: lib/rmse_web/live/blog_live/index.html.heex:14
 msgid "You can find my blog also under"
@@ -177,19 +134,19 @@ msgstr "und"
 msgid "Blog by Rico Metzger"
 msgstr "Blog von Rico Metzger"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:100
+#: lib/rmse_web/live/blog_live/index.html.heex:103
 msgid "Next"
-msgstr "Weiter"
+msgstr "Nächste"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:78
+#: lib/rmse_web/live/blog_live/index.html.heex:81
 msgid "Pagination"
 msgstr "Paginierung"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:92
+#: lib/rmse_web/live/blog_live/index.html.heex:95
 msgid "Previous"
 msgstr "Vorherige"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:82
+#: lib/rmse_web/live/blog_live/index.html.heex:85
 msgid "Showing page "
 msgstr "Zeige Seite "
 
@@ -221,7 +178,63 @@ msgstr "Artikel lesen"
 msgid "Work"
 msgstr "Berufliche Laufbahn"
 
-#: lib/rmse_web/live/blog_live/index.html.heex:55
+#: lib/rmse_web/live/blog_live/index.html.heex:56
 msgid "last updated at"
 msgstr "zuletzt aktualisiert am"
+
+#: lib/rmse_web/live/about_live.ex:13
+#: lib/rmse_web/live/about_live.html.heex:14
+msgid "About me"
+msgstr "Über mich"
+
+#: lib/rmse_web/live/skills_live.html.heex:29
+msgid "Event Driven Architecture"
+msgstr "Ereignisgesteuerte Architektur"
+
+#: lib/rmse_web/live/skills_live.html.heex:59
+msgid "Functional Programming Languages"
+msgstr "Funktionale Programmiersprachen"
+
+#: lib/rmse_web/live/motorcycle_live.html.heex:21
+msgid "History of my motorcycles"
+msgstr "Geschichte meiner Motorräder"
+
+#: lib/rmse_web/live/skills_live.html.heex:107
+msgid "Object Oriented Programming Languages"
+msgstr "Objektorientierte Programmiersprachen"
+
+#: lib/rmse_web/live/motorcycle_live.html.heex:3
+msgid "Rico Metzger, the motorcyclist"
+msgstr "Rico Metzger, der Motorradfahrer"
+
+#: lib/rmse_web/live/skills_live.html.heex:6
+msgid "Software Architecture"
+msgstr "Softwarearchitektur"
+
+#: lib/rmse_web/live/skills_live.html.heex:3
+msgid "Technical Skills"
+msgstr "Technische Fähigkeiten"
+
+#: lib/rmse_web/components/footer.ex:33
+#: lib/rmse_web/components/header.ex:86
+#: lib/rmse_web/components/header.ex:155
+#: lib/rmse_web/live/skills_live.ex:13
+msgid "Skills"
+msgstr "Kenntnisse"
+
+#: lib/rmse_web/live/skills_live.html.heex:253
+msgid "Agile Software Development"
+msgstr "Agile Software Entwicklung"
+
+#: lib/rmse_web/live/skills_live.html.heex:201
+msgid "Others"
+msgstr "Diverses"
+
+#: lib/rmse_web/live/wip_live.ex:17
+msgid "Conditions"
+msgstr "Konditionen"
+
+#: lib/rmse_web/components/layouts/root.html.heex:9
+msgid "Software Engineer, Freelancer and Motorcyclist"
+msgstr "Softwareentwickler, Freelancer und Motorrad-Fahrer"
 
