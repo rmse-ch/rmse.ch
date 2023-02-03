@@ -220,7 +220,7 @@ msgstr "Technische Fähigkeiten"
 #: lib/rmse_web/components/header.ex:155
 #: lib/rmse_web/live/skills_live.ex:13
 msgid "Skills"
-msgstr "Kenntnisse"
+msgstr "Fähigkeiten"
 
 #: lib/rmse_web/live/skills_live.html.heex:253
 msgid "Agile Software Development"
