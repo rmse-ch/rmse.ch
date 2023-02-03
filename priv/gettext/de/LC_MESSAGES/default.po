@@ -70,7 +70,7 @@ msgstr "Leider ist diese Seite noch in Arbeit. Das Ziel ist es, diese Homepage b
 #: lib/rmse_web/components/header.ex:83
 #: lib/rmse_web/components/header.ex:147
 msgid "About"
-msgstr "Über mich"
+msgstr "Über"
 
 #: lib/rmse_web/live/wip_live.ex:20
 msgid "Apps"
