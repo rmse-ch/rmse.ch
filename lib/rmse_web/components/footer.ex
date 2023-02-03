@@ -20,8 +20,7 @@ defmodule RmseWeb.Footer do
 
   def footer(assigns) do
     ~H"""
-    <footer class="mt-32">
-      <%= Gettext.get_locale(RmseWeb.Gettext) %>
+    <footer class="mt-16 lg:mt-32">
       <.outer_container>
         <div class="border-t border-zinc-100 pt-10 pb-16 dark:border-zinc-700/40">
           <.inner_container>

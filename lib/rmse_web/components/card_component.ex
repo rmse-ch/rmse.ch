@@ -16,12 +16,13 @@ defmodule RmseWeb.CardComponent do
     """
   end
 
+  attr :class, :string, required: false, default: ""
   attr :rest, :global
   slot :inner_block
 
   def card(assigns) do
     ~H"""
-    <div class="group relative flex flex-col items-start">
+    <div class={"group relative flex flex-col items-start   #{@class}"} {@rest}>
       <%= render_slot(@inner_block) %>
     </div>
     """
@@ -33,7 +34,7 @@ defmodule RmseWeb.CardComponent do
 
   def card_link(assigns) do
     ~H"""
-    <div class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+    <div class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-50 transition group-hover:scale-100 group-hover:opacity-100 bg-zinc-200 dark:bg-zinc-700/50 sm:-inset-x-6 sm:rounded-2xl" />
     <.link href={@href} {@rest}>
       <span class="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
       <span class="relative z-10"><%= render_slot(@inner_block) %></span>
@@ -41,7 +42,7 @@ defmodule RmseWeb.CardComponent do
     """
   end
 
-  attr :href, :string, required: false
+  attr :href, :string, required: false, default: nil
   attr :rest, :global
   slot :inner_block
 

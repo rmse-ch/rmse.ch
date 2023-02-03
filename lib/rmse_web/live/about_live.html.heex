@@ -1,5 +1,5 @@
 <.container class="mt-16 sm:mt-32">
-  <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+  <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-3 lg:grid-rows-[auto_1fr] lg:gap-y-12">
     <div class="lg:pl-20">
       <img
         src={~p"/images/portrait.png"}
@@ -9,8 +9,75 @@
       />
     </div>
 
-    <div class="lg:order-first lg:row-span-2">
-      <.about_content language={@language} />
+    <div class="lg:order-first lg:row-span-2 lg:col-span-2">
+      <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+        <%= gettext("About me") %>
+      </h1>
+
+      <div :if={@language == "de"} class="text-base text-zinc-600 dark:text-zinc-400">
+        <p class="mt-6">
+          Ich bin ein enthusiastischer Software-Entwickler, seit beinahe 20 Jahren im Geschäft.
+          In all dieser Zeit habe ich mich darauf fokussiert, mein Wissen rund um Software-Entwicklung
+          zu erweitern, neue Technologien und Sprachen zu erlernen (wenn möglich ohne gleich allen Hypes zu erliegen)
+          und dann in Projekten praktisch anzuwenden.
+        </p>
+        <p class="mt-6">
+          Seit beinahe 10 Jahren arbeite ich als Freelancer in diversen, immer wieder interessanten Projekten.
+          Meine Neugierde zu sehen, in welchen Geschäftsbereichen man Software nutzbringend einsetzen kann, ist
+          noch lange nicht gestillt und so suche ich immer wieder nach neuen Herausforderungen, Software zielbringend für
+          Kunden zu entwickeln.
+        </p>
+        <p class="mt-6">
+          Freelancer bin ich primär, weil ich gerne selber die Kontrolle darüber habe, wohin ich mich
+          entwickle, welche Technologien ich für mich selber forcieren möchte und weil ich immer noch die Energie habe,
+          immer wieder neue Aufgaben zu suchen und diese Abwechslung auch liebe.
+        </p>
+        <p class="mt-6">
+          Meine wichtigsten Soft-Skills:
+          <ol class="list-disc list-inside">
+            <li>Teamfähigkeit</li>
+            <li>
+              Pragmatismus à la Einstein:
+              <blockquote class="indent-8 italic text-gray-700 dark:text-gray-300">
+                " Keep it as simple as possible, but not simpler. "
+              </blockquote>
+            </li>
+            <li>Methodische Problemlösungen</li>
+          </ol>
+        </p>
+      </div>
+
+      <div :if={@language != "de"} class="text-base text-zinc-600 dark:text-zinc-400">
+        <p class="mt-6">
+          I am an enthusiastic software developer, in business for almost 20 years.
+          In all that time, I have focused on expanding my knowledge of software development, learning
+          new technologies and languages (if possible without succumbing to all the hype) and then applying them
+          practically in projects.
+        </p>
+        <p class="mt-6">
+          For almost 10 years I have been working as a freelancer in various, always interesting projects.
+          My curiosity to see in which business areas software can be used beneficially is far from satisfied and
+          so I am always looking for new challenges to develop software for clients.
+        </p>
+        <p class="mt-6">
+          I'm a freelancer primarily because I like to be in control of where I'm going,
+          what technologies I want to push for myself and because I still have the energy to keep looking for new tasks
+          and also love this variety.
+        </p>
+        <p class="mt-6">
+          My most important soft skills:
+          <ol class="list-disc list-inside">
+            <li>Ability to work as part of a team</li>
+            <li>
+              Pragmatism à la Einstein:
+              <blockquote class="indent-8 italic text-gray-700 dark:text-gray-300">
+                " Keep it as simple as possible, but not simpler. "
+              </blockquote>
+            </li>
+            <li>Methodical problem solving</li>
+          </ol>
+        </p>
+      </div>
     </div>
 
     <div class="lg:pl-20">

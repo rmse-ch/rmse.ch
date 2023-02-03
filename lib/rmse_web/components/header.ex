@@ -9,10 +9,10 @@ defmodule RmseWeb.Header do
 
   use RmseWeb, :verified_routes
 
-  attr :rest, :global
+  attr(:rest, :global)
 
-  attr :href, :string, required: true
-  slot :inner_block, doc: "the optional inner block that renders the icon"
+  attr(:href, :string, required: true)
+  slot(:inner_block, doc: "the optional inner block that renders the icon")
 
   def mobile_nav_item(assigns) do
     ~H"""
@@ -36,8 +36,8 @@ defmodule RmseWeb.Header do
     |> JS.hide(to: "#mobile-overlay")
   end
 
-  attr :class, :string, required: false, default: ""
-  attr :rest, :global
+  attr(:class, :string, required: false, default: "")
+  attr(:rest, :global)
 
   def mobile_navigation(assigns) do
     ~H"""
@@ -82,13 +82,14 @@ defmodule RmseWeb.Header do
           <ul class="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
             <.mobile_nav_item href={~p"/about"}><%= gettext("About") %></.mobile_nav_item>
 
-            <.mobile_nav_item href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.mobile_nav_item>
-
             <.mobile_nav_item href={~p"/blog"}><%= gettext("Blog") %></.mobile_nav_item>
+            <.mobile_nav_item href={~p"/skills"}><%= gettext("Skills") %></.mobile_nav_item>
 
             <.mobile_nav_item href={~p"/projects"}><%= gettext("Projects") %></.mobile_nav_item>
 
             <.mobile_nav_item href={~p"/apps"}><%= gettext("Apps") %></.mobile_nav_item>
+
+            <.mobile_nav_item href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.mobile_nav_item>
 
             <.mobile_nav_item href={~p"/contact"}><%= gettext("Contact") %></.mobile_nav_item>
 
@@ -100,9 +101,9 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr :navigate, :string, required: true
-  attr :request_path, :string, required: false, default: ""
-  slot :inner_block, doc: "the optional inner block that renders the icon"
+  attr(:navigate, :string, required: true)
+  attr(:request_path, :string, required: false, default: "")
+  slot(:inner_block, doc: "the optional inner block that renders the icon")
 
   def nav_item(assigns) do
     ~H"""
@@ -131,8 +132,8 @@ defmodule RmseWeb.Header do
     end
   end
 
-  attr :rest, :global
-  attr :request_path, :string, required: true
+  attr(:rest, :global)
+  attr(:request_path, :string, required: true)
 
   def desktop_navigation(assigns) do
     ~H"""
@@ -142,20 +143,23 @@ defmodule RmseWeb.Header do
           <%= gettext("About") %>
         </.nav_item>
 
-        <.nav_item navigate={~p"/motorcycle"} request_path={@request_path}>
-          <%= gettext("Motorcycle") %>
-        </.nav_item>
-
         <.nav_item navigate={~p"/blog"} request_path={@request_path}>
           <%= gettext("Blog") %>
         </.nav_item>
 
+        <.nav_item navigate={~p"/skills"} request_path={@request_path}>
+          <%= gettext("Skills") %>
+        </.nav_item>
         <.nav_item navigate={~p"/projects"} request_path={@request_path}>
           <%= gettext("Projects") %>
         </.nav_item>
 
         <.nav_item navigate={~p"/apps"} request_path={@request_path}>
           <%= gettext("Apps") %>
+        </.nav_item>
+
+        <.nav_item navigate={~p"/motorcycle"} request_path={@request_path}>
+          <%= gettext("Motorcycle") %>
         </.nav_item>
 
         <.nav_item navigate={~p"/contact"} request_path={@request_path}>
@@ -170,10 +174,10 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr :class, :string, required: false, default: ""
-  attr :rest, :global
+  attr(:class, :string, required: false, default: "")
+  attr(:rest, :global)
 
-  slot :inner_block
+  slot(:inner_block)
 
   def avatar_container(assigns) do
     ~H"""
@@ -186,9 +190,9 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr :class, :string, required: false, default: ""
-  attr :large, :boolean, required: false, default: false
-  attr :rest, :global
+  attr(:class, :string, required: false, default: "")
+  attr(:large, :boolean, required: false, default: false)
+  attr(:rest, :global)
 
   def avatar(assigns) do
     ~H"""
@@ -204,8 +208,8 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr :request_path, :string, required: true
-  attr :language, :string, default: "en"
+  attr(:request_path, :string, required: true)
+  attr(:language, :string, default: "en")
 
   def header(assigns) do
     ~H"""
@@ -254,9 +258,9 @@ defmodule RmseWeb.Header do
             </div>
 
             <div class="flex flex-1 justify-end md:justify-center">
-              <.mobile_navigation class="pointer-events-auto md:hidden" />
+              <.mobile_navigation class="pointer-events-auto lg:hidden" />
               <.desktop_navigation
-                class="pointer-events-auto hidden md:block"
+                class="pointer-events-auto hidden lg:block"
                 request_path={@request_path}
               />
             </div>

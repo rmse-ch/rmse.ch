@@ -1,0 +1,267 @@
+<.container class="mt-16 sm:mt-32">
+  <h1 class="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-3xl">
+    <%= gettext("Technical Skills") %>
+  </h1>
+
+  <.skill_section title={gettext("Software Architecture")}>
+    <:description :if={@language == "de"}>
+      Während ich von mir selber sage, dass ich kein Software-Architekt bin (und zur Zeit auch nicht werden will),
+      ist es natürlich so, dass ich gewisse Architekturen bevorzuge. Die hier aufgelisteten Architekturen sind solche,
+      bei denen ich mich immer wohlfühle.
+    </:description>
+    <:description :if={@language != "de"}>
+      While I say of myself that I am not a software architect (and don't want to become one at the moment),
+      it is of course the case that I prefer certain architectures. The architectures listed here are ones that
+      I always feel comfortable with.
+    </:description>
+
+    <.skill_card title={gettext("Domain Driven Design")} skill="domain driven design">
+      <div :if={@language == "de"}>
+        In der heutigen Modellierung komplexer Software kaum noch wegzudenken, bin ich persönlich der Meinung, dass es die einzige realistische Methodik ist,
+        bei der die Fachleute mit ihrer Expertise voll in die Software-Entwicklung eingebunden werden können.
+      </div>
+      <div :if={@language != "de"}>
+        Hard to imagine today's modelling of complex software without it, I personally believe that it is the only realistic methodology,
+        in which the expertise of the business professionals can be fully integrated into the software development.
+      </div>
+    </.skill_card>
+
+    <.skill_card title={gettext("Event Driven Architecture")} skill="event driven architecture">
+      <div :if={@language == "de"}>
+        Eine Software-Architektur basierend auf den (geschäftsrelevanten) Ereignissen, erlaubt eine
+        extrem gute Trennung von Zuständigkeiten sowie die Entwicklung von sehr robusten Systemen,
+        welche sich aus Geschäftssicht sehr "natürlich" anfühlen. Mein absoluter Favorit unter den
+        Software-Architekturen für grosse Systeme, aber meistens sehr aufwändig.
+      </div>
+      <div :if={@language != "de"}>
+        A software architecture based on (business-relevant) events allows for an extremely good separation
+        of responsibilities and the development of very robust systems, which feel very "natural" from a
+        business point of view. My absolute favourite among software architectures for large systems,
+        but usually very costly.
+      </div>
+    </.skill_card>
+
+    <.skill_card title={gettext("Microservices")} skill="microservices">
+      <div :if={@language == "de"}>
+        Microservices sollen es ermöglichen, dass man viele kleine, individuelle
+        Komponenten entwickeln kann, die dann zusammenarbeiten, um eine gesamtheitliche
+        Lösung zu erzielen. Bei der Software-Entwicklung mit mehreren Teams kaum noch
+        wegzudenken.
+      </div>
+      <div :if={@language != "de"}>
+        Microservices are individual components (probably developed by diverse teams)
+        which then work together to deliver a solution. Practically always present nowaday
+        if multiple teams are involved
+      </div>
+    </.skill_card>
+  </.skill_section>
+
+  <.skill_section title={gettext("Functional Programming Languages")}>
+    <:description :if={@language == "de"}>
+      Meine heutige bevorzugte Art, Software zu entwickeln. Fokussiert auf kleine
+      Funktionen, die (idealerweise) ohne Seiteneffekte ihre Funktionalität vollbringen.
+      Hat ihre Basis in der Mathematik, ist sehr robust und speziell in grossen Software-
+      Systemen meiner Erfahrung nach deutlich einfacher wartbar.
+    </:description>
+    <:description :if={@language != "de"}>
+      Today my favourite way of developing software. It focuses on small functions
+      that work (ideally) without side effects, and with immutable data structures.
+      Has its definition in the mathematics and in my experience brings better maintenable
+      software system in the long run.
+    </:description>
+
+    <.skill_card title={gettext("Elixir")} skill="elixir">
+      <div :if={@language == "de"}>
+        Mein momentaner Top-Favorit: Elixir ist eine dynamische, funktionale Sprache zur Erstellung skalierbarer und wartbarer Anwendungen.
+      </div>
+      <div :if={@language != "de"}>
+        My current top favourite: Elixir is a dynamic, functional language for building scalable and maintainable applications.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Go")} skill="golang">
+      <div :if={@language == "de"}>
+        Meine liebste "einfache" Programmiersprache: Go. Mit ihr kann man einfache, sichere und skalierbare Systeme aufbauen und sie hat das Potenzial, eine ernsthafte Alternative zu Java zu werden.
+      </div>
+      <div :if={@language != "de"}>
+        My favourite "simple" programming language: Go. You can b uild simple, secure, scalable systems with it and it has the potential to become a serious alternative to Java.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Rust")} skill="rust">
+      <div :if={@language == "de"}>
+        Eine Sprache, die es ermöglicht, zuverlässige und effiziente Software zu erstellen; ich verwende sie hauptsächlich für die Systemprogrammierung (endlich kein C/C++ mehr)
+      </div>
+      <div :if={@language != "de"}>
+        A language empowering everyone to build reliable and efficient software, I use it mainly for system programming (finally no C/C++ anymore)
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Scala")} skill="scala">
+      <div :if={@language == "de"}>
+        Meiner Meinung nach das mächtigste Typsystem in der Java-Welt, außerdem eine wirklich gute funktionale Programmiersprache und für lange Zeit einer meiner Favoriten.
+      </div>
+      <div :if={@language != "de"}>
+        In my opinion the most powerful type system in the Java world, it is also a really good functional programming language and for a long time favourite of mine.
+      </div>
+    </.skill_card>
+  </.skill_section>
+
+  <.skill_section title={gettext("Object Oriented Programming Languages")}>
+    <:description :if={@language == "de"}>
+      Deusches Bla Bla zu Software Architektur
+    </:description>
+    <:description :if={@language != "de"}>
+      Englisches Bla Bla zu Software Architektur
+    </:description>
+
+    <.skill_card title={gettext("Java")} skill="java">
+      <div :if={@language == "de"}>
+        Java ist eine hochentwickelte, klassenbasierte, objektorientierte Programmiersprache, mit der sich viele Probleme lösen lassen.
+        Sie war ein Pionier, als sie auf den Markt kam, und ist immer noch eine der am häufigsten verwendeten Programmiersprachen der Welt.
+        In den ersten 15 Jahren meiner beruflichen Tätigkeit als Softwareentwickler war sie meine Lieblingssprache; in der Zwischenzeit versuche ich,
+        sie nicht mehr allzu oft zu verwenden. Das liegt nicht nur an der Sprache (die es noch 10-20 Jahre lang geben wird, auch wenn es inzwischen bessere gibt),
+        sondern vor allem an dem seltsamen Ökosystem und Verständnis von Softwareentwicklungskultur vieler Firmen, die Software in Java entwickeln..
+      </div>
+      <div :if={@language != "de"}>
+        Java is a high-level, class-based, object-oriented programming language suited to solve a lot of general problems. It was a pioneer when it entered the field
+        and is still one of the most used programming languages in the world. My favourite for the first 15 years of professional software development, I generally try not to use it too often anymore.
+        It's not only the language (it will stay around for another 10-20 years even though there are better ones now) but especially in Switzerland a strange ecosystem around it.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Kotlin")} skill="kotlin">
+      <div :if={@language == "de"}>
+        Wie von den Entwicklern geschrieben: Eine moderne Programmiersprache, die Entwickler glücklicher macht.
+        Eine Anpassung von Java an moderne Softwareentwicklungspraktiken ist eine wirklich gute Erfahrung für Entwickler.
+        Eine gute Integration mit bestehendem Java-Code macht es zu einem guten Ersatz für oder einer Erweiterung zu Java.
+        Sie wird auch deshalb bleiben, weil sie von Google gefördert wird (für die Android-Entwicklung).
+      </div>
+      <div :if={@language != "de"}>
+        As written by the developers: A modern programming language that makes developers happier. An adaption of Java to modern software development practices it's a really good developer experience.
+        A good integration with existing java code makes it a good replacement for or enhancement to Java. Also here to stay due to the fact that it's pushed by Google too (for Android development).
+      </div>
+    </.skill_card>
+  </.skill_section>
+
+  <.skill_section title={gettext("Frameworks")}>
+    <:description :if={@language == "de"}>
+      Frameworks sind meist weit verbreitet und bringen ein erstes Set von Werkzeugen, die man so einfach wiederverwenden kann.
+      Auch wenn sie eine starke Tendenz haben, Leute zu binden, bieten sie durchaus auch Vorteile. Allerdings gibt es auch gefühlt
+      jede Woche ein neues. Die hier gelisteten Frameworks habe ich aktiv verwendet und empfinde sie als echte Bereicherung.
+    </:description>
+    <:description :if={@language != "de"}>
+      Frameworks are usually widely used and bring a first set of tools that can be reused so easily.
+      Even though they have a tendency to tie people to themself, they definitely offer advantages as well. However, there is also a new one
+      every week (at least I sometimes have that feeling). I have actively used the frameworks listed here and find them a real enrichment.
+    </:description>
+
+    <.skill_card title={gettext("Phoenix Framework")} skill="phoenix">
+      <div :if={@language == "de"}>
+        Entwickelt von Rails-affinen Leuten, ist dies das momentan beste Framework für die Entwicklung von Web-Applikationen (diese Webseite ist nur ein Beispiel dafür).
+        Speziell Liveviews mit der Möglichkeit, auch den interaktiven Frontend-Code im Backend mit derselben Sprache wie das Backend selbst zu entwickeln, gibt ganz neue
+        Möglichkeiten für eine echte Fullstack-Entwicklungsumgebung. Bei weitem das Beste Webframework, das ich je gesehen habe.
+      </div>
+      <div :if={@language != "de"}>
+        Developed by people with an affinity for Rails, this is currently the best framework for developing web applications (this website is just one example).
+        Especially Liveviews with the possibility to also develop the interactive frontend code in the backend with the same language as the backend itself gives
+        completely new possibilities for a real fullstack development environment. The best web framework I ever used by quite a margin.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("React")} skill="react">
+      <div :if={@language == "de"}>
+        Eine JavaScript-Bibliothek zur Erstellung von Benutzeroberflächen, die genau das gut kann. React an sich würde ich nicht einmal als Framework bezeichnen,
+        sondern wirklich nur als Bibliothek, aber es gibt ein ganzes Ökosystem drum herum. Wenn ich ein Frontend in JavaScript entwickeln muss, ist React immer noch mein Favorit.
+      </div>
+      <div :if={@language != "de"}>
+        A JavaScript library for building user interfaces it's really good in doing exactly that. React by itself I would not even call a framework but really just a library
+        but there is a whole ecosystem surrounding it. If I have to develop a frontend in JavaScript then React is still my favourite.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Spring")} skill="spring">
+      <div :if={@language == "de"}>
+        Spring wurde erstellt, weil zu dieser Zeit die Entwicklung von Java Enterprise Applikationen schlicht zu kompliziert war (mein Horror war immer XDoclet bzw. der Fakt, dass es so etwas überhaupt brauchte).
+        Spring ist selber ein riesiges System geworden, erlaubt zwar einen schnellen Einstieg, aber ist auch undurchschaubar. Wartbaren Spring-Code zu schreiben, ist eine deutlich grössere Herausforderung, als es zunächst aussieht und ich
+        habe mehr Teams daran scheitern sehen, als damit Erfolg zu haben. Aber: wenn man erfahrene Spring-Entwickler hat, kann man damit sehr schnell sehr gute Software schreiben, weil die Mächtigkeit des Frameworks ist extrem hoch.
+      </div>
+      <div :if={@language != "de"}>
+        Spring was created because at that time the development of Java Enterprise applications was simply too complicated (my horror was always XDoclet or the fact that something like it was needed at all).
+        Spring itself has become a huge system, allows a quick start, but is also inscrutable. Writing maintainable Spring code is a much bigger challenge than it looks at first and I have seen more teams  fail than succeed.
+        But: if you have experienced Spring developers, you can write very good software very quickly, because the pure power of the framework.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Angular")} skill="angular">
+      <div :if={@language == "de"}>
+        Als grosser Konkurrenz von React ist Angular sogar eine komplette Plattform. Man kriegt alles geliefert, was man zur Entwicklung von Frontend-Applikationen braucht - aber bindet sich natürlich stark an diese Art der Programmierung.
+        Dennoch: ich mochte das Framework immer und man kann wirklich effizient damit entwickeln.
+      </div>
+      <div :if={@language != "de"}>
+        As the big competitor to React, Angular is more a platform then a framework. You get everything you need to develop frontend applications - but of course you are strongly tied to this kind of programming.
+        Nevertheless, I always liked the framework and you can develop really efficiently with it.
+      </div>
+    </.skill_card>
+  </.skill_section>
+
+  <.skill_section title={gettext("Others")}>
+    <:description :if={@language == "de"}>
+      Es gibt diverse Hilfsmittel und Methodiken in der Software-Entwicklung, die hier gelisteten sind diejenigen, die ich persönlich häufig verwende und in denen ich wirklich gute Skills mitbringe.
+    </:description>
+    <:description :if={@language != "de"}>
+      There are a multitude of tools and methods for software development. The list below are just the tools and methodologies, that I use on a regular basis and where I think I have a good to high
+      level of expertise.
+    </:description>
+
+    <.skill_card title={gettext("SQL (Oracle, Postgres, MSSQL, MySQL, ...)")} skill="sql">
+      <div :if={@language == "de"}>
+        SQL Datenbanken sind die Basis beinahe jeder Datenpersistenz und mit Sicherheit immer noch eines der wichtigsten Tools jedes Software-Entwicklers.
+        Die Mächtigkeit moderner SQL-Queries für die Software-Entwicklung sind nicht zu unterschätzen und mir macht es immer Spass, die Systeme etwas
+        auszureizen.
+      </div>
+      <div :if={@language != "de"}>
+        SQL databases are still the basis for nearly all data persistency and for sure one of the most important tools of probably every software developer.
+        The power of moderne sql queries for efficient software development are not to be underestimated and I myself enjoy writing complex queries.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("NoSQL (Mongo, Cassandra, ...)")} skill="nosql">
+      <div :if={@language == "de"}>
+        In gewissen Fällen sind SQL Datenbanken für die Persistenz nicht geeignet und dann kommen häufig NoSQL Datenbanken zum Einsatz. Im Gegensatz zu SQL
+        Datenbanken gibt es aber nicht "die eine" Abfragesprache, sondern jede dieser Datenbanken bringt ihre eigenen Stärken, eigene Tools und eigene Komplexität.
+      </div>
+      <div :if={@language != "de"}>
+        Sometimes SQL databases are a bad fit for the persistence. That's when NoSQL databases come in to save the day. Contrary to SQL they are not standardized
+        in any way and every one brings her own strengths, tools and complexity.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Kafka")} skill="kafka">
+      <div :if={@language == "de"}>
+        Kafka ist ein extrem mächtiges Tool zum Streamen von Events in Echtzeit mit der Fähigkeit, Milliarden von Events pro Tag zu verarbeiten. Faktisch ist Kafka
+        heute der Industriestandard für die Persistierung und Verarbeitung von Events in Echtzeit, speziell bei grossen Mengen.
+      </div>
+      <div :if={@language != "de"}>
+        Kafka is a real-time data streaming technology   capable of handling high volume of events. It can probably be called a standard nowaday for
+        persisting and working with events in real-time especially with high volumes.
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Kubernetes")} skill="kubernetes">
+      <div :if={@language == "de"}>
+        Kubernetes, auch bekannt als K8s, ist ein Open-Source-System zur Automatisierung der Bereitstellung, Skalierung und Verwaltung von containerisierten Anwendungen.
+        Es ist meiner Meinung nach einer der Gründe (oder vielleicht auch ein Nebeneffekt), warum die Containerisierung in Microservices heute so reibungslos funktioniert
+        (in Kombination mit der Leistungsfähigkeit und dem einfachen Workflow von Docker).
+      </div>
+      <div :if={@language != "de"}>
+        Kubernetes, also known as K8s, is an open-source system for automating deployment, scaling, and management of containerized applications. It's in my opinion
+        one of the reasons (or may be also a side effect) why containerization in microservices is working as smoothly as it does nowaday (combined with the power
+        and simple workflow of docker).
+      </div>
+    </.skill_card>
+    <.skill_card title={gettext("Agile Software Development")} skill="agile">
+      <div :if={@language == "de"}>
+        Wie viele Software-Entwickler habe ich mit Wasserfall begonnen und konnte das zum Glück grösstenteils hinter mir lassen. Die meisten Projekte heute sind
+        basierend auf Scrum oder Kanban und zumindest auf dem Papier dementsprechend agil. Persönlich fühle ich mich in agilen Teams deutlich wohler, adaptive
+        und interative Software-Entwicklung ist meiner Meinung nach viel zielführender als die frühere Methodiken (auch wenn mir bewusst ist, dass die Statistiken
+        nicht wirklich besser aussehen als früher).
+      </div>
+      <div :if={@language != "de"}>
+        Like many software developers, I started with waterfall and was lucky to leave that behind for the most part. Most projects today are based
+        on Scrum or Kanban and, at least on paper, are agile accordingly. Personally, I feel much more comfortable in agile teams because adaptive and interactive software
+        development is, in my opinion, much more goal-oriented than the earlier methodologies (even though I am aware that the statistics do not really look better than before).
+      </div>
+    </.skill_card>
+  </.skill_section>
+</.container>

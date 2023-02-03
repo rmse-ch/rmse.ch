@@ -39,6 +39,7 @@ defmodule RmseWeb.Router do
       live("/about", AboutLive)
       live("/motorcycle", MotorcycleLive)
       live("/links", LinksLive)
+      live("/skills", SkillsLive)
 
       live("/apps", WIPLive, :apps)
       live("/projects", WIPLive, :projects)
