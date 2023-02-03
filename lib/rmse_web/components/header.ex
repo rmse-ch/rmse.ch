@@ -85,13 +85,17 @@ defmodule RmseWeb.Header do
             <.mobile_nav_item href={~p"/blog"}><%= gettext("Blog") %></.mobile_nav_item>
             <.mobile_nav_item href={~p"/skills"}><%= gettext("Skills") %></.mobile_nav_item>
 
+            <%!--
             <.mobile_nav_item href={~p"/projects"}><%= gettext("Projects") %></.mobile_nav_item>
 
             <.mobile_nav_item href={~p"/apps"}><%= gettext("Apps") %></.mobile_nav_item>
+            --%>
 
             <.mobile_nav_item href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.mobile_nav_item>
 
+            <%!--
             <.mobile_nav_item href={~p"/contact"}><%= gettext("Contact") %></.mobile_nav_item>
+            --%>
 
             <.mobile_nav_item href={~p"/links"}><%= gettext("Links") %></.mobile_nav_item>
           </ul>
@@ -150,6 +154,7 @@ defmodule RmseWeb.Header do
         <.nav_item navigate={~p"/skills"} request_path={@request_path}>
           <%= gettext("Skills") %>
         </.nav_item>
+        <%!--
         <.nav_item navigate={~p"/projects"} request_path={@request_path}>
           <%= gettext("Projects") %>
         </.nav_item>
@@ -157,14 +162,17 @@ defmodule RmseWeb.Header do
         <.nav_item navigate={~p"/apps"} request_path={@request_path}>
           <%= gettext("Apps") %>
         </.nav_item>
+        --%>
 
         <.nav_item navigate={~p"/motorcycle"} request_path={@request_path}>
           <%= gettext("Motorcycle") %>
         </.nav_item>
 
+        <%!--
         <.nav_item navigate={~p"/contact"} request_path={@request_path}>
           <%= gettext("Contact") %>
         </.nav_item>
+        --%>
 
         <.nav_item navigate={~p"/links"} request_path={@request_path}>
           <%= gettext("Links") %>
