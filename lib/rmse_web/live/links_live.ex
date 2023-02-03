@@ -16,7 +16,7 @@ defmodule RmseWeb.LinksLive do
 
     {:ok,
      socket
-     |> assign(:page_title, gettext("Links - Rico Metzger"))
+     |> assign(:page_title, gettext("Links") <> " - Rico Metzger")
      |> assign(:tool_sections, tool_sections)}
   end
 

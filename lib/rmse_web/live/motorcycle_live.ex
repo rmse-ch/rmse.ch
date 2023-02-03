@@ -10,10 +10,10 @@ defmodule RmseWeb.MotorcycleLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :page_title, gettext("Motorcycle - Rico Metzger"))}
+    {:ok, assign(socket, :page_title, gettext("Motorcycle") <> " - Rico Metzger")}
   end
 
-  attr :language, :string, required: true
+  attr(:language, :string, required: true)
 
   def introduction(%{language: "de"} = assigns) do
     ~H"""
@@ -72,7 +72,7 @@ defmodule RmseWeb.MotorcycleLive do
     """
   end
 
-  attr :language, :string, required: true
+  attr(:language, :string, required: true)
 
   def honda_text(%{language: "de"} = assigns) do
     ~H"""
@@ -95,7 +95,7 @@ defmodule RmseWeb.MotorcycleLive do
     """
   end
 
-  attr :language, :string, required: true
+  attr(:language, :string, required: true)
 
   def kawa_z1000(%{language: "de"} = assigns) do
     ~H"""
@@ -115,7 +115,7 @@ defmodule RmseWeb.MotorcycleLive do
     """
   end
 
-  attr :language, :string, required: true
+  attr(:language, :string, required: true)
 
   def kawa_h2_sx_se(%{language: "de"} = assigns) do
     ~H"""

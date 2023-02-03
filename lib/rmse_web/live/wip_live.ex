@@ -14,12 +14,11 @@ defmodule RmseWeb.WIPLive do
     {:ok, assign(socket, :page_title, title(socket.assigns[:live_action]))}
   end
 
-  defp title(:blog), do: gettext("Blog - Rico Metzger")
-  defp title(:conditions), do: gettext("Conditions - Rico Metzger")
-  defp title(:cookies), do: gettext("Cookies - Rico Metzger")
-  defp title(:projects), do: gettext("Projects - Rico Metzger")
-  defp title(:apps), do: gettext("Apps - Rico Metzger")
-  defp title(:contact), do: gettext("Contact - Rico Metzger")
+  defp title(:conditions), do: gettext("Conditions") <> " - Rico Metzger"
+  defp title(:cookies), do: "Cookies - Rico Metzger"
+  defp title(:projects), do: gettext("Projects") <> " - Rico Metzger"
+  defp title(:apps), do: gettext("Apps") <> " - Rico Metzger"
+  defp title(:contact), do: gettext("Contact") <> " - Rico Metzger"
 
   defp title(atom) do
     dynamic_title =

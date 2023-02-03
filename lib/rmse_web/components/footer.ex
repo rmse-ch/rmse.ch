@@ -43,7 +43,7 @@ defmodule RmseWeb.Footer do
                 <.nav_link href={~p"/links"}><%= gettext("Links") %></.nav_link>
 
                 <%!-- <.nav_link href={~p"/conditions"} class="pl-9"><%= gettext("Conditions") %></.nav_link> --%>
-                <%!-- <.nav_link href={~p"/cookies"}><%= gettext("Cookies") %></.nav_link> --%>
+                <%!-- <.nav_link href={~p"/cookies"}>Cookies</.nav_link> --%>
               </div>
 
               <p class="text-sm text-zinc-400 dark:text-zinc-500">

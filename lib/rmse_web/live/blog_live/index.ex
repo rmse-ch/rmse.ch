@@ -15,7 +15,7 @@ defmodule RmseWeb.BlogLive.Index do
     {:ok,
      socket
      |> assign(:articles, [])
-     |> assign(:page_title, gettext("Blog - Rico Metzger"))
+     |> assign(:page_title, gettext("Blog") <> " - Rico Metzger")
      |> assign(:more?, false)}
   end
 

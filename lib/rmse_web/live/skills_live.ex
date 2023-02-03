@@ -1,7 +1,6 @@
 defmodule RmseWeb.SkillsLive do
   use RmseWeb, :live_view
 
-  import RmseWeb.SocialIconsComponent
   import RmseWeb.CardComponent
 
   @impl true
@@ -11,7 +10,7 @@ defmodule RmseWeb.SkillsLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :page_title, gettext("Skills - Rico Metzger"))}
+    {:ok, assign(socket, :page_title, gettext("Skills") <> " - Rico Metzger")}
   end
 
   attr(:title, :string, required: true)
