@@ -17,21 +17,25 @@ msgid "close"
 msgstr "close"
 
 #: lib/rmse_web/live/about_live.html.heex:97
+#: lib/rmse_web/live/contact_live.html.heex:64
 #: lib/rmse_web/live/index_live.html.heex:20
 msgid "Follow on GitHub"
 msgstr "Follow on GitHub"
 
 #: lib/rmse_web/live/about_live.html.heex:92
+#: lib/rmse_web/live/contact_live.html.heex:59
 #: lib/rmse_web/live/index_live.html.heex:16
 msgid "Follow on Instagram"
 msgstr "Follow on Instagram"
 
 #: lib/rmse_web/live/about_live.html.heex:102
+#: lib/rmse_web/live/contact_live.html.heex:49
 #: lib/rmse_web/live/index_live.html.heex:25
 msgid "Follow on LinkedIn"
 msgstr "Follow on LinkedIn"
 
 #: lib/rmse_web/live/about_live.html.heex:87
+#: lib/rmse_web/live/contact_live.html.heex:54
 #: lib/rmse_web/live/index_live.html.heex:10
 msgid "Follow on Twitter"
 msgstr "Follow on Twitter"
@@ -74,7 +78,7 @@ msgstr "You found one of the pages, that I am still actively working on. The hom
 
 #: lib/rmse_web/components/footer.ex:29
 #: lib/rmse_web/components/header.ex:83
-#: lib/rmse_web/components/header.ex:147
+#: lib/rmse_web/components/header.ex:145
 msgid "About"
 msgstr "About"
 
@@ -88,11 +92,16 @@ msgstr "Attempting to reconnect"
 
 #: lib/rmse_web/components/footer.ex:31
 #: lib/rmse_web/components/header.ex:85
-#: lib/rmse_web/components/header.ex:151
+#: lib/rmse_web/components/header.ex:149
 #: lib/rmse_web/live/blog_live/index.ex:18
 msgid "Blog"
 msgstr "Blog"
 
+#: lib/rmse_web/components/footer.ex:41
+#: lib/rmse_web/components/header.ex:96
+#: lib/rmse_web/components/header.ex:170
+#: lib/rmse_web/live/contact_live.ex:13
+#: lib/rmse_web/live/contact_live.html.heex:3
 #: lib/rmse_web/live/wip_live.ex:21
 msgid "Contact"
 msgstr "Contact"
@@ -102,15 +111,15 @@ msgid "Error!"
 msgstr "Error!"
 
 #: lib/rmse_web/components/footer.ex:43
-#: lib/rmse_web/components/header.ex:100
-#: lib/rmse_web/components/header.ex:178
+#: lib/rmse_web/components/header.ex:98
+#: lib/rmse_web/components/header.ex:174
 #: lib/rmse_web/live/links_live.ex:19
 msgid "Links"
 msgstr "Links"
 
 #: lib/rmse_web/components/footer.ex:39
 #: lib/rmse_web/components/header.ex:94
-#: lib/rmse_web/components/header.ex:168
+#: lib/rmse_web/components/header.ex:166
 #: lib/rmse_web/live/motorcycle_live.ex:13
 msgid "Motorcycle"
 msgstr "Motorcycle"
@@ -223,7 +232,7 @@ msgstr "Technical Skills"
 
 #: lib/rmse_web/components/footer.ex:33
 #: lib/rmse_web/components/header.ex:86
-#: lib/rmse_web/components/header.ex:155
+#: lib/rmse_web/components/header.ex:153
 #: lib/rmse_web/live/skills_live.ex:13
 msgid "Skills"
 msgstr "Skills"
@@ -243,4 +252,8 @@ msgstr "Conditions"
 #: lib/rmse_web/components/layouts/root.html.heex:9
 msgid "Software Engineer, Freelancer and Motorcyclist"
 msgstr "Software Engineer, Freelancer and Motorcyclist"
+
+#: lib/rmse_web/live/contact_live.html.heex:9
+msgid "Contact Information"
+msgstr "Contact Information"
 
