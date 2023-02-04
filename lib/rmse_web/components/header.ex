@@ -93,9 +93,7 @@ defmodule RmseWeb.Header do
 
             <.mobile_nav_item href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.mobile_nav_item>
 
-            <%!--
             <.mobile_nav_item href={~p"/contact"}><%= gettext("Contact") %></.mobile_nav_item>
-            --%>
 
             <.mobile_nav_item href={~p"/links"}><%= gettext("Links") %></.mobile_nav_item>
           </ul>
@@ -168,11 +166,9 @@ defmodule RmseWeb.Header do
           <%= gettext("Motorcycle") %>
         </.nav_item>
 
-        <%!--
         <.nav_item navigate={~p"/contact"} request_path={@request_path}>
           <%= gettext("Contact") %>
         </.nav_item>
-        --%>
 
         <.nav_item navigate={~p"/links"} request_path={@request_path}>
           <%= gettext("Links") %>

@@ -29,11 +29,11 @@
   </div>
   <div class="relative mt-3 mb-3">
     <div class="absolute inset-0 flex items-center" aria-hidden="true">
-      <div class="w-full border-t border-gray-300"></div>
+      <div class="w-full"></div>
     </div>
   </div>
   <%= if Enum.empty?(@articles) do %>
-    <p class="text-sm text-zinc-900 dark:text-zinc-100">
+    <p class="text-sm text-zinc-900 dark:text-zinc-100 pt-3 border-t border-gray-500">
       <%= gettext("No blog entries.") %>
     </p>
   <% else %>

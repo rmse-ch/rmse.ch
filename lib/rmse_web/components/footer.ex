@@ -38,7 +38,7 @@ defmodule RmseWeb.Footer do
 
                 <.nav_link href={~p"/motorcycle"}><%= gettext("Motorcycle") %></.nav_link>
 
-                <%!-- <.nav_link href={~p"/contact"}><%= gettext("Contact") %></.nav_link> --%>
+                <.nav_link href={~p"/contact"}><%= gettext("Contact") %></.nav_link>
 
                 <.nav_link href={~p"/links"}><%= gettext("Links") %></.nav_link>
 

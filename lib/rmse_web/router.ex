@@ -37,6 +37,7 @@ defmodule RmseWeb.Router do
     live_session :default, on_mount: [LanguageOnMount] do
       live("/", IndexLive)
       live("/about", AboutLive)
+      live("/contact", ContactLive)
       live("/motorcycle", MotorcycleLive)
       live("/links", LinksLive)
       live("/skills", SkillsLive)
@@ -47,7 +48,6 @@ defmodule RmseWeb.Router do
       live("/blog/:slug", BlogLive.Show)
 
       live("/conditions", WIPLive, :conditions)
-      live("/contact", WIPLive, :contact)
       live("/cookies", WIPLive, :cookies)
     end
   end
