@@ -51,7 +51,7 @@ msgstr "Keine Blogeinträge."
 
 #: lib/rmse_web/live/index_live.html.heex:4
 msgid "Software engineer, Freelancer and Motorcyclist."
-msgstr "Software-Ingenieur, Freiberufler und Motorradfahrer."
+msgstr "Software-Ingenieur, Freelancer und Motorradfahrer."
 
 #: lib/rmse_web/live/index_live.html.heex:6
 msgid "index_page_content"
