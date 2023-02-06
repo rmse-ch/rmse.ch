@@ -7,19 +7,24 @@ defmodule Rmse.ProjectsFixtures do
   @doc """
   Generate a project.
   """
+  alias Rmse.Repo
+  alias Rmse.Projects.Project
+
   def project_fixture(attrs \\ %{}) do
-    {:ok, project} =
+    attrs =
       attrs
       |> Enum.into(%{
         company: "some company",
-        description_html: "some description_html",
+        description_de_html: "some description_de_html",
+        description_en_html: "some description_en_html",
         end_date: ~D[2023-02-03],
         project: "some project",
-        skills: ["option1", "option2"],
-        skills_hidden: ["option1", "option2"],
+        skills: ["skill1", "skill2"],
+        skills_hidden: ["skill_hidden1", "skill_hidden2"],
         start_date: ~D[2023-02-03]
       })
-      |> Rmse.Projects.create_project()
+
+    {:ok, project} = Project.changeset(%Project{}, attrs) |> Repo.insert()
 
     project
   end

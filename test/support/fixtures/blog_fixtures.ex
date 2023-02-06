@@ -20,7 +20,7 @@ defmodule Rmse.BlogFixtures do
         title: "some title",
         slug: unique_article_slug(),
         tags: ["tag1", "tag2"],
-        description: "some description",
+        summary: "some summarymix",
         content: "some content",
         dev_to_id: 41,
         dev_to_url: "https://dev.to/41",

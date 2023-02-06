@@ -11,7 +11,7 @@ defmodule Rmse.BlogTest do
     @invalid_attrs %{
       content: nil,
       created_at: nil,
-      description: nil,
+      summary: nil,
       dev_to_id: nil,
       medium_id: nil,
       published: nil,
@@ -54,7 +54,7 @@ defmodule Rmse.BlogTest do
         id: 99,
         content: "some content",
         created_at: ~U[2023-01-31 10:22:00Z],
-        description: "some description",
+        summary: "some summary",
         dev_to_id: 42,
         medium_id: 42,
         published: true,
@@ -67,7 +67,7 @@ defmodule Rmse.BlogTest do
       assert {:ok, %Article{} = article} = Blog.create_article(valid_attrs)
       assert article.content == "some content"
       assert article.created_at == ~U[2023-01-31 10:22:00Z]
-      assert article.description == "some description"
+      assert article.summary == "some summary"
       assert article.dev_to_id == 42
       assert article.medium_id == 42
       assert article.published == true
@@ -87,7 +87,7 @@ defmodule Rmse.BlogTest do
       update_attrs = %{
         content: "some updated content",
         created_at: ~U[2023-02-01 10:22:00Z],
-        description: "some updated description",
+        summary: "some updated summary",
         dev_to_id: 43,
         medium_id: 43,
         published: false,
@@ -100,7 +100,7 @@ defmodule Rmse.BlogTest do
       assert {:ok, %Article{} = article} = Blog.update_article(article, update_attrs)
       assert article.content == "some updated content"
       assert article.created_at == ~U[2023-02-01 10:22:00Z]
-      assert article.description == "some updated description"
+      assert article.summary == "some updated summary"
       assert article.dev_to_id == 43
       assert article.medium_id == 43
       assert article.published == false

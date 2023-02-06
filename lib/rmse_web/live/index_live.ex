@@ -29,7 +29,7 @@ defmodule RmseWeb.IndexLive do
       <.card_eyebrow decorate>
         <.format_datetime datetime={@article.created_at} />
       </.card_eyebrow>
-      <.card_description><%= @article.description %></.card_description>
+      <.card_description><%= @article.summary %></.card_description>
       <.card_cta><%= gettext("Read article") %></.card_cta>
     </.card>
     """

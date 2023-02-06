@@ -5,7 +5,7 @@ defmodule Rmse.Blog.Article do
   @primary_key {:id, :id, autogenerate: false}
   schema "articles" do
     field :content, :string
-    field :description, :string
+    field :summary, :string
     field :dev_to_id, :integer
     field :dev_to_url, :string
     field :medium_id, :integer
@@ -31,7 +31,7 @@ defmodule Rmse.Blog.Article do
       :content,
       :tags,
       :slug,
-      :description,
+      :summary,
       :published,
       :dev_to_id,
       :dev_to_url,
@@ -46,7 +46,7 @@ defmodule Rmse.Blog.Article do
       :content,
       :tags,
       :slug,
-      :description,
+      :summary,
       :published,
       :created_at,
       :updated_at
