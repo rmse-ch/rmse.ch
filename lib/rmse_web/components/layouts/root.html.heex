@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
+    <meta name="description" content="Rico Metzger - Software Engineer, Freelancer and Motorcyclist. Freelancer for software engineering / development in the fields of Elixir (Phoenix), Go, Rust, Scala and (if needed) Java." />
     <.live_title>
       <%= assigns[:page_title] ||
         "Rico Metzger - " <> gettext("Software Engineer, Freelancer and Motorcyclist") %>
@@ -19,7 +20,9 @@
     <!-- Für Windows Metro -->
     <meta name="msapplication-square310x310logo" content={~p"/favicon/mstile-310x310.png"} />
     <meta name="msapplication-TileColor" content="#000000" />
-  </head>
+  
+    <script defer data-domain="rmse.ch" src="https://plausible.io/js/script.js"></script>
+</head>
 
   <body
     class="flex h-full flex-col bg-zinc-50 dark:bg-black"
