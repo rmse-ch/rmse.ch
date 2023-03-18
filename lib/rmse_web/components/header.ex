@@ -7,6 +7,8 @@ defmodule RmseWeb.Header do
   alias Phoenix.LiveView.JS
   alias RmseWeb.PreferencesComponent
 
+  import RmseWeb.CoreComponents, only: [icon: 1]
+
   use RmseWeb, :verified_routes
 
   attr(:rest, :global)
@@ -50,7 +52,7 @@ defmodule RmseWeb.Header do
         aria-haspopup="true"
         phx-click={show_menu()}
       >
-        <span>Menu</span> <Heroicons.chevron_down class="h-4 w-4" />
+        <span>Menu</span> <.icon name="hero-chevron-down" class="h-4 w-4" />
       </button>
 
       <div
@@ -70,7 +72,7 @@ defmodule RmseWeb.Header do
       >
         <div class="flex flex-row-reverse items-center justify-between">
           <button aria-label="Close menu" class="-m-1 p-1" phx-click={hide_menu()}>
-            <Heroicons.x_mark class="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+            <.icon name="hero-x-mark" class="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
           </button>
 
           <h2 class="text-sm font-medium text-zinc-600 dark:text-zinc-400">

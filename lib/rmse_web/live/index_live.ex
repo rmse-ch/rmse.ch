@@ -39,7 +39,7 @@ defmodule RmseWeb.IndexLive do
     ~H"""
     <div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 class="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <Heroicons.briefcase class="h-6 w-6 flex-none" />
+        <.icon name="hero-briefcase" class="h-6 w-6 flex-none" />
         <span class="ml-3"><%= gettext("Work") %></span>
       </h2>
       <ol class="mt-6 space-y-4">
