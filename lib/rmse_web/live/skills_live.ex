@@ -13,11 +13,11 @@ defmodule RmseWeb.SkillsLive do
     {:ok, assign(socket, :page_title, gettext("Skills") <> " - Rico Metzger")}
   end
 
-  attr(:title, :string, required: true)
-  attr(:skill, :string, required: false, default: nil)
+  attr :title, :string, required: true
+  attr :skill, :string, required: false, default: nil
 
-  slot(:description, required: true)
-  slot(:inner_block, required: true)
+ slot :description, required: true
+ slot :inner_block, required: true
 
   def skill_section(assigns) do
     ~H"""
@@ -31,10 +31,10 @@ defmodule RmseWeb.SkillsLive do
     """
   end
 
-  attr(:title, :string, required: true)
-  attr(:skill, :string, required: false, default: nil)
+  attr :title, :string, required: true
+  attr :skill, :string, required: false, default: nil
 
-  slot(:inner_block, required: true)
+ slot :inner_block, required: true
 
   def skill_card(assigns) do
     ~H"""
@@ -51,7 +51,7 @@ defmodule RmseWeb.SkillsLive do
   defp skill_link(nil), do: nil
   defp skill_link(skill), do: ~p"/projects?skills=#{skill}"
 
-  attr(:language, :string, required: true)
+  attr :language, :string, required: true
 
   defp about_content(%{language: "de"} = assigns) do
     ~H"""

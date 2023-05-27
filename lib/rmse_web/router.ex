@@ -6,56 +6,51 @@ defmodule RmseWeb.Router do
   alias Plug.Conn
 
   pipeline :browser do
-    plug(:accepts, ["html"])
-    plug(:fetch_session)
-    plug(:fetch_live_flash)
-    plug(:put_root_layout, {RmseWeb.Layouts, :root})
-    plug(:protect_from_forgery)
-    plug(:put_secure_browser_headers)
-    plug(:fill_in_current_path)
-    plug(RmseWeb.Plugs.Locale, "en")
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, {RmseWeb.Layouts, :root}
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+    plug :fill_in_current_path
+    plug RmseWeb.Plugs.Locale, "en"
   end
 
   pipeline :api do
-    plug(:accepts, ["json"])
+    plug :accepts, ["json"]
   end
 
   pipeline :strapi_webhook do
-    plug(:accepts, ["json"])
-    plug(:check_strapi_authorization)
+    plug :accepts, ["json"]
+    plug :check_strapi_authorization
   end
 
   scope "/", RmseWeb do
-    pipe_through(:strapi_webhook)
+    pipe_through :strapi_webhook
 
-    post("/strapi-webhook", StrapiWebhook, :strapi)
+    post "/strapi-webhook", StrapiWebhook, :strapi
   end
 
   scope "/", RmseWeb do
-    pipe_through(:browser)
+    pipe_through :browser
 
     live_session :default, on_mount: [LanguageOnMount] do
-      live("/", IndexLive)
-      live("/about", AboutLive)
-      live("/contact", ContactLive)
-      live("/motorcycle", MotorcycleLive)
-      live("/links", LinksLive)
-      live("/skills", SkillsLive)
+      live "/", IndexLive
+      live "/about", AboutLive
+      live "/contact", ContactLive
+      live "/motorcycle", MotorcycleLive
+      live "/links", LinksLive
+      live "/skills", SkillsLive
 
-      live("/apps", WIPLive, :apps)
-      live("/projects", WIPLive, :projects)
-      live("/blog", BlogLive.Index)
-      live("/blog/:slug", BlogLive.Show)
+      live "/apps", WIPLive, :apps
+      live "/projects", WIPLive, :projects
+      live "/blog", BlogLive.Index
+      live "/blog/:slug", BlogLive.Show
 
-      live("/conditions", WIPLive, :conditions)
-      live("/cookies", WIPLive, :cookies)
+      live "/conditions", WIPLive, :conditions
+      live "/cookies", WIPLive, :cookies
     end
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", RmseWeb do
-  #   pipe_through :api
-  # end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:rmse, :dev_routes) do
@@ -67,14 +62,14 @@ defmodule RmseWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/dev" do
-      pipe_through(:browser)
+      pipe_through :browser
 
-      live_dashboard("/dashboard", metrics: RmseWeb.Telemetry)
-      forward("/mailbox", Plug.Swoosh.MailboxPreview)
+      live_dashboard "/dashboard", metrics: RmseWeb.Telemetry
+      forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
 
-  defp fill_in_current_path(%Conn{assigns: assigns, request_path: request_path} = conn, _opts) do
+  def fill_in_current_path(%Conn{assigns: assigns, request_path: request_path} = conn, _opts) do
     %{conn | assigns: Map.put(assigns, :request_path, request_path)}
   end
 
@@ -95,8 +90,6 @@ defmodule RmseWeb.Router do
 
   defp validate_authorization_header(conn, [_hd | tl]),
     do: validate_authorization_header(conn, tl)
-
-  defp validate_authorization_header(conn, _), do: unauthorized(conn)
 
   defp unauthorized(conn), do: conn |> Conn.send_resp(401, "\"unauthorized\"") |> Conn.halt()
 

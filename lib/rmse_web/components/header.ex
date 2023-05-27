@@ -11,10 +11,10 @@ defmodule RmseWeb.Header do
 
   use RmseWeb, :verified_routes
 
-  attr(:rest, :global)
+  attr :rest, :global
 
-  attr(:href, :string, required: true)
-  slot(:inner_block, doc: "the optional inner block that renders the icon")
+  attr :href, :string, required: true
+ slot :inner_block, doc: "the optional inner block that renders the icon"
 
   def mobile_nav_item(assigns) do
     ~H"""
@@ -38,8 +38,8 @@ defmodule RmseWeb.Header do
     |> JS.hide(to: "#mobile-overlay")
   end
 
-  attr(:class, :string, required: false, default: "")
-  attr(:rest, :global)
+  attr :class, :string, required: false, default: ""
+  attr :rest, :global
 
   def mobile_navigation(assigns) do
     ~H"""
@@ -105,9 +105,9 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr(:navigate, :string, required: true)
-  attr(:request_path, :string, required: false, default: "")
-  slot(:inner_block, doc: "the optional inner block that renders the icon")
+  attr :navigate, :string, required: true
+  attr :request_path, :string, required: false, default: ""
+ slot :inner_block, doc: "the optional inner block that renders the icon"
 
   def nav_item(assigns) do
     ~H"""
@@ -136,8 +136,8 @@ defmodule RmseWeb.Header do
     end
   end
 
-  attr(:rest, :global)
-  attr(:request_path, :string, required: true)
+  attr :rest, :global
+  attr :request_path, :string, required: true
 
   def desktop_navigation(assigns) do
     ~H"""
@@ -180,10 +180,10 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr(:class, :string, required: false, default: "")
-  attr(:rest, :global)
+  attr :class, :string, required: false, default: ""
+  attr :rest, :global
 
-  slot(:inner_block)
+ slot :inner_block
 
   def avatar_container(assigns) do
     ~H"""
@@ -196,9 +196,9 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr(:class, :string, required: false, default: "")
-  attr(:large, :boolean, required: false, default: false)
-  attr(:rest, :global)
+  attr :class, :string, required: false, default: ""
+  attr :large, :boolean, required: false, default: false
+  attr :rest, :global
 
   def avatar(assigns) do
     ~H"""
@@ -214,8 +214,8 @@ defmodule RmseWeb.Header do
     """
   end
 
-  attr(:request_path, :string, required: true)
-  attr(:language, :string, default: "en")
+  attr :request_path, :string, required: true
+  attr :language, :string, default: "en"
 
   def header(assigns) do
     ~H"""
